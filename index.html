@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0f172a">
+    <title>MobiMatch Pro - LCD, Glass & Cover Finder</title>
+    
+    <!-- Play Store / PWA Manifest Link -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; -webkit-tap-highlight-color: transparent; user-select: none; }
+        .glass-badge { background-color: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+        .lcd-badge { background-color: #fce7f3; color: #9d174d; border: 1px solid #f9a8d4; }
+        .cover-badge { background-color: #dcfce7; color: #166534; border: 1px solid #86efac; }
+        .highlight { background-color: #fef08a; font-weight: bold; padding: 0 4px; border-radius: 4px; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="pb-16">
+
+    <!-- App Header -->
+    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-5xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-xl text-white shadow">
+                    <i class="fas fa-mobile-screen-button text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-wide leading-tight">MobiMatch <span class="text-blue-400 text-xs font-normal">PRO</span></h1>
+                    <p class="text-[11px] text-slate-400">Universal LCD, Glass & Cover Finder</p>
+                </div>
+            </div>
+            <button onclick="toggleModal()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded-lg shadow flex items-center gap-1.5">
+                <i class="fas fa-plus"></i> Add Match
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-3 mt-4">
+
+        <!-- Search & Filter Box -->
+        <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-200">
+            <div class="relative">
+                <input type="text" id="searchInput" oninput="filterData()" 
+                    placeholder="Search model e.g. Y20, Note 11, A12, Smart 8..." 
+                    class="w-full pl-10 pr-9 py-3 rounded-xl border-2 border-slate-200 focus:border-blue-600 focus:outline-none text-slate-800 font-medium text-sm">
+                <i class="fas fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-base"></i>
+                <button onclick="clearSearch()" id="clearBtn" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                    <i class="fas fa-times-circle text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="grid grid-cols-4 gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
+                <button onclick="setCategory('ALL')" id="cat-ALL" class="cat-btn bg-slate-900 text-white py-2 rounded-lg text-xs font-bold transition text-center">
+                    All
+                </button>
+                <button onclick="setCategory('GLASS')" id="cat-GLASS" class="cat-btn bg-slate-100 text-slate-700 py-2 rounded-lg text-xs font-bold transition text-center">
+                    <i class="fas fa-shield-halved text-blue-600 mr-1"></i>Glass
+                </button>
+                <button onclick="setCategory('LCD')" id="cat-LCD" class="cat-btn bg-slate-100 text-slate-700 py-2 rounded-lg text-xs font-bold transition text-center">
+                    <i class="fas fa-microchip text-pink-600 mr-1"></i>LCD
+                </button>
+                <button onclick="setCategory('COVER')" id="cat-COVER" class="cat-btn bg-slate-100 text-slate-700 py-2 rounded-lg text-xs font-bold transition text-center">
+                    <i class="fas fa-mobile text-green-600 mr-1"></i>Cover
+                </button>
+            </div>
+
+            <!-- Brand Pills -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pt-2.5 mt-1 no-scrollbar">
+                <button onclick="quickSearch('')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">All Brands</button>
+                <button onclick="quickSearch('Samsung')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Samsung</button>
+                <button onclick="quickSearch('Vivo')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Vivo</button>
+                <button onclick="quickSearch('Oppo')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Oppo</button>
+                <button onclick="quickSearch('Realme')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Realme</button>
+                <button onclick="quickSearch('Redmi')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Redmi</button>
+                <button onclick="quickSearch('Poco')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Poco</button>
+                <button onclick="quickSearch('Infinix')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Infinix</button>
+                <button onclick="quickSearch('Tecno')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">Tecno</button>
+                <button onclick="quickSearch('iPhone')" class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-700 font-medium shrink-0">iPhone</button>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center my-3 px-1">
+            <p id="resultCount" class="text-xs font-semibold text-slate-500"></p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div id="resultsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5"></div>
+    </main>
+
+    <!-- Add Custom Match Modal (Saves in Phone Memory) -->
+    <div id="addModal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-slate-800 text-base">Add New Compatible Models</h3>
+                <button onclick="toggleModal()" class="text-slate-400 hover:text-slate-600"><i class="fas fa-times text-lg"></i></button>
+            </div>
+            <div class="space-y-3">
+                <div>
+                    <label class="text-xs font-bold text-slate-600">Category</label>
+                    <select id="newType" class="w-full mt-1 p-2.5 rounded-xl border border-slate-200 text-sm font-medium">
+                        <option value="GLASS">Screen Protector / Glass</option>
+                        <option value="LCD">LCD / Display Combo</option>
+                        <option value="COVER">Back Cover / Case</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-600">Group Title / Master Model</label>
+                    <input type="text" id="newTitle" placeholder="e.g. Vivo V27 / V29 Universal Glass" class="w-full mt-1 p-2.5 rounded-xl border border-slate-200 text-sm">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-600">Size / Type</label>
+                    <input type="text" id="newSize" placeholder="e.g. 6.78 Inch Curved" class="w-full mt-1 p-2.5 rounded-xl border border-slate-200 text-sm">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-600">Compatible Models (Comma separated)</label>
+                    <input type="text" id="newModels" placeholder="e.g. Vivo V27, Vivo V29, Vivo V30" class="w-full mt-1 p-2.5 rounded-xl border border-slate-200 text-sm">
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-600">Technician Note</label>
+                    <input type="text" id="newNote" placeholder="e.g. 100% UV Glass Fit" class="w-full mt-1 p-2.5 rounded-xl border border-slate-200 text-sm">
+                </div>
+                <button onclick="saveCustomMatch()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl text-sm shadow hover:bg-blue-500 transition">
+                    Save to Database
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const defaultData = [
+            { type: "GLASS", title: "Y20 / A15 / C11 Universal 9D Glass", size: "6.5\" - 6.52\" Notch", models: ["Vivo Y20", "Vivo Y20i", "Vivo Y20s", "Vivo Y12s", "Vivo Y15s", "Vivo Y15a", "Vivo Y11 (2023)", "Vivo Y01", "Vivo Y02s", "Oppo A15", "Oppo A15s", "Oppo A16", "Oppo A16k", "Oppo A16e", "Oppo A53s", "Oppo A54", "Oppo A55", "Realme C11", "Realme C12", "Realme C15", "Realme C20", "Realme C21", "Realme C21Y", "Realme C25", "Realme C25s", "Realme Narzo 20", "Realme Narzo 30A", "Realme 5", "Realme 5i", "Realme 5s", "Samsung A02", "Samsung A02s", "Samsung A03", "Samsung A03s", "Samsung A03 Core", "Samsung M02", "Samsung A12", "Samsung M12"], note: "Sabse zyada bikne wala master glass. Sabhi 35+ models par 100% fit aata hai." },
+            { type: "GLASS", title: "Y21 / A13 / A04 Universal Glass", size: "6.58\" - 6.6\" Waterdrop", models: ["Vivo Y21", "Vivo Y21s", "Vivo Y21t", "Vivo Y21a", "Vivo Y21e", "Vivo Y33s", "Vivo Y33t", "Vivo Y22", "Vivo Y22s", "Vivo Y16", "Vivo Y02", "Vivo Y35", "Vivo Y53s", "Samsung A04", "Samsung A04s", "Samsung A04e", "Samsung A13 4G", "Samsung A13 5G", "Samsung A23", "Samsung M13", "Samsung F13"], note: "Flat edge 6.6-inch waterdrop models ke liye universal match." },
+            { type: "GLASS", title: "6.43\" AMOLED Punch-Hole Master Glass", size: "6.43\" Display", models: ["Redmi Note 10", "Redmi Note 10s", "Redmi Note 11", "Redmi Note 11s", "Redmi Note 12s", "Poco M4 Pro 4G", "Poco M5s", "Oppo F19", "Oppo F19s", "Oppo F19 Pro", "Oppo F21 Pro", "Oppo A74 4G", "Oppo A95", "Oppo Reno 7 4G", "Oppo Reno 8 4G", "Realme 8", "Realme 8 Pro", "Realme 9 4G", "Realme 9 Pro+", "Realme GT Master", "Vivo V21e 5G", "Vivo Y73", "Vivo T1 44W"], note: "Full clear glass sab par 100% exact fit hote hain." },
+            { type: "GLASS", title: "6.67\" Center Punch-Hole Master Glass", size: "6.67\" Large Display", models: ["Redmi Note 9 Pro", "Redmi Note 9s", "Redmi Note 9 Pro Max", "Redmi Note 10 Pro", "Redmi Note 10 Pro Max", "Redmi Note 11 Pro", "Redmi Note 12 4G/5G", "Redmi Note 12 Pro", "Redmi Note 13 4G/5G", "Poco X3", "Poco X3 Pro", "Poco X4 Pro", "Poco X5", "Poco X5 Pro", "Poco X6", "Poco M6 Pro", "Infinix Note 12 Pro", "Infinix Note 30", "Infinix Note 30 Pro", "Infinix Note 40", "Infinix Zero 30", "Infinix GT 10 Pro", "Infinix GT 20 Pro", "Tecno Camon 20", "Tecno Camon 20 Pro", "Tecno Camon 30", "Tecno Spark 10 Pro", "Tecno Spark 20 Pro", "Tecno Pova 5", "Tecno Pova 6"], note: "Note 13 aur Camon 30 par slim border wala 6.67\" glass lagayein." },
+            { type: "GLASS", title: "Infinix / Tecno / Itel 6.6\" Punch-Hole", size: "6.56\" - 6.6\" Display", models: ["Infinix Smart 7", "Infinix Smart 8", "Infinix Smart 8 HD", "Infinix Smart 8 Plus", "Infinix Hot 30i", "Infinix Hot 40i", "Tecno Spark Go 2023", "Tecno Spark Go 2024", "Tecno Spark 10", "Tecno Spark 10C", "Tecno Spark 20", "Tecno Spark 20C", "Tecno Pop 8", "Itel S23", "Itel P55", "Itel A70"], note: "Transsion family ke sabhi naye punch-hole models par same glass chalta hai." },
+            { type: "GLASS", title: "6.74\" Large Waterdrop Master Glass", size: "6.7\" - 6.74\" Display", models: ["Samsung A05", "Samsung A05s", "Samsung A06", "Samsung M14", "Samsung F14", "Realme C51", "Realme C53", "Realme Note 50", "Realme Narzo N53", "Vivo Y17s", "Vivo Y27", "Vivo Y03", "Vivo Y18", "Redmi 13C", "Poco C65", "Redmi A3"], note: "Naye bade size wale budget phones ka universal glass." },
+            { type: "GLASS", title: "iPhone 6.1\" Glass Compatibility Groups", size: "6.1\" Apple Series", models: ["iPhone XR", "iPhone 11", "iPhone 12", "iPhone 12 Pro", "iPhone 13", "iPhone 13 Pro", "iPhone 14", "iPhone 16e", "iPhone 14 Pro", "iPhone 15", "iPhone 15 Pro", "iPhone 16"], note: "Group 1: (XR = 11) | Group 2: (12 = 12 Pro) | Group 3: (13 = 13 Pro = 14 = 16e) | Group 4: (14 Pro = 15 = 15 Pro = 16)." },
+            { type: "LCD", title: "Vivo Y20 Series Universal LCD Combo", size: "6.51\" IPS Connector", models: ["Vivo Y20", "Vivo Y20i", "Vivo Y20s", "Vivo Y12a", "Vivo Y12s", "Vivo Y15s", "Vivo Y15a", "Vivo Y01", "Vivo Y02s", "Vivo Y11 (2023)"], note: "100% Guaranteed fit across all 10 models." },
+            { type: "LCD", title: "Vivo Y21 / Y22 / Y16 Universal LCD Combo", size: "6.51\" - 6.58\" Strip", models: ["Vivo Y21", "Vivo Y21s", "Vivo Y21t", "Vivo Y21a", "Vivo Y21e", "Vivo Y33s", "Vivo Y33t", "Vivo Y22", "Vivo Y22s", "Vivo Y16"], note: "Without frame LCD combo sabhi models mein 100% same lagta hai." },
+            { type: "LCD", title: "Infinix Smart 8 / Tecno Spark 20 Universal LCD", size: "6.6\" 90Hz Combo", models: ["Infinix Smart 8", "Infinix Smart 8 HD", "Infinix Hot 40i", "Tecno Spark Go 2024", "Tecno Spark 20", "Tecno Spark 20C", "Tecno Pop 8", "Itel A70", "Itel P55"], note: "100% Same LCD strip & connector across all 9 models." },
+            { type: "LCD", title: "Infinix Smart 5 / Smart 6 / Spark 6 Go LCD", size: "X657 / A56 Combo", models: ["Infinix Smart 5", "Infinix Smart 6", "Infinix Hot 10 Lite", "Infinix Hot 8", "Tecno Spark 6 Go", "Tecno Spark 5 Air", "Tecno Spark 7", "Tecno Pop 5 LTE", "Itel Vision 1 Pro"], note: "⚠️ Technician Note: Fitting se pehle touch zaroor check karein (V1/V2 IC version)." },
+            { type: "LCD", title: "Oppo A15 / Realme C11 / C12 / C15 Universal LCD", size: "6.5\" Universal Combo", models: ["Oppo A15", "Oppo A15s", "Oppo A16k", "Realme C11 (2020)", "Realme C12", "Realme C15", "Realme Narzo 20", "Realme Narzo 30A"], note: "100% Direct plug-and-play combo." },
+            { type: "LCD", title: "Oppo A16 / Realme C21Y / C25Y Universal LCD", size: "6.5\" Combo", models: ["Oppo A16", "Oppo A54s", "Realme C21Y", "Realme C25Y"], note: "⚠️ Dhyan dein: Realme C21 aur C21Y ki LCD alag hai! C21Y mein Oppo A16 wali LCD lagti hai." },
+            { type: "LCD", title: "Redmi Note 10 / Note 11 (4G) Universal LCD", size: "6.43\" AMOLED / TFT", models: ["Redmi Note 10 4G", "Redmi Note 10s", "Redmi Note 11 4G", "Redmi Note 11s", "Redmi Note 12s", "Poco M4 Pro 4G", "Poco M5s"], note: "Without frame combo sabhi 7 models mein same chalta hai." },
+            { type: "LCD", title: "Redmi 9A / 9C / 10A / Poco C3 Universal LCD", size: "6.53\" Master Combo", models: ["Redmi 9A", "Redmi 9AT", "Redmi 9i", "Redmi 9C", "Redmi 9 Activ", "Redmi 10A", "Poco C3", "Poco C31"], note: "100% Same LCD combo for all models." },
+            { type: "LCD", title: "Samsung A12 / A02s / A03s / M12 LCD Combo", size: "6.5\" PLS IPS Combo", models: ["Samsung A12 (SM-A125F)", "Samsung A12 Nacho (SM-A127F)", "Samsung M12", "Samsung F12", "Samsung A02s", "Samsung A03", "Samsung A03s"], note: "⚠️ Technician Alert: A125F (Old) aur A127F/M12 (New) strip connector zaroor match karein!" },
+            { type: "COVER", title: "Infinix Smart 8 / Spark 20C / Itel A70 Cover", size: "Exact Body Match", models: ["Infinix Smart 8", "Infinix Smart 8 HD", "Infinix Hot 40i", "Tecno Spark Go 2024", "Tecno Spark 20", "Tecno Spark 20C", "Tecno Pop 8", "Itel A70", "Itel P55"], note: "In 9 models ka back cover 100% ek doosre par fit aata hai." },
+            { type: "COVER", title: "Vivo Y20 / Y12s / Y15s / Y01 Universal Cover", size: "Exact Side Fingerprint", models: ["Vivo Y20", "Vivo Y20i", "Vivo Y20s", "Vivo Y12s", "Vivo Y15s", "Vivo Y15a", "Vivo Y01"], note: "Y20 ka universal cover sab par fit baith jata hai." },
+            { type: "COVER", title: "Vivo Y21 / Y33s vs Y22 Cover Groups", size: "2 Body Groups", models: ["Vivo Y21", "Vivo Y21s", "Vivo Y21t", "Vivo Y21e", "Vivo Y33s", "Vivo Y33t", "Vivo Y22", "Vivo Y22s"], note: "Group A: (Y21 = Y21s = Y33s) | Group B: (Y22 = Y22s).⚠️ Y21 ka cover Y22 ya Y16 par NAHI lagta!" },
+            { type: "COVER", title: "Realme C51 / C53 / Note 50 / Narzo N53 Cover", size: "100% Exact Box Frame", models: ["Realme C51", "Realme C53", "Realme Note 50", "Realme Narzo N53"], note: "Charo phones ki body aur 3-lens camera cutout 100% identical hain." },
+            { type: "COVER", title: "Xiaomi / Redmi / Poco Exact Twin Covers", size: "100% Matched Pairs", models: ["Redmi 9C", "Redmi 9 Activ", "Poco C3", "Poco C31", "Redmi 12C", "Poco C55", "Redmi 13C 4G", "Poco C65", "Redmi Note 11 4G", "Redmi Note 11s", "Redmi Note 12s", "Redmi 12 4G", "Redmi 12 5G", "Poco M6 Pro 5G", "Redmi Note 13 Pro 5G", "Poco X6 5G"], note: "• (9C = 9 Activ = C31) • (12C = C55) • (13C = C65) • (Note 11 = 11s = 12s) • (Redmi 12 = Poco M6 Pro 5G) • (Note 13 Pro 5G = Poco X6 5G)" },
+            { type: "COVER", title: "Oppo & Realme Exact Cover Matches", size: "100% Matched Pairs", models: ["Oppo A5s", "Oppo A7", "Oppo A12", "Realme 3i", "Oppo A15", "Oppo A15s", "Oppo A16", "Oppo A54s", "Oppo F19", "Oppo F19s", "Oppo A74 4G", "Oppo A95 4G", "Realme C12", "Realme C25", "Realme C25s", "Realme Narzo 20", "Realme Narzo 30A", "Realme 9i 4G", "Oppo A76", "Oppo A96"], note: "• (A5s = A7 = A12) • (A15 = A15s) • (A16 = A54s) • (F19 = A74 4G = A95 4G) • (C12 = C25 = Narzo 20/30A) • (Realme 9i = Oppo A76 = A96)" }
+        ];
+
+        let customData = JSON.parse(localStorage.getItem('mobimatch_custom') || '[]');
+        let compatibilityData = [...customData, ...defaultData];
+        let currentCategory = 'ALL';
+
+        function toggleModal() {
+            document.getElementById('addModal').classList.toggle('hidden');
+        }
+
+        function saveCustomMatch() {
+            const type = document.getElementById('newType').value;
+            const title = document.getElementById('newTitle').value.trim();
+            const size = document.getElementById('newSize').value.trim() || 'Universal';
+            const modelsRaw = document.getElementById('newModels').value;
+            const note = document.getElementById('newNote').value.trim() || 'Added by shopkeeper.';
+
+            if (!title || !modelsRaw) {
+                alert('Please fill Title and Compatible Models!');
+                return;
+            }
+            const models = modelsRaw.split(',').map(s => s.trim()).filter(Boolean);
+            const newEntry = { type, title, size, models, note };
+            customData.unshift(newEntry);
+            localStorage.setItem('mobimatch_custom', JSON.stringify(customData));
+            compatibilityData = [...customData, ...defaultData];
+            toggleModal();
+            renderCards();
+        }
+
+        function getBadgeInfo(type) {
+            if (type === 'GLASS') return { label: 'Glass / Protector', css: 'glass-badge', icon: 'fa-shield-halved' };
+            if (type === 'LCD') return { label: 'LCD / Combo', css: 'lcd-badge', icon: 'fa-microchip' };
+            if (type === 'COVER') return { label: 'Back Cover', css: 'cover-badge', icon: 'fa-mobile' };
+        }
+
+        function highlightText(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        function renderCards() {
+            const query = document.getElementById('searchInput').value.trim();
+            document.getElementById('clearBtn').style.display = query ? 'block' : 'none';
+            const grid = document.getElementById('resultsGrid');
+            grid.innerHTML = '';
+
+            const filtered = compatibilityData.filter(item => {
+                const matchesCategory = currentCategory === 'ALL' || item.type === currentCategory;
+                if (!matchesCategory) return false;
+                if (!query) return true;
+                const qLower = query.toLowerCase();
+                return item.title.toLowerCase().includes(qLower) ||
+                       item.models.some(m => m.toLowerCase().includes(qLower)) ||
+                       item.note.toLowerCase().includes(qLower);
+            });
+
+            document.getElementById('resultCount').innerText = `Showing ${filtered.length} compatibility groups`;
+
+            filtered.forEach(item => {
+                const badge = getBadgeInfo(item.type);
+                const modelsHtml = item.models.map(m => {
+                    const isMatched = query && m.toLowerCase().includes(query.toLowerCase());
+                    return `<span class="inline-block text-xs px-2.5 py-1 rounded-md font-medium ${isMatched ? 'bg-yellow-200 text-slate-900 border border-yellow-400 font-bold' : 'bg-slate-100 text-slate-700'}">${highlightText(m, query)}</span>`;
+                }).join('');
+                const isWarning = item.note.includes('⚠️');
+
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2 mb-2.5">
+                                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full ${badge.css}">
+                                    <i class="fas ${badge.icon} mr-1"></i> ${badge.label}
+                                </span>
+                                <span class="text-[11px] font-semibold text-slate-400 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">${item.size}</span>
+                            </div>
+                            <h2 class="text-sm font-bold text-slate-800 mb-2.5">${highlightText(item.title, query)}</h2>
+                            <div class="flex flex-wrap gap-1.5 mb-3.5">${modelsHtml}</div>
+                        </div>
+                        <div class="text-xs p-2.5 rounded-xl ${isWarning ? 'bg-amber-50 text-amber-900 border border-amber-200' : 'bg-slate-50 text-slate-600 border border-slate-100'}">
+                            <span class="font-semibold">${highlightText(item.note, query)}</span>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.className = "cat-btn bg-slate-100 text-slate-700 py-2 rounded-lg text-xs font-bold transition text-center";
+            });
+            document.getElementById('cat-' + cat).className = "cat-btn bg-slate-900 text-white py-2 rounded-lg text-xs font-bold transition text-center shadow";
+            renderCards();
+        }
+
+        function filterData() { renderCards(); }
+        function quickSearch(brand) { document.getElementById('searchInput').value = brand; renderCards(); }
+        function clearSearch() { document.getElementById('searchInput').value = ''; renderCards(); }
+
+        renderCards();
+
+        // Register Service Worker for Play Store APK / Offline Support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+</body>
+</html>
