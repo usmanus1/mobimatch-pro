@@ -1,0 +1,33 @@
+name: MobiMatch Pro Auto-Research & Sitemap Sync
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MobiMatch Pro Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Research & Validation Dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run Automated Research Validator & Sitemap Updater
+        run: python auto_sync_research.py
+
+      - name: Auto-Commit & Push to Trigger Vercel Deployment
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(auto-sync): daily database validation & sitemap refresh"
+          file_pattern: "sitemap.xml database-parts.js database-board.js index.html"
