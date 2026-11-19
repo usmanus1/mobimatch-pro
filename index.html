@@ -42,7 +42,7 @@
           "operatingSystem": "All",
           "inLanguage": ["en", "ur-Latn"],
           "softwareVersion": "16.8",
-          "dateModified": "2026-11-17",
+          "dateModified": "2026-11-19",
           "description": "Bilingual (English & Roman Urdu) mobile hardware compatibility and bench diagnostic database covering universal LCD combos, Waterdrop vs No-Cut tempered glasses, OCA sheets, outer glass, camera protectors, OEM batteries, BTB connectors, and ICs.",
           "featureList": [
             "AI Natural-Language Part Search (English & Roman Urdu)",
@@ -65,7 +65,7 @@
           "name": "MobiMatch Pro Mobile Spare Parts & IC Cross-Reference Dataset (V16.8)",
           "description": "Verified and conditional cross-compatibility records for smartphone LCD assemblies, tempered glass cut templates, OEM battery model codes, charging sub-boards, BTB connectors, 128GB eMMC/eMCP chips, 64GB iPhone NAND codes, and PMICs.",
           "url": "https://www.mobimatchpro.com/",
-          "dateModified": "2026-11-17",
+          "dateModified": "2026-11-19",
           "license": "https://www.mobimatchpro.com/privacy",
           "creator": {
             "@type": "Organization",
@@ -1493,12 +1493,15 @@
             }
             if (!candidate) {
                 try {
-                    status.innerText = siteLang === 'ur' ? '🤖 AI Tesseract OCR photo se part code parh raha hai...' : '🤖 Running Tesseract.js AI OCR on part photo...';
-                    if (!window.Tesseract) {
+                    status.innerText = siteLang === 'ur'
+                        ? '🤖 AI Tesseract OCR photo se part code parh raha hai...'
+                        : '🤖 Running Tesseract.js AI OCR on part photo...';
+                    if (typeof window.Tesseract === "undefined") {
                         await new Promise((res, rej) => {
                             const sc = document.createElement('script');
                             sc.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
-                            sc.onload = res; sc.onerror = rej;
+                            sc.onload = res;
+                            sc.onerror = rej;
                             document.head.appendChild(sc);
                         });
                     }
@@ -1810,7 +1813,7 @@
                 if (score > 0) scoredList.push({ item, score, origIdx: i });
             }
 
-            if (qNorm && scoredList.length === 0 && window.Fuse) {
+            if (qNorm && scoredList.length === 0 && typeof window.Fuse === "function") {
                 const fusePool = compatibilityData.filter(item => {
                     const effCat = resolveEffectiveCategory(item);
                     if (currentCategory === 'FAV') return favList.includes(item.title);
@@ -2130,7 +2133,7 @@
             document.getElementById('mmBody').innerHTML = `
                 <div class="space-y-2.5 text-xs">
                     <div class="p-2.5 bg-rose-50 border border-rose-200 rounded-xl text-rose-950 text-[11px]">
-                        <b>🛑 Safety Gate &amp; 14-Point Pre/Post-Repair Checklist (16 Nov Research Spec):</b> Stop immediately if battery is swollen/damaged (never flatten!) or port is wet. Untested items default to <b>Not Tested</b> — never default to Pass!
+                        <b>🛑 Safety Gate &amp; 14-Point Pre/Post-Repair Checklist:</b> Stop immediately if battery is swollen/damaged (never flatten!) or port is wet. Untested items default to <b>Not tested</b> — never default to Pass!
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                         <input id="qcJobModel" value="${savedQc.model || ''}" oninput="saveQcState()" placeholder="Exact Model Code (e.g. TECNO KL6, SM-A166B)" class="border rounded-xl p-2 text-xs font-bold">
