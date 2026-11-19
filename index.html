@@ -184,6 +184,8 @@
     <link rel="apple-touch-icon" href="/icon-192.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -2032,7 +2034,11 @@
                         <b>📥 AI Supplier Catalogue Importer (Draft Queue):</b> Paste rows from any supplier CSV/Excel (Format: <code>Category | Part/SKU | Models (;/, separated) | Condition/Note</code>). Records stay in <b>Pending Review Drafts</b> until you approve them!
                     </div>
                     <textarea id="rawCatalogueInput" rows="3" placeholder="Example:&#10;LCD | 560002C3UA00 | Redmi 13C; Poco C65 | Confirm With-Frame vs Without-Frame&#10;BATTERY | BN5Q | Redmi 13C; Poco C65; Redmi 13C 5G | 5000mAh Service Pack" class="w-full border rounded-xl p-2.5 text-xs font-mono"></textarea>
-                    <button onclick="parseCatalogueToDrafts()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold py-2 rounded-xl text-xs">Parse &amp; Add to Review Drafts</button>
+                    <div class="flex flex-col sm:flex-row gap-1.5">
+                        <button onclick="parseCatalogueToDrafts()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold py-2 rounded-xl text-xs">Parse &amp; Add to Review Drafts</button>
+                        <button onclick="loadGithubResearchDrafts()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-2 rounded-xl text-xs">🔄 Load Today's GitHub Research Drafts</button>
+                    </div>
+                    <div id="githubResearchBox" class="hidden border-t pt-2 space-y-1.5"></div>
                     <div class="border-t pt-2">
                         <b class="text-slate-800 block mb-1.5">Pending Review Drafts (${importedDrafts.length}):</b>
                         <div class="space-y-1.5 max-h-48 overflow-y-auto">
@@ -2052,6 +2058,54 @@
                     </div>
                 </div>`;
         }
+        async function loadGithubResearchDrafts() {
+            const box = document.getElementById('githubResearchBox');
+            if (!box) return;
+            box.classList.remove('hidden');
+            box.innerHTML = '<p class="text-xs text-indigo-700 font-bold py-1">⏳ Fetching latest research-drafts.json from site...</p>';
+            try {
+                const res = await fetch('/research-drafts.json?t=' + Date.now());
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const data = await res.json();
+                const tracks = data.feature_research || {};
+                const legacyLeads = Array.isArray(data.leads) ? data.leads : [];
+                let html = `<div class="flex justify-between items-center bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 text-[11px] text-emerald-950 font-bold">
+                    <span>📡 Last Auto-Sync: ${data.last_sync || 'Today'} (${data.total_leads || legacyLeads.length} leads)</span>
+                    <button onclick="document.getElementById('githubResearchBox').classList.add('hidden')" class="text-slate-500 hover:text-slate-800">✕</button>
+                </div><div class="max-h-52 overflow-y-auto space-y-2 pr-1">`;
+
+                const trackKeys = Object.keys(tracks);
+                if (trackKeys.length > 0) {
+                    trackKeys.forEach(cat => {
+                        const items = tracks[cat] || [];
+                        if (!items.length) return;
+                        html += `<div class="p-2 bg-slate-50 border rounded-xl space-y-1">
+                            <span class="inline-block bg-indigo-100 text-indigo-900 font-extrabold px-2 py-0.5 rounded text-[10px]">${cat.replace(/_/g, ' ')} (${items.length})</span>`;
+                        items.forEach(it => {
+                            const safeTitle = (it.headline || '').replace(/</g, '&lt;').replace(/'/g, "\'");
+                            html += `<div class="text-[11px] flex justify-between items-start gap-2 pt-1 border-t border-slate-200/70">
+                                <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold leading-snug">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
+                                <button onclick="document.getElementById('rawCatalogueInput').value='LCD | NEW-SKU | ${safeTitle.slice(0,45)} | Research Lead';showToast('Copied to input box!')" class="bg-blue-100 text-blue-900 px-1.5 py-0.5 rounded text-[9px] font-bold shrink-0">+ Draft</button>
+                            </div>`;
+                        });
+                        html += `</div>`;
+                    });
+                } else if (legacyLeads.length > 0) {
+                    legacyLeads.forEach(it => {
+                        html += `<div class="p-2 bg-slate-50 border rounded-xl text-[11px]">
+                            <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
+                        </div>`;
+                    });
+                } else {
+                    html += '<p class="text-xs text-slate-500 text-center py-2">No leads found yet. Run the GitHub Action once and try again.</p>';
+                }
+                html += '</div>';
+                box.innerHTML = html;
+            } catch (err) {
+                box.innerHTML = `<p class="text-xs text-rose-700 font-bold bg-rose-50 border border-rose-200 rounded-lg p-2">❌ Could not load /research-drafts.json yet (${err.message}). Make sure auto_sync_research.py has run on GitHub.</p>`;
+            }
+        }
+
         function parseCatalogueToDrafts() {
             const raw = document.getElementById('rawCatalogueInput').value.trim();
             if (!raw) return showToast('Paste at least 1 line first!');
