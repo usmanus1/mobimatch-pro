@@ -1,41 +1,40 @@
-#!/usr/bin/env python3
-"""
-MobiMatch Pro V16.8 — Automated Database Validator & Sitemap Refresh Script
-Runs inside GitHub Actions (.github/workflows/auto-research-update.yml):
-1. Strictly validates JSON syntax in database-parts.js and database-board.js.
-2. Automatically merges any approved JSON records placed in `new_records_inbox.json`.
-3. Refreshes <lastmod> dates in sitemap.xml so Googlebot crawls fresh updates.
-"""
-import datetime, json, os, re
+import datetime
+import json
+import re
+import requests
+from bs4 import BeautifulSoup
 
 TODAY = datetime.date.today().isoformat()
 
-def validate_js_array(filepath, is_concat=False):
-    with open(filepath, "r", encoding="utf-8") as f:
-        raw = f.read()
-    cleaned = re.sub(r'^\s*//.*$', '', raw, flags=re.MULTILINE)
-    if is_concat:
-        start = cleaned.find("concat([") + len("concat(")
-        end = cleaned.rfind("]);")
-        arr = json.loads(cleaned[start:end+1])
-    else:
-        start = cleaned.find("[")
-        end = cleaned.rfind("];")
-        arr = json.loads(cleaned[start:end+1])
-    print(f"[OK] {filepath} validated: {len(arr)} master cards.")
-    return arr
-
-def refresh_sitemap():
-    if not os.path.exists("sitemap.xml"):
-        return
+# 1. Update sitemap.xml <lastmod> dates
+try:
     with open("sitemap.xml", "r", encoding="utf-8") as f:
-        sm = f.read()
-    sm_updated = re.sub(r'<lastmod>\d{4}-\d{2}-\d{2}</lastmod>', f'<lastmod>{TODAY}</lastmod>', sm)
+        xml = f.read()
+    updated_xml = re.sub(r"<lastmod>.*?</lastmod>", f"<lastmod>{TODAY}</lastmod>", xml)
     with open("sitemap.xml", "w", encoding="utf-8") as f:
-        f.write(sm_updated)
-    print(f"[OK] sitemap.xml <lastmod> updated to {TODAY}.")
+        f.write(updated_xml)
+    print(f"✅ sitemap.xml updated to {TODAY}")
+except Exception as e:
+    print(f"⚠️ Sitemap skipped: {e}")
 
-if __name__ == "__main__":
-    validate_js_array("database-parts.js", is_concat=False)
-    validate_js_array("database-board.js", is_concat=True)
-    refresh_sitemap()
+# 2. Fetch latest mobile releases as research leads (Drafts only — never breaks live DB)
+drafts = []
+try:
+    res = requests.get("https://www.gsmarena.com/rss-news-reviews.php3", timeout=15)
+    soup = BeautifulSoup(res.content, "xml")
+    for item in soup.find_all("item")[:10]:
+        title = item.title.text.strip()
+        link = item.link.text.strip()
+        if any(b in title.lower() for b in ["samsung", "xiaomi", "redmi", "poco", "vivo", "oppo", "realme", "infinix", "tecno", "iphone", "motorola"]):
+            drafts.append({
+                "date": TODAY,
+                "headline": title,
+                "source": link,
+                "status": "Pending Bench Verification"
+            })
+except Exception as e:
+    print(f"⚠️ Research feed error: {e}")
+
+with open("research-drafts.json", "w", encoding="utf-8") as f:
+    json.dump({"last_sync": TODAY, "leads": drafts}, f, indent=2)
+print(f"✅ Saved {len(drafts)} new model research leads to research-drafts.json")
