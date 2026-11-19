@@ -184,7 +184,6 @@
     <link rel="apple-touch-icon" href="/icon-192.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -1076,7 +1075,7 @@
         let searchTimeout = null;
         let scanStream = null;
 
-        function t(key) {
+        function uiText(key) {
             return (UI_TEXT[siteLang] && UI_TEXT[siteLang][key]) || UI_TEXT.en[key] || key;
         }
 
@@ -1089,24 +1088,24 @@
 
         function applyLanguageUI() {
             document.getElementById('langSwitchLabel').innerText = siteLang === 'ur' ? '🇵🇰 Urdu | EN' : '🇬🇧 EN | Urdu';
-            document.getElementById('hdrSubtitle').innerText = t('hdrSub');
-            document.getElementById('searchInput').placeholder = t('searchPh');
-            document.getElementById('btnAiDemoQuery').innerText = t('aiDemoBtn');
-            document.getElementById('btnCompareCutTop').innerText = t('compareCutTop');
-            document.getElementById('pillResetAll').innerText = t('resetAll');
-            document.getElementById('subBtnWizard').innerText = t('subWizard');
-            document.getElementById('subBtnDrawer').innerText = t('subDrawer');
-            document.getElementById('subBtnDonor').innerText = t('subDonor');
-            document.getElementById('subBtnCompare').innerText = t('subCompare');
-            document.getElementById('fabChatLabel').innerText = t('fabChat');
-            document.getElementById('fabToolsLabel').innerText = t('fabTools');
-            document.getElementById('lblSponsorTitle').innerText = t('sponsorTitle');
-            document.getElementById('lblSuppliersBtn').innerText = t('suppliersBtn');
-            document.getElementById('lblBookAdBtn').innerText = t('bookAdBtn');
-            document.getElementById('eeatHeading').innerText = t('eeatHeading');
-            document.getElementById('eeatSub').innerText = t('eeatSub');
+            document.getElementById('hdrSubtitle').innerText = uiText('hdrSub');
+            document.getElementById('searchInput').placeholder = uiText('searchPh');
+            document.getElementById('btnAiDemoQuery').innerText = uiText('aiDemoBtn');
+            document.getElementById('btnCompareCutTop').innerText = uiText('compareCutTop');
+            document.getElementById('pillResetAll').innerText = uiText('resetAll');
+            document.getElementById('subBtnWizard').innerText = uiText('subWizard');
+            document.getElementById('subBtnDrawer').innerText = uiText('subDrawer');
+            document.getElementById('subBtnDonor').innerText = uiText('subDonor');
+            document.getElementById('subBtnCompare').innerText = uiText('subCompare');
+            document.getElementById('fabChatLabel').innerText = uiText('fabChat');
+            document.getElementById('fabToolsLabel').innerText = uiText('fabTools');
+            document.getElementById('lblSponsorTitle').innerText = uiText('sponsorTitle');
+            document.getElementById('lblSuppliersBtn').innerText = uiText('suppliersBtn');
+            document.getElementById('lblBookAdBtn').innerText = uiText('bookAdBtn');
+            document.getElementById('eeatHeading').innerText = uiText('eeatHeading');
+            document.getElementById('eeatSub').innerText = uiText('eeatSub');
             const cw = document.getElementById('chatWelcomeMsg');
-            if (cw) cw.innerHTML = t('chatWelcome');
+            if (cw) cw.innerHTML = uiText('chatWelcome');
             updateCategoryTabCounts();
             renderRecentSearches();
             updateNetworkBadge();
@@ -1114,7 +1113,7 @@
         }
 
         function runNaturalDemoQuery() {
-            const q = t('aiDemoQuery');
+            const q = uiText('aiDemoQuery');
             document.getElementById('searchInput').value = q;
             renderCards();
         }
@@ -1293,7 +1292,7 @@
             });
             const qCount = Object.keys(missingQueue).length;
             const qBtn = document.getElementById('missingQueueBadgeBtn');
-            if (qBtn) qBtn.innerText = `${t('researchQueue')} (${qCount})`;
+            if (qBtn) qBtn.innerText = `${uiText('researchQueue')} (${qCount})`;
         }
 
         function updateVariantSelectorBar(qNorm) {
@@ -1327,8 +1326,8 @@
             const b = document.getElementById('netStatusBadge');
             if (!b) return;
             b.innerHTML = navigator.onLine
-                ? `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ${t('offlineReady')}`
-                : `<i class="fas fa-bolt text-[8px]"></i> ${t('offlineActive')}`;
+                ? `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ${uiText('offlineReady')}`
+                : `<i class="fas fa-bolt text-[8px]"></i> ${uiText('offlineActive')}`;
         }
         window.addEventListener('online', updateNetworkBadge);
         window.addEventListener('offline', updateNetworkBadge);
@@ -1760,10 +1759,10 @@
         }
 
         function getScopeLockBanner(effCat) {
-            if (effCat === 'GLASS') return t('scopeGlass');
-            if (effCat === 'OUTER_GLASS' || effCat === 'OCA_SHEET') return t('scopeOca');
-            if (effCat === 'CAM_PROT') return t('scopeCamProt');
-            if (effCat === 'COVER') return t('scopeCover');
+            if (effCat === 'GLASS') return uiText('scopeGlass');
+            if (effCat === 'OUTER_GLASS' || effCat === 'OCA_SHEET') return uiText('scopeOca');
+            if (effCat === 'CAM_PROT') return uiText('scopeCamProt');
+            if (effCat === 'COVER') return uiText('scopeCover');
             return '';
         }
 
@@ -1813,22 +1812,6 @@
                 if (score > 0) scoredList.push({ item, score, origIdx: i });
             }
 
-            if (qNorm && scoredList.length === 0 && typeof window.Fuse === "function") {
-                const fusePool = compatibilityData.filter(item => {
-                    const effCat = resolveEffectiveCategory(item);
-                    if (currentCategory === 'FAV') return favList.includes(item.title);
-                    if (currentCategory === 'ALL') return true;
-                    return effCat === currentCategory;
-                });
-                const fuse = new window.Fuse(fusePool, {
-                    keys: ['title', 'size', 'models', 'note'],
-                    threshold: 0.36,
-                    ignoreLocation: true
-                });
-                fuse.search(nl.coreQuery).slice(0, 8).forEach((r, idx) => {
-                    scoredList.push({ item: r.item, score: 50 - idx, origIdx: idx });
-                });
-            }
 
             if (qNorm) scoredList.sort((a, b) => b.score - a.score || a.origIdx - b.origIdx);
 
@@ -1846,14 +1829,14 @@
                 document.getElementById('resultsGrid').innerHTML = `
                     <div class="col-span-full bg-white rounded-2xl p-6 text-center border-2 border-amber-300 shadow-xs">
                         <i class="fas fa-clipboard-question text-3xl text-amber-500 mb-2"></i>
-                        <p class="text-sm font-extrabold text-slate-900">${t('noResultTitle')} "${rawQuery.replace(/</g, '&lt;')}"</p>
-                        <p class="text-xs text-slate-600 mt-1">${t('noResultSub')}</p>
+                        <p class="text-sm font-extrabold text-slate-900">${uiText('noResultTitle')} "${rawQuery.replace(/</g, '&lt;')}"</p>
+                        <p class="text-xs text-slate-600 mt-1">${uiText('noResultSub')}</p>
                         <div class="flex flex-wrap justify-center gap-2 mt-3.5">
                             <button onclick="logMissingQuery('${rawQuery.replace(/'/g, "\\'")}');showToast('📋 Added to Priority Research Queue!');" class="bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold px-4 py-2 rounded-xl shadow-xs">
-                                ${t('noResultAddBtn')}
+                                ${uiText('noResultAddBtn')}
                             </button>
                             <button onclick="setCategory('ALL')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-xl">
-                                ${t('noResultAllBtn')}
+                                ${uiText('noResultAllBtn')}
                             </button>
                         </div>
                     </div>`;
@@ -1881,10 +1864,10 @@
                 const matchedModels = qNorm ? item.models.filter(m => words.every(w => smartTokenMatch(normalizeTechQuery(m), w))) : [];
                 const primaryMatchedModel = matchedModels.length ? matchedModels[0].split(':')[0].split('=')[0].trim() : nl.coreQuery;
                 const statusText = isTrapCard
-                    ? t('statusTrap')
+                    ? uiText('statusTrap')
                     : ((item.conf || 'High') === 'High' && !fullCardStr.includes('Conditional') && !fullCardStr.includes('🟡')
-                        ? t('statusVerified')
-                        : t('statusCond'));
+                        ? uiText('statusVerified')
+                        : uiText('statusCond'));
 
                 const modelSpecificBanner = rawQuery ? `
                     <div class="mb-2.5 p-2.5 rounded-xl ${isTrapCard ? 'bg-rose-50 border border-rose-400' : 'bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200'} text-xs">
@@ -1892,14 +1875,14 @@
                             <span>🎯 ${highlightText(primaryMatchedModel, nl.coreQuery)} → <span class="text-blue-700">${badge.label}</span></span>
                             ${cutBadge}
                         </div>
-                        <div class="text-[11px] text-slate-700 mt-1"><b>${t('refLabel')}</b> ${item.title} (${item.size})</div>
+                        <div class="text-[11px] text-slate-700 mt-1"><b>${uiText('refLabel')}</b> ${item.title} (${item.size})</div>
                         <div class="text-[11px] ${isTrapCard ? 'text-rose-800' : 'text-amber-900'} font-bold mt-0.5"><b>Status:</b> ${statusText}</div>
                     </div>` : '';
 
                 const smartExplanation = buildSmartCompatibilityExplanation(item, effCat);
                 const smartExplanationBanner = smartExplanation ? `
                     <div class="mb-2 px-2.5 py-1.5 rounded-lg bg-indigo-50/90 border border-indigo-200 text-[11px] text-indigo-950 font-medium">
-                        <b>${t('smartReasonPrefix')}</b> ${smartExplanation}
+                        <b>${uiText('smartReasonPrefix')}</b> ${smartExplanation}
                     </div>` : '';
 
                 const { stockHits, donorHits } = findStockAndDonorHits(item, nl.coreQuery);
@@ -1968,9 +1951,9 @@
                             ${scopeBanner ? `<div class="text-[11px] px-2.5 py-1.5 rounded-lg bg-rose-50 text-rose-900 border border-rose-200 mb-2.5">${scopeBanner}</div>` : ''}
                             <div class="flex flex-wrap justify-between items-center gap-1.5 pt-2 border-t border-slate-100 text-[11px]">
                                 <div class="flex flex-wrap items-center gap-1">
-                                    <button onclick="openCutCompareModal('${item.title.replace(/'/g, "\\'").slice(0, 45)}')" class="bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold px-2 py-1 rounded-lg transition">${t('btnCompareCut')}</button>
-                                    <button onclick="openFitReportModal(${idx})" class="bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold px-2 py-1 rounded-lg transition">${t('btnReportFit')}</button>
-                                    <button onclick="mmOpen(5)" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-2 py-1 rounded-lg transition">${t('btnCheckStock')}</button>
+                                    <button onclick="openCutCompareModal('${item.title.replace(/'/g, "\\'").slice(0, 45)}')" class="bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold px-2 py-1 rounded-lg transition">${uiText('btnCompareCut')}</button>
+                                    <button onclick="openFitReportModal(${idx})" class="bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold px-2 py-1 rounded-lg transition">${uiText('btnReportFit')}</button>
+                                    <button onclick="mmOpen(5)" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-2 py-1 rounded-lg transition">${uiText('btnCheckStock')}</button>
                                 </div>
                                 <button onclick="voteWorked('${cardKey}')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold px-2.5 py-1 rounded-lg transition"><i class="fas fa-thumbs-up text-emerald-600"></i> (${votes})</button>
                             </div>
