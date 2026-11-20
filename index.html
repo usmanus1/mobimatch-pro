@@ -42,7 +42,7 @@
           "operatingSystem": "All",
           "inLanguage": ["en", "ur-Latn"],
           "softwareVersion": "16.8",
-          "dateModified": "2026-11-19",
+          "dateModified": "2026-11-17",
           "description": "Bilingual (English & Roman Urdu) mobile hardware compatibility and bench diagnostic database covering universal LCD combos, Waterdrop vs No-Cut tempered glasses, OCA sheets, outer glass, camera protectors, OEM batteries, BTB connectors, and ICs.",
           "featureList": [
             "AI Natural-Language Part Search (English & Roman Urdu)",
@@ -65,7 +65,7 @@
           "name": "MobiMatch Pro Mobile Spare Parts & IC Cross-Reference Dataset (V16.8)",
           "description": "Verified and conditional cross-compatibility records for smartphone LCD assemblies, tempered glass cut templates, OEM battery model codes, charging sub-boards, BTB connectors, 128GB eMMC/eMCP chips, 64GB iPhone NAND codes, and PMICs.",
           "url": "https://www.mobimatchpro.com/",
-          "dateModified": "2026-11-19",
+          "dateModified": "2026-11-17",
           "license": "https://www.mobimatchpro.com/privacy",
           "creator": {
             "@type": "Organization",
@@ -184,8 +184,7 @@
     <link rel="apple-touch-icon" href="/icon-192.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -1077,7 +1076,7 @@
         let searchTimeout = null;
         let scanStream = null;
 
-        function uiText(key) {
+        function t(key) {
             return (UI_TEXT[siteLang] && UI_TEXT[siteLang][key]) || UI_TEXT.en[key] || key;
         }
 
@@ -1090,24 +1089,24 @@
 
         function applyLanguageUI() {
             document.getElementById('langSwitchLabel').innerText = siteLang === 'ur' ? '🇵🇰 Urdu | EN' : '🇬🇧 EN | Urdu';
-            document.getElementById('hdrSubtitle').innerText = uiText('hdrSub');
-            document.getElementById('searchInput').placeholder = uiText('searchPh');
-            document.getElementById('btnAiDemoQuery').innerText = uiText('aiDemoBtn');
-            document.getElementById('btnCompareCutTop').innerText = uiText('compareCutTop');
-            document.getElementById('pillResetAll').innerText = uiText('resetAll');
-            document.getElementById('subBtnWizard').innerText = uiText('subWizard');
-            document.getElementById('subBtnDrawer').innerText = uiText('subDrawer');
-            document.getElementById('subBtnDonor').innerText = uiText('subDonor');
-            document.getElementById('subBtnCompare').innerText = uiText('subCompare');
-            document.getElementById('fabChatLabel').innerText = uiText('fabChat');
-            document.getElementById('fabToolsLabel').innerText = uiText('fabTools');
-            document.getElementById('lblSponsorTitle').innerText = uiText('sponsorTitle');
-            document.getElementById('lblSuppliersBtn').innerText = uiText('suppliersBtn');
-            document.getElementById('lblBookAdBtn').innerText = uiText('bookAdBtn');
-            document.getElementById('eeatHeading').innerText = uiText('eeatHeading');
-            document.getElementById('eeatSub').innerText = uiText('eeatSub');
+            document.getElementById('hdrSubtitle').innerText = t('hdrSub');
+            document.getElementById('searchInput').placeholder = t('searchPh');
+            document.getElementById('btnAiDemoQuery').innerText = t('aiDemoBtn');
+            document.getElementById('btnCompareCutTop').innerText = t('compareCutTop');
+            document.getElementById('pillResetAll').innerText = t('resetAll');
+            document.getElementById('subBtnWizard').innerText = t('subWizard');
+            document.getElementById('subBtnDrawer').innerText = t('subDrawer');
+            document.getElementById('subBtnDonor').innerText = t('subDonor');
+            document.getElementById('subBtnCompare').innerText = t('subCompare');
+            document.getElementById('fabChatLabel').innerText = t('fabChat');
+            document.getElementById('fabToolsLabel').innerText = t('fabTools');
+            document.getElementById('lblSponsorTitle').innerText = t('sponsorTitle');
+            document.getElementById('lblSuppliersBtn').innerText = t('suppliersBtn');
+            document.getElementById('lblBookAdBtn').innerText = t('bookAdBtn');
+            document.getElementById('eeatHeading').innerText = t('eeatHeading');
+            document.getElementById('eeatSub').innerText = t('eeatSub');
             const cw = document.getElementById('chatWelcomeMsg');
-            if (cw) cw.innerHTML = uiText('chatWelcome');
+            if (cw) cw.innerHTML = t('chatWelcome');
             updateCategoryTabCounts();
             renderRecentSearches();
             updateNetworkBadge();
@@ -1115,7 +1114,7 @@
         }
 
         function runNaturalDemoQuery() {
-            const q = uiText('aiDemoQuery');
+            const q = t('aiDemoQuery');
             document.getElementById('searchInput').value = q;
             renderCards();
         }
@@ -1294,7 +1293,7 @@
             });
             const qCount = Object.keys(missingQueue).length;
             const qBtn = document.getElementById('missingQueueBadgeBtn');
-            if (qBtn) qBtn.innerText = `${uiText('researchQueue')} (${qCount})`;
+            if (qBtn) qBtn.innerText = `${t('researchQueue')} (${qCount})`;
         }
 
         function updateVariantSelectorBar(qNorm) {
@@ -1328,8 +1327,8 @@
             const b = document.getElementById('netStatusBadge');
             if (!b) return;
             b.innerHTML = navigator.onLine
-                ? `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ${uiText('offlineReady')}`
-                : `<i class="fas fa-bolt text-[8px]"></i> ${uiText('offlineActive')}`;
+                ? `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ${t('offlineReady')}`
+                : `<i class="fas fa-bolt text-[8px]"></i> ${t('offlineActive')}`;
         }
         window.addEventListener('online', updateNetworkBadge);
         window.addEventListener('offline', updateNetworkBadge);
@@ -1494,15 +1493,12 @@
             }
             if (!candidate) {
                 try {
-                    status.innerText = siteLang === 'ur'
-                        ? '🤖 AI Tesseract OCR photo se part code parh raha hai...'
-                        : '🤖 Running Tesseract.js AI OCR on part photo...';
-                    if (typeof window.Tesseract === "undefined") {
+                    status.innerText = siteLang === 'ur' ? '🤖 AI Tesseract OCR photo se part code parh raha hai...' : '🤖 Running Tesseract.js AI OCR on part photo...';
+                    if (!window.Tesseract) {
                         await new Promise((res, rej) => {
                             const sc = document.createElement('script');
                             sc.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
-                            sc.onload = res;
-                            sc.onerror = rej;
+                            sc.onload = res; sc.onerror = rej;
                             document.head.appendChild(sc);
                         });
                     }
@@ -1761,10 +1757,10 @@
         }
 
         function getScopeLockBanner(effCat) {
-            if (effCat === 'GLASS') return uiText('scopeGlass');
-            if (effCat === 'OUTER_GLASS' || effCat === 'OCA_SHEET') return uiText('scopeOca');
-            if (effCat === 'CAM_PROT') return uiText('scopeCamProt');
-            if (effCat === 'COVER') return uiText('scopeCover');
+            if (effCat === 'GLASS') return t('scopeGlass');
+            if (effCat === 'OUTER_GLASS' || effCat === 'OCA_SHEET') return t('scopeOca');
+            if (effCat === 'CAM_PROT') return t('scopeCamProt');
+            if (effCat === 'COVER') return t('scopeCover');
             return '';
         }
 
@@ -1814,6 +1810,22 @@
                 if (score > 0) scoredList.push({ item, score, origIdx: i });
             }
 
+            if (qNorm && scoredList.length === 0 && window.Fuse) {
+                const fusePool = compatibilityData.filter(item => {
+                    const effCat = resolveEffectiveCategory(item);
+                    if (currentCategory === 'FAV') return favList.includes(item.title);
+                    if (currentCategory === 'ALL') return true;
+                    return effCat === currentCategory;
+                });
+                const fuse = new window.Fuse(fusePool, {
+                    keys: ['title', 'size', 'models', 'note'],
+                    threshold: 0.36,
+                    ignoreLocation: true
+                });
+                fuse.search(nl.coreQuery).slice(0, 8).forEach((r, idx) => {
+                    scoredList.push({ item: r.item, score: 50 - idx, origIdx: idx });
+                });
+            }
 
             if (qNorm) scoredList.sort((a, b) => b.score - a.score || a.origIdx - b.origIdx);
 
@@ -1831,14 +1843,14 @@
                 document.getElementById('resultsGrid').innerHTML = `
                     <div class="col-span-full bg-white rounded-2xl p-6 text-center border-2 border-amber-300 shadow-xs">
                         <i class="fas fa-clipboard-question text-3xl text-amber-500 mb-2"></i>
-                        <p class="text-sm font-extrabold text-slate-900">${uiText('noResultTitle')} "${rawQuery.replace(/</g, '&lt;')}"</p>
-                        <p class="text-xs text-slate-600 mt-1">${uiText('noResultSub')}</p>
+                        <p class="text-sm font-extrabold text-slate-900">${t('noResultTitle')} "${rawQuery.replace(/</g, '&lt;')}"</p>
+                        <p class="text-xs text-slate-600 mt-1">${t('noResultSub')}</p>
                         <div class="flex flex-wrap justify-center gap-2 mt-3.5">
                             <button onclick="logMissingQuery('${rawQuery.replace(/'/g, "\\'")}');showToast('📋 Added to Priority Research Queue!');" class="bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold px-4 py-2 rounded-xl shadow-xs">
-                                ${uiText('noResultAddBtn')}
+                                ${t('noResultAddBtn')}
                             </button>
                             <button onclick="setCategory('ALL')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-xl">
-                                ${uiText('noResultAllBtn')}
+                                ${t('noResultAllBtn')}
                             </button>
                         </div>
                     </div>`;
@@ -1866,10 +1878,10 @@
                 const matchedModels = qNorm ? item.models.filter(m => words.every(w => smartTokenMatch(normalizeTechQuery(m), w))) : [];
                 const primaryMatchedModel = matchedModels.length ? matchedModels[0].split(':')[0].split('=')[0].trim() : nl.coreQuery;
                 const statusText = isTrapCard
-                    ? uiText('statusTrap')
+                    ? t('statusTrap')
                     : ((item.conf || 'High') === 'High' && !fullCardStr.includes('Conditional') && !fullCardStr.includes('🟡')
-                        ? uiText('statusVerified')
-                        : uiText('statusCond'));
+                        ? t('statusVerified')
+                        : t('statusCond'));
 
                 const modelSpecificBanner = rawQuery ? `
                     <div class="mb-2.5 p-2.5 rounded-xl ${isTrapCard ? 'bg-rose-50 border border-rose-400' : 'bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200'} text-xs">
@@ -1877,14 +1889,14 @@
                             <span>🎯 ${highlightText(primaryMatchedModel, nl.coreQuery)} → <span class="text-blue-700">${badge.label}</span></span>
                             ${cutBadge}
                         </div>
-                        <div class="text-[11px] text-slate-700 mt-1"><b>${uiText('refLabel')}</b> ${item.title} (${item.size})</div>
+                        <div class="text-[11px] text-slate-700 mt-1"><b>${t('refLabel')}</b> ${item.title} (${item.size})</div>
                         <div class="text-[11px] ${isTrapCard ? 'text-rose-800' : 'text-amber-900'} font-bold mt-0.5"><b>Status:</b> ${statusText}</div>
                     </div>` : '';
 
                 const smartExplanation = buildSmartCompatibilityExplanation(item, effCat);
                 const smartExplanationBanner = smartExplanation ? `
                     <div class="mb-2 px-2.5 py-1.5 rounded-lg bg-indigo-50/90 border border-indigo-200 text-[11px] text-indigo-950 font-medium">
-                        <b>${uiText('smartReasonPrefix')}</b> ${smartExplanation}
+                        <b>${t('smartReasonPrefix')}</b> ${smartExplanation}
                     </div>` : '';
 
                 const { stockHits, donorHits } = findStockAndDonorHits(item, nl.coreQuery);
@@ -1953,9 +1965,9 @@
                             ${scopeBanner ? `<div class="text-[11px] px-2.5 py-1.5 rounded-lg bg-rose-50 text-rose-900 border border-rose-200 mb-2.5">${scopeBanner}</div>` : ''}
                             <div class="flex flex-wrap justify-between items-center gap-1.5 pt-2 border-t border-slate-100 text-[11px]">
                                 <div class="flex flex-wrap items-center gap-1">
-                                    <button onclick="openCutCompareModal('${item.title.replace(/'/g, "\\'").slice(0, 45)}')" class="bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold px-2 py-1 rounded-lg transition">${uiText('btnCompareCut')}</button>
-                                    <button onclick="openFitReportModal(${idx})" class="bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold px-2 py-1 rounded-lg transition">${uiText('btnReportFit')}</button>
-                                    <button onclick="mmOpen(5)" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-2 py-1 rounded-lg transition">${uiText('btnCheckStock')}</button>
+                                    <button onclick="openCutCompareModal('${item.title.replace(/'/g, "\\'").slice(0, 45)}')" class="bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold px-2 py-1 rounded-lg transition">${t('btnCompareCut')}</button>
+                                    <button onclick="openFitReportModal(${idx})" class="bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold px-2 py-1 rounded-lg transition">${t('btnReportFit')}</button>
+                                    <button onclick="mmOpen(5)" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-2 py-1 rounded-lg transition">${t('btnCheckStock')}</button>
                                 </div>
                                 <button onclick="voteWorked('${cardKey}')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold px-2.5 py-1 rounded-lg transition"><i class="fas fa-thumbs-up text-emerald-600"></i> (${votes})</button>
                             </div>
@@ -2034,11 +2046,7 @@
                         <b>📥 AI Supplier Catalogue Importer (Draft Queue):</b> Paste rows from any supplier CSV/Excel (Format: <code>Category | Part/SKU | Models (;/, separated) | Condition/Note</code>). Records stay in <b>Pending Review Drafts</b> until you approve them!
                     </div>
                     <textarea id="rawCatalogueInput" rows="3" placeholder="Example:&#10;LCD | 560002C3UA00 | Redmi 13C; Poco C65 | Confirm With-Frame vs Without-Frame&#10;BATTERY | BN5Q | Redmi 13C; Poco C65; Redmi 13C 5G | 5000mAh Service Pack" class="w-full border rounded-xl p-2.5 text-xs font-mono"></textarea>
-                    <div class="flex flex-col sm:flex-row gap-1.5">
-                        <button onclick="parseCatalogueToDrafts()" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold py-2 rounded-xl text-xs">Parse &amp; Add to Review Drafts</button>
-                        <button onclick="loadGithubResearchDrafts()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-2 rounded-xl text-xs">🔄 Load Today's GitHub Research Drafts</button>
-                    </div>
-                    <div id="githubResearchBox" class="hidden border-t pt-2 space-y-1.5"></div>
+                    <button onclick="parseCatalogueToDrafts()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold py-2 rounded-xl text-xs">Parse &amp; Add to Review Drafts</button>
                     <div class="border-t pt-2">
                         <b class="text-slate-800 block mb-1.5">Pending Review Drafts (${importedDrafts.length}):</b>
                         <div class="space-y-1.5 max-h-48 overflow-y-auto">
@@ -2058,54 +2066,6 @@
                     </div>
                 </div>`;
         }
-        async function loadGithubResearchDrafts() {
-            const box = document.getElementById('githubResearchBox');
-            if (!box) return;
-            box.classList.remove('hidden');
-            box.innerHTML = '<p class="text-xs text-indigo-700 font-bold py-1">⏳ Fetching latest research-drafts.json from site...</p>';
-            try {
-                const res = await fetch('/research-drafts.json?t=' + Date.now());
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                const data = await res.json();
-                const tracks = data.feature_research || {};
-                const legacyLeads = Array.isArray(data.leads) ? data.leads : [];
-                let html = `<div class="flex justify-between items-center bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 text-[11px] text-emerald-950 font-bold">
-                    <span>📡 Last Auto-Sync: ${data.last_sync || 'Today'} (${data.total_leads || legacyLeads.length} leads)</span>
-                    <button onclick="document.getElementById('githubResearchBox').classList.add('hidden')" class="text-slate-500 hover:text-slate-800">✕</button>
-                </div><div class="max-h-52 overflow-y-auto space-y-2 pr-1">`;
-
-                const trackKeys = Object.keys(tracks);
-                if (trackKeys.length > 0) {
-                    trackKeys.forEach(cat => {
-                        const items = tracks[cat] || [];
-                        if (!items.length) return;
-                        html += `<div class="p-2 bg-slate-50 border rounded-xl space-y-1">
-                            <span class="inline-block bg-indigo-100 text-indigo-900 font-extrabold px-2 py-0.5 rounded text-[10px]">${cat.replace(/_/g, ' ')} (${items.length})</span>`;
-                        items.forEach(it => {
-                            const safeTitle = (it.headline || '').replace(/</g, '&lt;').replace(/'/g, "\'");
-                            html += `<div class="text-[11px] flex justify-between items-start gap-2 pt-1 border-t border-slate-200/70">
-                                <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold leading-snug">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
-                                <button onclick="document.getElementById('rawCatalogueInput').value='LCD | NEW-SKU | ${safeTitle.slice(0,45)} | Research Lead';showToast('Copied to input box!')" class="bg-blue-100 text-blue-900 px-1.5 py-0.5 rounded text-[9px] font-bold shrink-0">+ Draft</button>
-                            </div>`;
-                        });
-                        html += `</div>`;
-                    });
-                } else if (legacyLeads.length > 0) {
-                    legacyLeads.forEach(it => {
-                        html += `<div class="p-2 bg-slate-50 border rounded-xl text-[11px]">
-                            <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
-                        </div>`;
-                    });
-                } else {
-                    html += '<p class="text-xs text-slate-500 text-center py-2">No leads found yet. Run the GitHub Action once and try again.</p>';
-                }
-                html += '</div>';
-                box.innerHTML = html;
-            } catch (err) {
-                box.innerHTML = `<p class="text-xs text-rose-700 font-bold bg-rose-50 border border-rose-200 rounded-lg p-2">❌ Could not load /research-drafts.json yet (${err.message}). Make sure auto_sync_research.py has run on GitHub.</p>`;
-            }
-        }
-
         function parseCatalogueToDrafts() {
             const raw = document.getElementById('rawCatalogueInput').value.trim();
             if (!raw) return showToast('Paste at least 1 line first!');
@@ -2170,7 +2130,7 @@
             document.getElementById('mmBody').innerHTML = `
                 <div class="space-y-2.5 text-xs">
                     <div class="p-2.5 bg-rose-50 border border-rose-200 rounded-xl text-rose-950 text-[11px]">
-                        <b>🛑 Safety Gate &amp; 14-Point Pre/Post-Repair Checklist:</b> Stop immediately if battery is swollen/damaged (never flatten!) or port is wet. Untested items default to <b>Not tested</b> — never default to Pass!
+                        <b>🛑 Safety Gate &amp; 14-Point Pre/Post-Repair Checklist (16 Nov Research Spec):</b> Stop immediately if battery is swollen/damaged (never flatten!) or port is wet. Untested items default to <b>Not Tested</b> — never default to Pass!
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                         <input id="qcJobModel" value="${savedQc.model || ''}" oninput="saveQcState()" placeholder="Exact Model Code (e.g. TECNO KL6, SM-A166B)" class="border rounded-xl p-2 text-xs font-bold">
