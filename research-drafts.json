@@ -55,6 +55,13 @@
         "status": "Pending Bench Verification"
       },
       {
+        "headline": "I kept my old phone alive by replacing one part; it cost way less than an upgrade - Android Police",
+        "published": "Sun, 27 Sep 2026 07:00:00 GMT",
+        "source": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZFlLTENPQWl0RjIxQk5uZDVnaW4zUmd2eldERktYdVZxR08tR21fRUZhaXVhN3JVdkwzMWl5NEpESVRBNWN6RU4wZjUzb0VoeDFDdmxKdzgyVEMwNUNWMDBrem1WeVRJTGtVMl9vS0lfLVJzcS14VHIzenZlSFI0ZnNwS0lDcWROc3R3T0pIbW8zdms1LVRuZFZ4aUZUU0JiczVXYWln?oc=5",
+        "target_tab": "BATTERY_AND_IC",
+        "status": "Pending Bench Verification"
+      },
+      {
         "headline": "Yes, your phone\u2019s battery is still replaceable (and it\u2019s better than upgrading) - How-To Geek",
         "published": "Sun, 08 Mar 2026 08:00:00 GMT",
         "source": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQV1R0VjlDYVEtdjJQdEhyMVJudnhxLVJ0U29sNTNYT19WVUw4X25XX2JXejBYVmloejBWczBnLTEyb1NxOVREenlHTEcweXVDTmpFZkdvOHBhNTZSUl85bTZTNjVTY1hkREdIX2tEa0doUzVZdHY0UUxjLVNiYVctcTVLdDZWYmtHcl9fUk4xZVIyUFZrd0xOdDNuSEVtMGxsbHg0?oc=5",
@@ -65,13 +72,6 @@
         "headline": "IPhone Battery Replacement Singapore (2026): Complete Guide And LYK Repair Service - MacSources",
         "published": "Thu, 02 Apr 2026 07:00:00 GMT",
         "source": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNzRBQk42NlMwMWR2WTJ5Y2RNRzlBRmJRTUZMaXRid2NxelpiM0t6SHZvYmFiaTNiNm9nVVdaTHhTZklwZUJrLXFLckFOdjNiNE9Kc0s3ejE4ZGhKQ3pqQzRIRVVyTGRQOTU1RnlNNHdfYjZoZ19ZaTI3MVZvZzI4Ukh1S1JyMlBoN3lyekxtV2VtZzdhUnRtcDVFODJLSjBvdmIwLUhR?oc=5",
-        "target_tab": "BATTERY_AND_IC",
-        "status": "Pending Bench Verification"
-      },
-      {
-        "headline": "When It's Time for a New Phone Battery - Consumer Reports",
-        "published": "Thu, 26 Oct 2023 07:00:00 GMT",
-        "source": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQeHpFZ2ZqOUFOaERGWC04TDNvek1tYlpzeVd4NEdydW5zR290aW5SZ1g0dEtWTWt6UnBJRzlUclFDdmwzcld6MF92NVdTNERycVRneC1kV19iTmFmUS1HUUtueEt5eTdHTTh0NDktbVh6Q1dPV05xSUhmQVBnT0lQS0pfZHQxRTBvdDRKZC1BX0lXalJmaVoxMzQ3dUZWNG0tTUcxcDBYSQ?oc=5",
         "target_tab": "BATTERY_AND_IC",
         "status": "Pending Bench Verification"
       }
@@ -115,6 +115,20 @@
     ],
     "TEARDOWNS_AND_PARTS": [
       {
+        "headline": "iFixit HomeView Teardown Finds Glued Speakers and Fragile Connectors - Technology Org",
+        "published": "Fri, 20 Nov 2026 13:35:00 GMT",
+        "source": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUmFuWUp6cGp0MHJqNjZBYk1PaG13UUh3VG5jaUY0c3J1MmxMV2pqOE9tWTZQZ1FuZnYzRWx3cWJ2S05qb0ZZcXJkUWpSaUpfaGdFeGQzMkQ4UWZQVUdGM1NKTWo1NlJJdkxMY082Vmw2bVFHN0FZTE9TOTh0eklnRTRKR3Bfa1docnpFZ2U4OHdOTlJ6ZG9idm1LVW9JUTA?oc=5",
+        "target_tab": "TEARDOWNS_AND_PARTS",
+        "status": "Pending Bench Verification"
+      },
+      {
+        "headline": "Apple HomeView teardown reveals potentially difficult repairs - The Ambient",
+        "published": "Fri, 20 Nov 2026 16:00:04 GMT",
+        "source": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNTFI1eFYteGlHTFdZVzVTdmhpRUVIX0c0VmF2SlB4emYtUl80SEhzWmZzeW4wWmYtdkNDSHdRQWc3VnJZUVZZQTRGenVFX0VmRDkwTUpLOHlJaGVRcDBRazhfak83bmttSF9qcy1EUFVTbHBQMnZnR2hMQ3JqRHQ2U1JaUE5jTjQyQ0pjTHBpbkJiQlI4NGJNTnFVSQ?oc=5",
+        "target_tab": "TEARDOWNS_AND_PARTS",
+        "status": "Pending Bench Verification"
+      },
+      {
         "headline": "iFixit\u2019s Apple HomeView teardown reveals a device that will be difficult to repair - The Verge",
         "published": "Tue, 17 Nov 2026 22:25:41 GMT",
         "source": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQeFVldi1rbWEyQ2VfWHAyM3AteVE0RUlSbW1tV2VvZXpzNFFTMTRyU1NkbEc1dnBwNE85UWNYMkFxc2hyZTYzVFhOVEJyX19qNjRLN1NzbkF3TGVGZG14WXlmX3FyMXBTSkdfWHlZVzNzTzJyYXc1Z1dzSWNGX3NLbTRnRnE3Rld1VURv?oc=5",
@@ -132,20 +146,6 @@
         "headline": "Apple\u2019s HomeView Is a Repair Nightmare, iFixit Teardown Reveals - The Mac Observer",
         "published": "Wed, 18 Nov 2026 18:14:01 GMT",
         "source": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNOGY1SlVwX2ZyVmJvbHhRSFNDczFmdERqaU53ZVBVYWxnZUQySTBYREhiMTloYTNTOG43cElmSG5FUmk0enZERTh2cko0TlFlejZ3eFFBZFBOMTVpSl9ScERwYjNuTjl1aDFBREdQei1sTV9rXzJfZUdQRmJJYWtvaC1wWmllT090eVNYcXUzRE9DVG9Oam5tMG5BZw?oc=5",
-        "target_tab": "TEARDOWNS_AND_PARTS",
-        "status": "Pending Bench Verification"
-      },
-      {
-        "headline": "Apple iPhone 18 Pro Max Teardown: A20 Pro, X80 and Apple N1 - TechInsights",
-        "published": "Fri, 13 Nov 2026 16:55:06 GMT",
-        "source": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9zQkJ3ckFWQ096ajNyR0pNeUQ2dTB3SkFjTW96ZnFqc1RwaTM4TTFVZFhEOE9RcHJkYllkNHNjUXNYVkhmcTZyeE9ORnl6STJidHdGMGhLSm5GdEdCd29wdE1YUFhna2Jpd1B2cnlBbHFQN2pD?oc=5",
-        "target_tab": "TEARDOWNS_AND_PARTS",
-        "status": "Pending Bench Verification"
-      },
-      {
-        "headline": "iFixit\u2019s Apple HomeView teardown finds a device that will be difficult to repair - Mezha.net",
-        "published": "Tue, 17 Nov 2026 22:31:22 GMT",
-        "source": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQc1BPWkZlbjU2V0NUWFlPRGZ4UTNyTlA5N245NGZrWmxGcTBxYkVFbHB2RHU1ZDljZzhjYkdFVWItSmNOZXlkbGxESjZKZ0h1MFVPSGlFZWNQaWVPVWh5anV5ZFR2UklLT2Q2UUVsR1AzOVhYa0NCT2dfanRBQjlrNHJqWlQ3eU9LMmc?oc=5",
         "target_tab": "TEARDOWNS_AND_PARTS",
         "status": "Pending Bench Verification"
       }
