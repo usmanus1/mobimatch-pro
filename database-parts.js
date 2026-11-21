@@ -2489,5 +2489,16 @@ window.defaultData = [
             "OnePlus Nord CE 3 Lite 5G"
         ],
         "note": "6.72\" Master No-Cut Clear-Top Glass. Transparent over front camera to fit both Punch-Hole and V-Notch displays without blocking the selfie lens."
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
     }
 ];
