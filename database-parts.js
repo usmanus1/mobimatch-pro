@@ -2577,5 +2577,16 @@ window.defaultData = [
             "Top 5 Best Vizio Tv Stand 2026 - Pixelfy.me"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — The Best Wall Chargers for Almost Any USB-C Device - Th",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "The Best Wall Chargers for Almost Any USB-C Device - Th"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
