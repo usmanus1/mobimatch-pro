@@ -2654,5 +2654,16 @@ window.defaultData = [
             "[JerryRigEverything] iPhone Duo Durability: Destroyed"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — [iFixit News & Teardowns] iPhone Duo Teardown: The Most",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "[iFixit News & Teardowns] iPhone Duo Teardown: The Most"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
