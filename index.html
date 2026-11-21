@@ -934,6 +934,7 @@
         let fitReports = JSON.parse(localStorage.getItem('mobimatch_fit_reports') || '[]');
         let missingQueue = JSON.parse(localStorage.getItem('mobimatch_missing_queue') || '{}');
         let importedDrafts = JSON.parse(localStorage.getItem('mobimatch_import_drafts') || '[]');
+        let publishedLeads = JSON.parse(localStorage.getItem('mobimatch_published_leads') || '[]');
         let recentSearches = JSON.parse(localStorage.getItem('mobimatch_recent') || '["Hot 30i", "Realme C83", "Redmi A7 Pro", "T4x", "128GB eMMC", "A16"]');
         
         // FULL SITE LANGUAGE STATE ('en' = English Default, 'ur' = Roman Urdu)
@@ -2100,43 +2101,97 @@
                 const data = await res.json();
                 const tracks = data.feature_research || {};
                 const legacyLeads = Array.isArray(data.leads) ? data.leads : [];
-                let html = `<div class="flex justify-between items-center bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 text-[11px] text-emerald-950 font-bold">
-                    <span>📡 Last Auto-Sync: ${data.last_sync || 'Today'} (${data.total_leads || legacyLeads.length} leads)</span>
-                    <button onclick="document.getElementById('githubResearchBox').classList.add('hidden')" class="text-slate-500 hover:text-slate-800">✕</button>
-                </div><div class="max-h-52 overflow-y-auto space-y-2 pr-1">`;
+                let hiddenCount = 0;
+                let visibleCount = 0;
 
+                const isPublishedLead = (headline) => {
+                    const key = (headline || '').trim().toLowerCase().slice(0, 60);
+                    return publishedLeads.includes(key);
+                };
+
+                const catToType = (cat) => {
+                    const c = (cat || '').toUpperCase();
+                    if (c.includes('GLASS')) return 'GLASS';
+                    if (c.includes('BATTERY')) return 'BATTERY';
+                    if (c.includes('IC') || c.includes('BOARD')) return 'IC';
+                    if (c.includes('RESET') || c.includes('PANIC')) return 'RESET';
+                    return 'LCD';
+                };
+
+                let bodyHtml = '';
                 const trackKeys = Object.keys(tracks);
                 if (trackKeys.length > 0) {
                     trackKeys.forEach(cat => {
-                        const items = tracks[cat] || [];
+                        const rawItems = tracks[cat] || [];
+                        const items = rawItems.filter(it => {
+                            if (isPublishedLead(it.headline)) { hiddenCount++; return false; }
+                            return true;
+                        });
                         if (!items.length) return;
-                        html += `<div class="p-2 bg-slate-50 border rounded-xl space-y-1">
+                        visibleCount += items.length;
+                        const defType = catToType(cat);
+                        bodyHtml += `<div class="p-2 bg-slate-50 border rounded-xl space-y-1">
                             <span class="inline-block bg-indigo-100 text-indigo-900 font-extrabold px-2 py-0.5 rounded text-[10px]">${cat.replace(/_/g, ' ')} (${items.length})</span>`;
                         items.forEach(it => {
-                            const safeTitle = (it.headline || '').replace(/</g, '&lt;').replace(/'/g, "\\'");
-                            html += `<div class="text-[11px] flex justify-between items-start gap-2 pt-1 border-t border-slate-200/70">
-                                <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold leading-snug">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
-                                <button onclick="document.getElementById('rawCatalogueInput').value='LCD | NEW-SKU | ${safeTitle.slice(0,45)} | Research Lead';showToast('Copied to input box!')" class="bg-blue-100 text-blue-900 px-1.5 py-0.5 rounded text-[9px] font-bold shrink-0">+ Draft</button>
+                            const rawHeadline = it.headline || '';
+                            const safeDisplay = rawHeadline.replace(/</g, '&lt;');
+                            const safeJs = rawHeadline.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                            bodyHtml += `<div class="text-[11px] flex justify-between items-start gap-2 pt-1 border-t border-slate-200/70">
+                                <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold leading-snug">${safeDisplay} ↗</a>
+                                <div class="flex gap-1 shrink-0">
+                                    <button onclick="pickResearchLead('${defType}', '${safeJs}')" class="bg-blue-100 hover:bg-blue-200 text-blue-900 px-1.5 py-0.5 rounded text-[9px] font-bold">+ Draft</button>
+                                    <button onclick="markLeadPublished('${safeJs}', true)" title="Hide / Mark Done" class="bg-slate-200 hover:bg-rose-100 text-slate-600 hover:text-rose-700 px-1.5 py-0.5 rounded text-[9px] font-bold">✕</button>
+                                </div>
                             </div>`;
                         });
-                        html += `</div>`;
+                        bodyHtml += `</div>`;
                     });
                 } else if (legacyLeads.length > 0) {
-                    legacyLeads.forEach(it => {
-                        html += `<div class="p-2 bg-slate-50 border rounded-xl text-[11px]">
-                            <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
+                    const items = legacyLeads.filter(it => {
+                        if (isPublishedLead(it.headline)) { hiddenCount++; return false; }
+                        return true;
+                    });
+                    visibleCount = items.length;
+                    items.forEach(it => {
+                        const rawHeadline = it.headline || '';
+                        const safeJs = rawHeadline.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                        bodyHtml += `<div class="p-2 bg-slate-50 border rounded-xl text-[11px] flex justify-between items-center gap-2">
+                            <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold">${rawHeadline.replace(/</g, '&lt;')} ↗</a>
+                            <button onclick="pickResearchLead('LCD', '${safeJs}')" class="bg-blue-100 text-blue-900 px-1.5 py-0.5 rounded text-[9px] font-bold shrink-0">+ Draft</button>
                         </div>`;
                     });
-                } else {
-                    html += '<p class="text-xs text-slate-500 text-center py-2">No leads found yet. Run the GitHub Action once and try again.</p>';
                 }
-                html += '</div>';
+
+                if (!visibleCount) {
+                    bodyHtml = '<p class="text-xs text-emerald-700 font-bold text-center py-2">✅ Aaj ki saari leads publish/clear ho chuki hain!</p>';
+                }
+
+                const html = `<div class="flex flex-wrap justify-between items-center gap-1 bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 text-[11px] text-emerald-950 font-bold">
+                    <span>📡 Last Auto-Sync: ${data.last_sync || 'Today'} (${visibleCount} new${hiddenCount ? `, ${hiddenCount} published hidden` : ''})</span>
+                    <div class="flex items-center gap-2">
+                        ${hiddenCount ? `<button onclick="publishedLeads=[];localStorage.setItem('mobimatch_published_leads','[]');loadGithubResearchDrafts();" class="text-[10px] underline text-indigo-700">Show Hidden</button>` : ''}
+                        <button onclick="document.getElementById('githubResearchBox').classList.add('hidden')" class="text-slate-500 hover:text-slate-800">✕</button>
+                    </div>
+                </div><div class="max-h-52 overflow-y-auto space-y-2 pr-1">${bodyHtml}</div>`;
                 box.innerHTML = html;
             } catch (err) {
                 box.innerHTML = `<p class="text-xs text-rose-700 font-bold bg-rose-50 border border-rose-200 rounded-lg p-2">❌ Could not load /research-drafts.json yet (${err.message}). Make sure auto_sync_research.py has run on GitHub.</p>`;
             }
         }
-
+        function markLeadPublished(headline, reloadBox) {
+            const key = (headline || '').trim().toLowerCase().slice(0, 60);
+            if (key && !publishedLeads.includes(key)) {
+                publishedLeads.push(key);
+                localStorage.setItem('mobimatch_published_leads', JSON.stringify(publishedLeads));
+            }
+            if (reloadBox) loadGithubResearchDrafts();
+        }
+        function pickResearchLead(defType, headline) {
+            const inp = document.getElementById('rawCatalogueInput');
+            if (inp) inp.value = `${defType} | NEW-SKU | ${headline.slice(0, 55)} | Compatibility Research Lead`;
+            markLeadPublished(headline, true);
+            showToast('📥 Draft box mein add ho gaya aur list se hide kar diya!');
+        }
         function parseCatalogueToDrafts() {
             const raw = document.getElementById('rawCatalogueInput').value.trim();
             if (!raw) return showToast('Paste at least 1 line first!');
@@ -2238,6 +2293,7 @@
             try {
                 if (partsRecs.length) await pushRecordsToGithubFile('database-parts.js', partsRecs, token);
                 if (boardRecs.length) await pushRecordsToGithubFile('database-board.js', boardRecs, token);
+                records.forEach(r => markLeadPublished(r.title, false));
                 if (onSuccessClear) onSuccessClear();
                 if (statusEl) {
                     statusEl.className = 'p-2 rounded-lg text-[11px] font-bold bg-emerald-200 text-emerald-950';
