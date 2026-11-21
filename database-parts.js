@@ -2599,5 +2599,16 @@ window.defaultData = [
             "OnePlus is leaving—these OnePlus 15 alternative phones"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — [JerryRigEverything] BE GENTLE WITH YOUR NEW iPHONE DUO",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "[JerryRigEverything] BE GENTLE WITH YOUR NEW iPHONE DUO"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
