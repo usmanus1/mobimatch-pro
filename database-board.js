@@ -994,5 +994,16 @@ window.defaultData = (window.defaultData || []).concat([
             "Android 17 Beta 4.1 Rolls Out With Critical Bug Fixes A"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — iPhone 17e Teardown Reveals Most Parts Swap With iPhone",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iPhone 17e Teardown Reveals Most Parts Swap With iPhone"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
