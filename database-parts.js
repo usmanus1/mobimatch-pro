@@ -2621,5 +2621,16 @@ window.defaultData = [
             "[JerryRigEverything] iPhone Duo Teardown – APPLE SHOULD"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — [JerryRigEverything] I think i fixed the iPhone Duo...",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "[JerryRigEverything] I think i fixed the iPhone Duo..."
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
