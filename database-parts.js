@@ -2511,5 +2511,16 @@ window.defaultData = [
             "iFixit HomeView Teardown Finds Glued Speakers"
         ],
         "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — iOS 27 Adds Mac-Like Recovery Mode for iPhone",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iOS 27 Adds Mac-Like Recovery Mode for iPhone"
+        ],
+        "note": "Research Lead"
     }
 ];
