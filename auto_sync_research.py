@@ -8,32 +8,58 @@ from datetime import datetime, timezone
 
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-# Compatibility-focused research tracks for mobile repair technicians
+# Tight, mobile-repair-only queries (with negative keywords to block TV stands/furniture)
 RESEARCH_TRACKS = {
     "LCD_AND_COMBO_COMPATIBILITY": [
-        "universal lcd combo compatibility list smartphone 2026",
-        "realme oppo vivo display folder compatibility stencil",
-        "samsung redmi infinix tecno universal lcd combo match"
+        '"LCD" OR "display" smartphone replacement compatibility -tv -monitor -stand',
+        'realme OR oppo OR vivo OR redmi display screen replacement repair 2026 -tv',
+        'samsung OR infinix OR tecno smartphone screen replacement repair -tv -stand'
     ],
     "TEMPERED_GLASS_AND_OCA": [
-        "universal tempered glass compatibility chart 2026",
-        "waterdrop no cut tempered glass match samsung vivo oppo"
+        '"screen protector" smartphone iphone OR samsung OR pixel 2026 -tv -stand -furniture',
+        '"tempered glass" "screen protector" phone compatibility -tv -stand -table -desk',
+        'smartphone "OCA" OR "front glass" screen refurbishment repair -tv'
     ],
     "BATTERY_AND_IC_COMPATIBILITY": [
-        "mobile battery compatibility model code BLP BN EB-BA",
-        "smartphone pmic charging ic emmc compatibility list"
+        'smartphone battery replacement iphone OR samsung OR xiaomi 2026 -car -ev -laptop',
+        'mobile phone repair "PMIC" OR "charging IC" OR "eMMC" OR "motherboard" -tv'
     ],
     "FLEX_CC_BOARD_AND_PARTS": [
-        "mobile charging sub board cc board flex compatibility",
-        "smartphone teardown repair spare parts compatibility"
+        'smartphone "charging port" OR "USB-C" flex replacement repair -tv -laptop',
+        'iFixit OR smartphone teardown spare parts repairability 2026 -tv -laptop'
     ],
     "PANIC_LOG_AND_HARD_RESET": [
-        "iphone panic full thermalmonitord fix repair",
-        "android recovery mode hard reset samsung xiaomi 2026"
+        'iphone "panic" OR "restart" OR "bootloop" repair fix',
+        'android "recovery mode" OR "factory reset" samsung OR xiaomi OR pixel 2026'
     ]
 }
 
-def fetch_google_news_rss(query, limit=3):
+# Strict blocklist to reject non-mobile junk (TV stands, furniture, cars, spam blogs)
+BLOCKLIST_WORDS = [
+    "tv stand", "swivel", "furniture", "coffee table", "dining", "cabinet", "shelf",
+    "wall mount", "pixelfy", "windshield", "shower door", "aquarium", "fireplace",
+    "kitchen", "oven", "microwave", "refrigerator", "electric vehicle", "tesla",
+    "car battery", "laptop", "macbook", "smartwatch band", "gaming chair", "desk"
+]
+
+# Every headline must contain at least one mobile/repair keyword
+MOBILE_KEYWORDS = [
+    "phone", "smartphone", "iphone", "samsung", "galaxy", "xiaomi", "redmi", "poco",
+    "oppo", "realme", "vivo", "iqoo", "infinix", "tecno", "itel", "pixel", "oneplus",
+    "honor", "huawei", "motorola", "moto", "nokia", "nothing", "ipad", "android", "ios",
+    "screen protector", "lcd", "oled", "amoled", "display", "battery", "charging",
+    "teardown", "ifixit", "repair", "reset", "recovery", "panic", "ic", "pmic", "emmc", "nand"
+]
+
+def is_valid_mobile_lead(headline):
+    low = (headline or "").lower()
+    if any(bad in low for bad in BLOCKLIST_WORDS):
+        return False
+    if not any(kw in low for kw in MOBILE_KEYWORDS):
+        return False
+    return True
+
+def fetch_google_news_rss(query, limit=4):
     encoded = urllib.parse.quote(query)
     url = f"https://news.google.com/rss/search?q={encoded}&hl=en-US&gl=US&ceid=US:en"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 MobiMatchPro-Bot/1.0"})
@@ -42,17 +68,19 @@ def fetch_google_news_rss(query, limit=3):
         with urllib.request.urlopen(req, timeout=12) as resp:
             xml_data = resp.read()
         root = ET.fromstring(xml_data)
-        for item in root.findall("./channel/item")[:limit]:
+        for item in root.findall("./channel/item"):
             title = (item.findtext("title") or "").strip()
             link = (item.findtext("link") or "").strip()
             pub = (item.findtext("pubDate") or "").strip()
-            if title:
+            if title and is_valid_mobile_lead(title):
                 items.append({
                     "headline": title,
                     "source": link,
                     "published": pub,
                     "query": query
                 })
+                if len(items) >= limit:
+                    break
     except Exception as e:
         print(f"Warning: failed query '{query}': {e}")
     return items
@@ -75,7 +103,7 @@ def main():
     for category, queries in RESEARCH_TRACKS.items():
         cat_leads = []
         for q in queries:
-            for entry in fetch_google_news_rss(q, limit=3):
+            for entry in fetch_google_news_rss(q, limit=4):
                 norm = entry["headline"].lower().strip()
                 if norm not in seen_titles:
                     seen_titles.add(norm)
@@ -93,7 +121,7 @@ def main():
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
     update_sitemap_dates()
-    print(f"Saved {total_leads} compatibility research leads to research-drafts.json")
+    print(f"Saved {total_leads} filtered mobile-only leads to research-drafts.json")
 
 if __name__ == "__main__":
     main()
