@@ -1027,5 +1027,16 @@ window.defaultData = (window.defaultData || []).concat([
             "iPhone 18 Pro Random Shutdowns and Restarts: Panic-Full"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — Galaxy S26 Ultra Owners Report Getting Stuck After Fact",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Galaxy S26 Ultra Owners Report Getting Stuck After Fact"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
