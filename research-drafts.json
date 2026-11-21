@@ -1,6 +1,6 @@
 {
   "last_sync": "2026-11-21",
-  "total_leads": 9,
+  "total_leads": 10,
   "dedup_checked_codes": 666,
   "feature_research": {
     "IFIXIT_TEARDOWNS_AND_GUIDES": [
@@ -31,6 +31,12 @@
     ],
     "GSMARENA_NEW_MODELS_2026": [],
     "XDA_AND_RECOVERY_MODES": [
+      {
+        "headline": "[XDA Developers Mobile] The Zune was one of Microsoft's biggest flops, but I still think it deserved better",
+        "source": "https://www.xda-developers.com/the-zune-was-one-of-microsofts-biggest-flops-but-i-still-think-it-deserved-better/",
+        "published": "Sat, 21 Nov 2026 18:30:20 GMT",
+        "verification": "VERIFIED_TECH"
+      },
       {
         "headline": "[XDA Developers Mobile] 3 expansion cards I've tried dedicating my spare PCIe slots to",
         "source": "https://www.xda-developers.com/expansion-cards-ive-tried-dedicating-my-spare-pcie-slots-to/",
