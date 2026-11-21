@@ -2049,9 +2049,10 @@
                                 <span>Pending Review Drafts (${importedDrafts.length})</span>
                             </label>
                             <div class="flex flex-wrap gap-1">
+                                <button onclick="autoPublishSelectedToGithub()" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-2.5 py-1 rounded-lg font-extrabold text-[10px] shadow">🚀 1-Click Auto-Publish Live</button>
                                 <button onclick="copySelectedDraftsForGithub()" class="bg-slate-900 hover:bg-slate-800 text-amber-400 px-2 py-1 rounded-lg font-bold text-[10px]">📋 Copy Selected JS</button>
-                                <button onclick="approveSelectedDrafts()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2 py-1 rounded-lg font-bold text-[10px]">✅ Approve Selected</button>
-                                ${customData.length ? `<button onclick="copyAllLocalApprovedForGithub()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-2 py-1 rounded-lg font-bold text-[10px]">🚀 Copy My Approved (${customData.length})</button>` : ''}
+                                <button onclick="approveSelectedDrafts()" class="bg-blue-600 hover:bg-blue-500 text-white px-2 py-1 rounded-lg font-bold text-[10px]">✅ Local Approve</button>
+                                ${customData.length ? `<button onclick="autoPublishLocalApprovedToGithub()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-2 py-1 rounded-lg font-bold text-[10px]">⚡ Publish Approved (${customData.length})</button>` : ''}
                             </div>
                         </div>
                         <div class="space-y-1.5 max-h-48 overflow-y-auto">
@@ -2073,16 +2074,18 @@
                                 </div>`).join('') : '<p class="text-slate-500 text-center py-2">No pending catalogue drafts.</p>'}
                         </div>
                     </div>
-                    <div class="p-2.5 bg-amber-50 border border-amber-300 rounded-xl text-[11px] text-amber-950 space-y-1.5">
-                        <b class="block text-slate-900">🚀 Permanent Publish Karne Ka Asaan Tareeqa (Google &amp; All Techs — 3 Steps):</b>
-                        <div><b>1. GitHub Par File Kholein:</b>
-                            <ul class="list-disc pl-4 mt-0.5 space-y-0.5">
-                                <li>LCD, Glass, Battery, Flex, Camera, ya Body parts ke liye: <a href="https://github.com/usmanus1/mobimatch-pro/edit/main/database-parts.js" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-extrabold underline">database-parts.js kholein ↗</a></li>
-                                <li>IC, CPU, PMIC, Voltage/GR, Panic Log, ya Hard Reset ke liye: <a href="https://github.com/usmanus1/mobimatch-pro/edit/main/database-board.js" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-extrabold underline">database-board.js kholein ↗</a></li>
-                            </ul>
+                    <div class="p-2.5 bg-emerald-50 border border-emerald-300 rounded-xl text-[11px] text-emerald-950 space-y-2">
+                        <div class="flex flex-wrap justify-between items-center gap-1">
+                            <b class="text-slate-900">⚡ 1-Click Auto-Publish to Live Website (GitHub API Automation)</b>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded ${localStorage.getItem('mobimatch_gh_token') ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'}">${localStorage.getItem('mobimatch_gh_token') ? '🟢 Token Connected' : '🔑 Token Required (1-Time)'}</span>
                         </div>
-                        <div><b>2. Copy &amp; Paste Karein:</b> Upar draft ke samne <b>📋 Copy JS</b> dabayein, aur GitHub file ke aakhri <code>];</code> se bilkul upar paste kar dein.</div>
-                        <div><b>3. Commit Changes Dabayein:</b> 20 second mein Vercel par live aur Google/Bing par index ho jayega!</div>
+                        <div class="flex gap-1.5">
+                            <input id="ghTokenInput" type="password" value="${localStorage.getItem('mobimatch_gh_token') || ''}" placeholder="Paste GitHub Fine-Grained Token (github_pat_...)" class="flex-1 bg-white border border-emerald-300 rounded-lg px-2.5 py-1.5 text-xs font-mono">
+                            <button onclick="saveGithubToken()" class="bg-slate-900 hover:bg-slate-800 text-amber-400 font-extrabold px-3 py-1.5 rounded-lg text-[10px] shrink-0">💾 Save Key</button>
+                            ${localStorage.getItem('mobimatch_gh_token') ? `<button onclick="clearGithubToken()" class="bg-rose-100 text-rose-800 font-bold px-2 py-1.5 rounded-lg text-[10px] shrink-0">✕</button>` : ''}
+                        </div>
+                        <p class="text-[10px] text-slate-700">🔒 Token sirf aapke apne browser mein save hota hai. Drafts tick (☑) karein aur <b>🚀 1-Click Auto-Publish Live</b> dabayein — website khud sahi file (<code>database-parts.js</code> / <code>database-board.js</code>) update karke Vercel &amp; Google/Bing par live kar degi!</p>
+                        <div id="autoPublishStatus" class="hidden p-2 rounded-lg text-[11px] font-bold"></div>
                     </div>
                 </div>`;
         }
@@ -2157,6 +2160,118 @@
             renderCatalogueImporterTab();
             showToast(`📥 Added ${added} draft record(s) for review!`);
         }
+        function saveGithubToken() {
+            const val = (document.getElementById('ghTokenInput') || {}).value || '';
+            if (!val.trim()) return showToast('Pehle GitHub Token paste karein!');
+            localStorage.setItem('mobimatch_gh_token', val.trim());
+            renderCatalogueImporterTab();
+            showToast('🟢 GitHub Auto-Publish Token Saved!');
+        }
+        function clearGithubToken() {
+            localStorage.removeItem('mobimatch_gh_token');
+            renderCatalogueImporterTab();
+            showToast('Token removed from this browser.');
+        }
+        function utf8ToBase64(str) {
+            const bytes = new TextEncoder().encode(str);
+            let bin = '';
+            bytes.forEach(b => { bin += String.fromCharCode(b); });
+            return btoa(bin);
+        }
+        function base64ToUtf8(b64) {
+            const bin = atob(b64.replace(/\n/g, ''));
+            const bytes = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+            return new TextDecoder().decode(bytes);
+        }
+        async function pushRecordsToGithubFile(filename, records, token) {
+            const apiUrl = `https://api.github.com/repos/usmanus1/mobimatch-pro/contents/${filename}`;
+            const headers = {
+                'Authorization': `Bearer ${token}`,
+                'Accept': 'application/vnd.github+json',
+                'Content-Type': 'application/json'
+            };
+            const getRes = await fetch(apiUrl, { headers });
+            if (!getRes.ok) throw new Error(`GET ${filename} failed (HTTP ${getRes.status})`);
+            const fileData = await getRes.json();
+            const currentContent = base64ToUtf8(fileData.content);
+            const jsBlock = formatRecordsAsJs(records);
+            const isBoard = filename === 'database-board.js';
+            const closingAnchor = isBoard ? ']);' : '];';
+            const lastIdx = currentContent.lastIndexOf(closingAnchor);
+            if (lastIdx === -1) throw new Error(`Could not find ${closingAnchor} in ${filename}`);
+            const beforeClose = currentContent.slice(0, lastIdx).trimEnd();
+            const newContent = beforeClose + jsBlock + '\n' + closingAnchor + '\n';
+            const putRes = await fetch(apiUrl, {
+                method: 'PUT',
+                headers,
+                body: JSON.stringify({
+                    message: `Auto-publish ${records.length} verified record(s) to ${filename} via MobiMatch Pro`,
+                    content: utf8ToBase64(newContent),
+                    sha: fileData.sha
+                })
+            });
+            if (!putRes.ok) {
+                const errBody = await putRes.text();
+                throw new Error(`PUT ${filename} failed (HTTP ${putRes.status}): ${errBody.slice(0, 120)}`);
+            }
+            return true;
+        }
+        async function runGithubAutoPublish(records, onSuccessClear) {
+            const token = localStorage.getItem('mobimatch_gh_token');
+            const statusEl = document.getElementById('autoPublishStatus');
+            if (!token) {
+                showToast('🔑 Pehle neeche apna GitHub Token save karein!');
+                const inp = document.getElementById('ghTokenInput');
+                if (inp) inp.focus();
+                return;
+            }
+            if (!records.length) return showToast('Koi record select nahi kiya gaya!');
+            const boardTypes = ['IC', 'SMD', 'GR', 'PANIC', 'CODE', 'RESET'];
+            const partsRecs = records.filter(r => !boardTypes.includes(r.type));
+            const boardRecs = records.filter(r => boardTypes.includes(r.type));
+            if (statusEl) {
+                statusEl.className = 'p-2 rounded-lg text-[11px] font-bold bg-indigo-100 text-indigo-900';
+                statusEl.classList.remove('hidden');
+                statusEl.innerText = `⏳ Publishing ${records.length} record(s) directly to GitHub...`;
+            }
+            try {
+                if (partsRecs.length) await pushRecordsToGithubFile('database-parts.js', partsRecs, token);
+                if (boardRecs.length) await pushRecordsToGithubFile('database-board.js', boardRecs, token);
+                if (onSuccessClear) onSuccessClear();
+                if (statusEl) {
+                    statusEl.className = 'p-2 rounded-lg text-[11px] font-bold bg-emerald-200 text-emerald-950';
+                    statusEl.innerText = `✅ Published ${records.length} record(s) to GitHub! 20 seconds mein Vercel par publicly live ho jayega.`;
+                }
+                showToast(`🚀 ${records.length} Record(s) Publicly Published!`);
+            } catch (err) {
+                if (statusEl) {
+                    statusEl.className = 'p-2 rounded-lg text-[11px] font-bold bg-rose-100 text-rose-900';
+                    statusEl.innerText = `❌ Auto-Publish Error: ${err.message}`;
+                }
+                showToast('❌ Publish failed — check token permissions!');
+            }
+        }
+        async function autoPublishSelectedToGithub() {
+            const idxs = getSelectedDraftIndexes();
+            if (!idxs.length) return showToast('Pehle kam az kam 1 draft tick (☑) karein!');
+            const selected = idxs.map(i => importedDrafts[i]).filter(Boolean);
+            await runGithubAutoPublish(selected, () => {
+                idxs.sort((a, b) => b - a).forEach(i => importedDrafts.splice(i, 1));
+                localStorage.setItem('mobimatch_import_drafts', JSON.stringify(importedDrafts));
+                renderCatalogueImporterTab();
+            });
+        }
+        async function autoPublishLocalApprovedToGithub() {
+            if (!customData.length) return showToast('Koi local approved record nahi mila.');
+            const toPush = [...customData];
+            await runGithubAutoPublish(toPush, () => {
+                customData = [];
+                localStorage.setItem('mobimatch_custom', '[]');
+                renderCatalogueImporterTab();
+            });
+        }
+
         function toggleAllDrafts(checked) {
             document.querySelectorAll('.draft-select-chk').forEach(chk => { chk.checked = checked; });
         }
