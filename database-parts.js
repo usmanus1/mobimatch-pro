@@ -1380,5 +1380,1114 @@ window.defaultData = [
         "note": "🔊 16 Nov 2026 Audio & Motor SAP Rule: Official SAP part codes from Carlcare exploded-view diagrams (PDF p.3). Protect the receiver contact flex when lifting upper housings on KL7 and CM6!",
         "smartEn": "Covers 6 Earpiece Receiver groups (SAP 1950xxxx), 6 Loudspeaker groups (SAP 1940xxxx), 7 Vibration Motor groups (SAP 1930xxxx), and Keypad Mic SAP 19201012.",
         "smartUr": "TECNO, Infinix aur itel ke 20 official SAP Ear Speaker (1950xxxx), Ringer Speaker (1940xxxx), Mic (19201012) aur Vibration Motor (1930xxxx) groups!"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — iOS 27 Comes With a macOS-Like Recovery Mode",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iOS 27 Comes With a macOS-Like Recovery Mode"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Apple HomeView teardown reveals potentially d",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Apple HomeView teardown reveals potentially d"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Apple HomeView teardown reveals potentially d",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Apple HomeView teardown reveals potentially d"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Apple’s HomeView Is a Repair Nightmare / iFixi",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Apple’s HomeView Is a Repair Nightmare",
+            "iFixi"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — iFixit’s Apple HomeView teardown reveals a de",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iFixit’s Apple HomeView teardown reveals a de"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — iFixit HomeView Teardown Finds Glued Speakers",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iFixit HomeView Teardown Finds Glued Speakers"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Battery Replacement Has Gotten Pricier for Ap",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Battery Replacement Has Gotten Pricier for Ap"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — How to Hard Reset Every iPhone Model (2026 Gu",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "How to Hard Reset Every iPhone Model (2026 Gu"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — A folding screen replacement for the Galaxy Z",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "A folding screen replacement for the Galaxy Z"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Samsung Forced to Offer One-Time Free Screen",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Forced to Offer One-Time Free Screen"
+        ],
+        "note": "Research Lead"
+    },
+    {
+        "type": "PORT",
+        "subCat": "PORT",
+        "title": "3722-004093 & 16-Pin Mid-Mount Type-C Jack — Samsung Galaxy A12 / A13",
+        "size": "3722-004093 & 16-Pin Mid-Mount Type-C Jack",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A12",
+            "A13",
+            "A14",
+            "A15",
+            "A16",
+            "A22",
+            "A23",
+            "A32",
+            "M12",
+            "M33 (24-Pin 3722-004093)",
+            "Redmi Note 8-13",
+            "Redmi 12",
+            "13C",
+            "14C",
+            "Poco C65",
+            "C75",
+            "Realme C53",
+            "C55",
+            "C67",
+            "OPPO A57",
+            "A60 (16-Pin Type-C)",
+            "Vivo Y20",
+            "Y12",
+            "OPPO A15",
+            "Realme C11",
+            "Redmi 9A (5-Pin Micro-USB)"
+        ],
+        "note": "Match 24-pin vs 16-pin footprint and leg spacing before hot-air soldering at 330°C."
+    },
+    {
+        "type": "OUTER_GLASS",
+        "subCat": "OUTER_GLASS",
+        "title": "6.5\" AMOLED U-Notch & 6.67\" Flat OLED Outer Glass — Samsung Galaxy A15 4G (SM-A155F) / Galaxy A15 5G (SM-A156B)",
+        "size": "6.5\" AMOLED U-Notch & 6.67\" Flat OLED Outer Glass",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A15 4G (SM-A155F)",
+            "Galaxy A15 5G (SM-A156B)",
+            "Galaxy A24 4G (SM-A245F)",
+            "Galaxy A25 5G (SM-A256B)",
+            "Galaxy M34 5G",
+            "Xiaomi Redmi Note 13 4G",
+            "5G",
+            "Redmi Note 13 Pro 5G",
+            "POCO X6 5G",
+            "POCO X6 Pro 5G",
+            "POCO M6 Pro 4G"
+        ],
+        "note": "Group 1 (Samsung 6.5\" U-Notch Outer Glass + OCA): A15 4G/5G = A24 4G = A25 5G = M34 5G (Does NOT fit 6.7\" A16!)"
+    },
+    {
+        "type": "OCA_SHEET",
+        "subCat": "OCA_SHEET",
+        "title": "Mitsubishi 200um vs 250um OCA Lamination Guide — iPhone X to 17 Pro Max / Samsung Galaxy A15",
+        "size": "Mitsubishi 200um vs 250um OCA Lamination Guide",
+        "conf": "Conditional",
+        "models": [
+            "iPhone X to 17 Pro Max",
+            "Samsung Galaxy A15",
+            "A16",
+            "A35",
+            "A55",
+            "S20-S25 Series",
+            "Redmi Note 10-14 Series",
+            "Universal 6.1\"",
+            "6.5\"",
+            "6.67\"",
+            "6.8\" IPS LCDs"
+        ],
+        "note": "Use 200um OCA for AMOLED/OLED & Under-Display Fingerprint screens; Use 250um Mitsubishi OCA for IPS LCDs to prevent edge bubbles (Autoclave defoam at 60°C for 3 mins)."
+    },
+    {
+        "type": "TOUCH_FPC",
+        "subCat": "TOUCH_FPC",
+        "title": "External Touch Digitizer vs TDDI Incell Rule — Samsung Galaxy A01 Core (SM-A013F) / Xiaomi Redmi 6",
+        "size": "External Touch Digitizer vs TDDI Incell Rule",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A01 Core (SM-A013F)",
+            "Xiaomi Redmi 6",
+            "6A",
+            "OPPO A3s",
+            "A5s",
+            "A12 (COG)",
+            "Vivo Y91",
+            "Y93",
+            "Y95 (COG)",
+            "Apple iPad 7th",
+            "8th",
+            "9th",
+            "10th Gen"
+        ],
+        "note": "Only legacy COG phones & iPads use a separate soldered/FPC Touch Digitizer glass. Modern TDDI Incell & AMOLED screens have touch built inside the panel—use bare Outer Refurb Glass only!"
+    },
+    {
+        "type": "CAM_PROT",
+        "subCat": "CAM_PROT",
+        "title": "Galaxy A35 5G / A55 5G & S25 Hoops Camera Protector — Samsung Galaxy A35 5G (SM-A356B) / Samsung Galaxy A55 5G (SM-A556B)",
+        "size": "Galaxy A35 5G / A55 5G & S25 Hoops Camera Protector",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A35 5G (SM-A356B)",
+            "Samsung Galaxy A55 5G (SM-A556B)",
+            "Samsung Galaxy S25 5G (SM-S931B)"
+        ],
+        "note": "Group 1: Galaxy A35 5G = Galaxy A55 5G share 3-Ring Camera Lens Frame Protectors"
+    },
+    {
+        "type": "SIM",
+        "subCat": "SIM",
+        "title": "23100RN82L / 2411DRN47C / M2101K7BG — Xiaomi Redmi 13C 4G (23100RN82L / 23106RN0DA)",
+        "size": "23100RN82L / 2411DRN47C / M2101K7BG",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G (23100RN82L",
+            "23106RN0DA)",
+            "POCO C65 (2310FPCA4G)",
+            "Redmi 14C 4G (2411DRN47C)",
+            "Redmi 14C 5G (2411DRN47I)",
+            "POCO C75 (2410FPCC5G)",
+            "Redmi Note 10 4G (M2101K7AG)",
+            "Redmi Note 10S (M2101K7BG)"
+        ],
+        "note": "Group 1: Redmi 13C 4G = POCO C65"
+    },
+    {
+        "type": "SIM",
+        "subCat": "SIM",
+        "title": "SM-A155F/A156B & SM-A165F/A166B (GH98) — Samsung Galaxy A15 4G (SM-A155F) / Galaxy A15 5G (SM-A156B",
+        "size": "SM-A155F/A156B & SM-A165F/A166B (GH98)",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A15 4G (SM-A155F)",
+            "Galaxy A15 5G (SM-A156B",
+            "U)",
+            "Galaxy A16 4G (SM-A165F)",
+            "Galaxy A16 5G (SM-A166B)"
+        ],
+        "note": "Group 1: Galaxy A15 4G = A15 5G"
+    },
+    {
+        "type": "SPK",
+        "subCat": "SPK",
+        "title": "SM-A165F / SM-A166P Ringer & GH98-47982A — Samsung Galaxy A16 4G (SM-A165F) / Galaxy A16 5G (SM-A166P",
+        "size": "SM-A165F / SM-A166P Ringer & GH98-47982A",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G (SM-A165F)",
+            "Galaxy A16 5G (SM-A166P",
+            "B)",
+            "Galaxy S23 (SM-S911)",
+            "Galaxy S23+ (SM-S916)",
+            "Galaxy S23 Ultra (SM-S918)"
+        ],
+        "note": "Galaxy A16 4G/5G share bare speaker core (check plastic frame antenna pads between 4G & 5G)"
+    },
+    {
+        "type": "BODY",
+        "subCat": "BODY",
+        "title": "Redmi 13C 4G (23100RN82L) vs 13C 5G (23124RN87G) Frame — Xiaomi Redmi 13C 4G (23100RN82L) / POCO C65 (2310FPCA4G)",
+        "size": "Redmi 13C 4G (23100RN82L) vs 13C 5G (23124RN87G) Frame",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G (23100RN82L)",
+            "POCO C65 (2310FPCA4G)",
+            "Xiaomi Redmi 13C 5G (23124RN87G)",
+            "POCO M6 5G"
+        ],
+        "note": "Group A Middle Frame: Redmi 13C 4G = POCO C65"
+    },
+    {
+        "type": "CAM",
+        "subCat": "CAM",
+        "title": "GH64-08988A & Redmi 13C / Poco C65 Camera Lens — Samsung Galaxy S23 (SM-S911) / Galaxy S23+ (SM-S916)",
+        "size": "GH64-08988A & Redmi 13C / Poco C65 Camera Lens",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy S23 (SM-S911)",
+            "Galaxy S23+ (SM-S916)",
+            "Xiaomi Redmi 13C 4G (23100RN82L)",
+            "POCO C65 (2310FPCA4G)"
+        ],
+        "note": "Group 1 (GH64-08988A Official Camera Lens): Galaxy S23 = Galaxy S23+"
+    },
+    {
+        "type": "CAM",
+        "subCat": "CAM",
+        "title": "GH96-15058A / GH96-17150A / GH96-15517A — Samsung Galaxy A13 4G (SM-A135F) / Galaxy A23 4G (SM-A235F)",
+        "size": "GH96-15058A / GH96-17150A / GH96-15517A",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A13 4G (SM-A135F)",
+            "Galaxy A23 4G (SM-A235F)",
+            "Galaxy A04s (SM-A047F)",
+            "Galaxy A23 5G (SM-A236B)",
+            "Galaxy A05s",
+            "Galaxy A06",
+            "Galaxy A16 4G",
+            "5G"
+        ],
+        "note": "Group 1 (GH96-15058A 8MP Front Cam): A13 4G = A23 4G"
+    },
+    {
+        "type": "CAM",
+        "subCat": "CAM",
+        "title": "1410102000080A / 1410101000249A / BF220C — Xiaomi Redmi 13C 4G / POCO C65",
+        "size": "1410102000080A / 1410101000249A / BF220C",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G",
+            "POCO C65",
+            "Redmi 13 4G",
+            "POCO M6 4G",
+            "Redmi Note 14S",
+            "Realme C11 (2020)",
+            "Realme C12",
+            "Realme C15"
+        ],
+        "note": "Group 1 (1410102000080A 8MP Front): Redmi 13C 4G = Poco C65"
+    },
+    {
+        "type": "CAM",
+        "subCat": "CAM",
+        "title": "3C40F02 & Multi-Brand Rear Camera Glass Lenses — Samsung Galaxy A10 / A20",
+        "size": "3C40F02 & Multi-Brand Rear Camera Glass Lenses",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A10",
+            "A20",
+            "A30",
+            "A40",
+            "Galaxy A52 4G",
+            "A52 5G",
+            "A52s 5G",
+            "A72",
+            "Vivo Y12",
+            "Y15",
+            "Y17",
+            "Vivo Y20",
+            "Y20i",
+            "Y20s",
+            "Y12s",
+            "OPPO A54 4G",
+            "A55 4G",
+            "A16",
+            "Huawei P40 Lite 5G",
+            "Nova 7 SE",
+            "iPhone 14 Pro",
+            "14 Pro Max"
+        ],
+        "note": "Replacement Rear Camera Sapphire/Glass Repair Lenses (with adhesive). Clean CMOS sensor with dry air only—never touch sensor with liquid IPA!"
+    },
+    {
+        "type": "FLEX",
+        "subCat": "FLEX",
+        "title": "70039079 (2x12 Pin) & 70039083 (2x20 Pin) Samsung BTB — Samsung Galaxy A04s (SM-A047F) / Galaxy A15 4G",
+        "size": "70039079 (2x12 Pin) & 70039083 (2x20 Pin) Samsung BTB",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A04s (SM-A047F)",
+            "Galaxy A15 4G",
+            "5G (SM-A155",
+            "A156)",
+            "Galaxy A16 4G",
+            "5G (SM-A165",
+            "A166)",
+            "Galaxy A25 5G (SM-A256)",
+            "Galaxy A34 5G (SM-A346B)",
+            "Galaxy A35 5G",
+            "Galaxy A54 5G",
+            "Galaxy A55 5G"
+        ],
+        "note": "Group 1 (2x12 Pin 24-Pin 0.4mm BTB Socket): A04s = A15 4G/5G = A16 4G/5G"
+    },
+    {
+        "type": "FLEX",
+        "subCat": "FLEX",
+        "title": "70041716 Battery BTB & 70038849 Main Flex — Samsung Galaxy A36 5G (SM-A366B) / Galaxy A56 5G (SM-A566B)",
+        "size": "70041716 Battery BTB & 70038849 Main Flex",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A36 5G (SM-A366B)",
+            "Galaxy A56 5G (SM-A566B)",
+            "Galaxy S22",
+            "S22+",
+            "S22 Ultra",
+            "Galaxy S23+",
+            "S23 Ultra"
+        ],
+        "note": "Group 1 (Battery BTB Connector 70041716): A36 5G = A56 5G = S22/S22+/S22U = S23+/S23U"
+    },
+    {
+        "type": "SPK",
+        "subCat": "SPK",
+        "title": "70039077 Original Samsung Microphone Module — Samsung Galaxy A16 5G (SM-A166B) / Galaxy A26 5G (SM-A266B)",
+        "size": "70039077 Original Samsung Microphone Module",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 5G (SM-A166B)",
+            "Galaxy A26 5G (SM-A266B)",
+            "Galaxy A35 5G",
+            "Galaxy A36 5G",
+            "Galaxy A54 5G",
+            "Galaxy A55 5G",
+            "Galaxy A56 5G"
+        ],
+        "note": "Original Digital SMD Microphone Module shared across 2023–2026 Samsung A-Series 5G sub-boards. Use low airflow (260°C) and shield the sound port hole from flux!"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "VNE-LX1 / VNE-N41 (6.5\" IPS) — Honor X6 4G (VNE-LX1 / LX2",
+        "size": "VNE-LX1 / VNE-N41 (6.5\" IPS)",
+        "conf": "Conditional",
+        "models": [
+            "Honor X6 4G (VNE-LX1",
+            "LX2",
+            "LX3)",
+            "Honor X6s (VNE-LX3)",
+            "Honor X8 5G (VNE-N41)",
+            "Honor 70 Lite 5G (RBN-NX1)",
+            "Honor Play 6C",
+            "Play 30",
+            "Honor X5 (VNA-LX2)"
+        ],
+        "note": "Shared 6.5\" HD+ V-Notch bare LCD assembly. When ordering With-Frame, match 4G (VNE-LX1) vs 5G (VNE-N41) frame."
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "RMO-NX1 vs ALI-NX1 Curved OLED — Honor X9a 5G (RMO-NX1) / Magic 5 Lite",
+        "size": "RMO-NX1 vs ALI-NX1 Curved OLED",
+        "conf": "Conditional",
+        "models": [
+            "Honor X9a 5G (RMO-NX1)",
+            "Magic 5 Lite",
+            "X40",
+            "Honor X9b 5G (ALI-NX1)",
+            "Magic 6 Lite",
+            "X50"
+        ],
+        "note": "Group A (6.67\" Curved OLED): Honor X9a 5G = Magic 5 Lite = Honor X40"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "XT2421 / XT2423 (IC3 6.56\" IPS) — Motorola Moto E14 (XT2421-12) / Moto G04 (XT2421-2",
+        "size": "XT2421 / XT2423 (IC3 6.56\" IPS)",
+        "conf": "Conditional",
+        "models": [
+            "Motorola Moto E14 (XT2421-12)",
+            "Moto G04 (XT2421-2",
+            "3)",
+            "Moto G04s",
+            "Moto G24 (XT2423-1)",
+            "Moto G24 Power (XT2425)",
+            "Moto G34 5G (XT2363)",
+            "Moto G Play 2024 (XT2413)",
+            "Moto G64 5G"
+        ],
+        "note": "Shared 90Hz/120Hz Center Punch-Hole bare LCD panel across 2024 Moto E/G series."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "QF50 (SB18D96852) & PC50 (SB18D86478) — Motorola Moto G04 (XT2421) / Moto G24 (XT2423)",
+        "size": "QF50 (SB18D96852) & PC50 (SB18D86478)",
+        "conf": "Conditional",
+        "models": [
+            "Motorola Moto G04 (XT2421)",
+            "Moto G24 (XT2423)",
+            "Moto G34 5G (XT2363)",
+            "Moto G 5G 2024 (XT2417)",
+            "Moto G Play 2024 (XT2413)",
+            "Moto G14 (XT2341)",
+            "Moto G54 5G (XT2343)"
+        ],
+        "note": "Group 1 (QF50): Moto G04 = G24 = G34 5G = G 5G 2024 = G Play 2024"
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "HB466596EFW / HB496590EFW — Honor X6 (VNE-LX1) / Honor X6s",
+        "size": "HB466596EFW / HB496590EFW",
+        "conf": "Conditional",
+        "models": [
+            "Honor X6 (VNE-LX1)",
+            "Honor X6s",
+            "Honor X8 5G (VNE-N41)",
+            "Honor 70 Lite 5G",
+            "Honor X6a",
+            "Huawei Nova Y61"
+        ],
+        "note": "Shared 5000mAh Li-Polymer battery family across Honor X6/X8 5G & Huawei Nova Y-series (Match exact HB code on label)."
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "Nokia 105 / 106 / itel 12-Pin — Nokia 105 (TA-1547) / Nokia 106 4G",
+        "size": "Nokia 105 / 106 / itel 12-Pin",
+        "conf": "Conditional",
+        "models": [
+            "Nokia 105 (TA-1547)",
+            "Nokia 106 4G",
+            "itel Keypad Series",
+            "Nokia 110"
+        ],
+        "note": "SPI 4-wire color display. Pinout check: Pins 1-2 = LED Backlight (+/-), Pin 5 = VCC 3.3V, Pins 6-10 = SPI Data/Clock/CS lines."
+    },
+    {
+        "type": "PORT",
+        "subCat": "PORT",
+        "title": "Samsung B310E Micro-USB / V8 — Samsung B310E Guru Music 2 / Samsung B350E",
+        "size": "Samsung B310E Micro-USB / V8",
+        "conf": "Conditional",
+        "models": [
+            "Samsung B310E Guru Music 2",
+            "Samsung B350E",
+            "Metro 360"
+        ],
+        "note": "Standard 5-pin Micro-USB charging jack. Check input fuse, diode and 5V VBUS rail if charging indication fails."
+    },
+    {
+        "type": "SPK",
+        "subCat": "SPK",
+        "title": "Z Flip5 / Z Flip6 / S9 / S20 Ultra Speaker — Samsung Galaxy Z Flip5 (SM-F731) / Galaxy Z Flip6 (SM-F741)",
+        "size": "Z Flip5 / Z Flip6 / S9 / S20 Ultra Speaker",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy Z Flip5 (SM-F731)",
+            "Galaxy Z Flip6 (SM-F741)",
+            "Galaxy S9 (SM-G960F)",
+            "Galaxy S20 Ultra (SM-G988)",
+            "Galaxy S9+",
+            "S10",
+            "S20",
+            "Note 10+"
+        ],
+        "note": "Shared OEM Loudspeaker Core across Samsung Flagship & Z Flip foldable series."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "EB-BA166ABY / EB-BA166ABE — Samsung Galaxy A16 4G (SM-A165F) / Samsung Galaxy A16 5G (SM-A166B)",
+        "size": "EB-BA166ABY / EB-BA166ABE",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G (SM-A165F)",
+            "Samsung Galaxy A16 5G (SM-A166B)",
+            "Samsung Galaxy A17 4G (SM-A175)",
+            "Samsung Galaxy A17 5G (SM-A176)",
+            "Samsung Galaxy A26 5G (SM-A266)"
+        ],
+        "note": "5000mAh (4860mAh rated) 3.88V Li-Polymer Battery. Corroborated across All-Spares & GsmServer."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "BN5Q (1330101000156B) — Xiaomi Redmi 13C 4G / Xiaomi Redmi 13C 5G",
+        "size": "BN5Q (1330101000156B)",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G",
+            "Xiaomi Redmi 13C 5G",
+            "POCO C65",
+            "POCO M6 5G"
+        ],
+        "note": "5000mAh 3.84V OEM Service Pack & replacement battery family."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "BN5X (1330101000187A) — Xiaomi Redmi 14C 4G / POCO C75 4G",
+        "size": "BN5X (1330101000187A)",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 14C 4G",
+            "POCO C75 4G",
+            "Redmi A3 Pro 4G (Conditional)",
+            "Redmi 14R 5G (Conditional)"
+        ],
+        "note": "5160mAh typical (5060mAh rated) 3.84V / 4.45V limit. Strongly confirmed for 14C 4G & C75 4G; verify printed label on A3 Pro / 14R 5G / 14C 5G before installing."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "BLP923 (4909849) — OPPO A57 4G (CPH2387) / OPPO A57s (CPH2385)",
+        "size": "BLP923 (4909849)",
+        "conf": "Conditional",
+        "models": [
+            "OPPO A57 4G (CPH2387)",
+            "OPPO A57s (CPH2385)",
+            "OPPO A77 4G (CPH2385)",
+            "OPPO A77 5G (CPH2339)",
+            "OnePlus Nord N20 SE",
+            "Realme C51 (Conditional)",
+            "OPPO A77s",
+            "A78 5G",
+            "A97 5G (Conditional)"
+        ],
+        "note": "5000mAh 3.87V Li-Polymer. Core OPPO/OnePlus subset corroborated by Headlane & FixPart; check BTB & VOOC handshake on Realme C51."
+    },
+    {
+        "type": "CC",
+        "subCat": "CC",
+        "title": "GH96-18451A vs GH96-18449A — Samsung Galaxy A16 4G (SM-A165F) / Samsung Galaxy A16 5G (SM-A166B)",
+        "size": "GH96-18451A vs GH96-18449A",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G (SM-A165F)",
+            "Samsung Galaxy A16 5G (SM-A166B)"
+        ],
+        "note": "A16 4G Charging Board = GH96-18451A"
+    },
+    {
+        "type": "FLEX",
+        "subCat": "FLEX",
+        "title": "1350204000384A & Realme C51 Key Strip — Xiaomi Redmi 13C 4G / Redmi 13C 5G",
+        "size": "1350204000384A & Realme C51 Key Strip",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G",
+            "Redmi 13C 5G",
+            "POCO C65",
+            "Redmi 14C 4G",
+            "POCO C75"
+        ],
+        "note": "Group 1 (Xiaomi 1350204000384A): Redmi 13C 4G/5G = Poco C65 = Redmi 14C 4G = Poco C75 Power/Volume Flex"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "LM5C4090F0-A1 / FPC-WTF067H003 /LM5C3803F-A1 — Xiaomi Redmi 13C / Poco C65",
+        "size": "LM5C4090F0-A1 / FPC-WTF067H003 /LM5C3803F-A1",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C",
+            "Poco C65",
+            "Realme C51",
+            "C53",
+            "Narzo N53",
+            "Note 50",
+            "OPPO A17",
+            "A18",
+            "A38",
+            "A57",
+            "A77",
+            "A78 5G"
+        ],
+        "note": "Newly verified factory FPC stencils: Redmi 13C/C65 = LM5C4090F0-A1 / LM5C4254F0-A1 / BV067WBM-L04-XS01"
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "EB-BA166ABY / EB-BA166ABE — Samsung Galaxy A16 4G (SM-A165F) / Samsung Galaxy A16 5G (SM-A166B)",
+        "size": "EB-BA166ABY / EB-BA166ABE",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G (SM-A165F)",
+            "Samsung Galaxy A16 5G (SM-A166B)",
+            "Samsung Galaxy A17 4G (SM-A175)",
+            "Samsung Galaxy A17 5G (SM-A176)",
+            "Samsung Galaxy A26 5G (SM-A266)"
+        ],
+        "note": "5000mAh (4860mAh rated) 3.88V Li-Polymer Battery. Corroborated across All-Spares & GsmServer."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "BN5Q (1330101000156B) — Xiaomi Redmi 13C 4G / Xiaomi Redmi 13C 5G",
+        "size": "BN5Q (1330101000156B)",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G",
+            "Xiaomi Redmi 13C 5G",
+            "POCO C65",
+            "POCO M6 5G"
+        ],
+        "note": "5000mAh 3.84V OEM Service Pack & replacement battery family."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "BN5X (1330101000187A) — Xiaomi Redmi 14C 4G / POCO C75 4G",
+        "size": "BN5X (1330101000187A)",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 14C 4G",
+            "POCO C75 4G",
+            "Redmi A3 Pro 4G (Conditional)",
+            "Redmi 14R 5G (Conditional)"
+        ],
+        "note": "5160mAh typical (5060mAh rated) 3.84V / 4.45V limit. Strongly confirmed for 14C 4G & C75 4G; verify printed label on A3 Pro / 14R 5G / 14C 5G before installing."
+    },
+    {
+        "type": "BATTERY",
+        "subCat": "BATTERY",
+        "title": "BLP923 (4909849) — OPPO A57 4G (CPH2387) / OPPO A57s (CPH2385)",
+        "size": "BLP923 (4909849)",
+        "conf": "Conditional",
+        "models": [
+            "OPPO A57 4G (CPH2387)",
+            "OPPO A57s (CPH2385)",
+            "OPPO A77 4G (CPH2385)",
+            "OPPO A77 5G (CPH2339)",
+            "OnePlus Nord N20 SE",
+            "Realme C51 (Conditional)",
+            "OPPO A77s",
+            "A78 5G",
+            "A97 5G (Conditional)"
+        ],
+        "note": "5000mAh 3.87V Li-Polymer. Core OPPO/OnePlus subset corroborated by Headlane & FixPart; check BTB & VOOC handshake on Realme C51."
+    },
+    {
+        "type": "CC",
+        "subCat": "CC",
+        "title": "GH96-18451A vs GH96-18449A — Samsung Galaxy A16 4G (SM-A165F) / Samsung Galaxy A16 5G (SM-A166B)",
+        "size": "GH96-18451A vs GH96-18449A",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G (SM-A165F)",
+            "Samsung Galaxy A16 5G (SM-A166B)"
+        ],
+        "note": "A16 4G Charging Board = GH96-18451A"
+    },
+    {
+        "type": "FLEX",
+        "subCat": "FLEX",
+        "title": "1350204000384A & Realme C51 Key Strip — Xiaomi Redmi 13C 4G / Redmi 13C 5G",
+        "size": "1350204000384A & Realme C51 Key Strip",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C 4G",
+            "Redmi 13C 5G",
+            "POCO C65",
+            "Redmi 14C 4G",
+            "POCO C75"
+        ],
+        "note": "Group 1 (Xiaomi 1350204000384A): Redmi 13C 4G/5G = Poco C65 = Redmi 14C 4G = Poco C75 Power/Volume Flex"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "LM5C4090F0-A1 / FPC-WTF067H003 /LM5C3803F-A1 — Xiaomi Redmi 13C / Poco C65",
+        "size": "LM5C4090F0-A1 / FPC-WTF067H003 /LM5C3803F-A1",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 13C",
+            "Poco C65",
+            "Realme C51",
+            "C53",
+            "Narzo N53",
+            "Note 50",
+            "OPPO A17",
+            "A18",
+            "A38",
+            "A57",
+            "A77",
+            "A78 5G"
+        ],
+        "note": "Newly verified factory FPC stencils: Redmi 13C/C65 = LM5C4090F0-A1 / LM5C4254F0-A1 / BV067WBM-L04-XS01"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "CPD2354 / CP02354 — Vivo Y28 4G (V2352 / V2353)",
+        "size": "CPD2354 / CP02354",
+        "conf": "Conditional",
+        "models": [
+            "Vivo Y28 4G (V2352",
+            "V2353)",
+            "Vivo Y19s (V2419)",
+            "Vivo Y37 Pro (V2354A)",
+            "Vivo Y38 5G",
+            "Vivo Y29 5G (V2434)"
+        ],
+        "note": "6.68\" HD+ (1608x720) 90Hz Punch-Hole LCD. Do NOT confuse with Vivo Y28 5G (V2315 V-Notch) or T3x/T4x (6.72\" FHD+)!"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "BV067BRM-L00-XB00 / 2667A65-02-015 — OPPO A60 4G (CPH2631) / OPPO A3x 4G (CPH2641)",
+        "size": "BV067BRM-L00-XB00 / 2667A65-02-015",
+        "conf": "Conditional",
+        "models": [
+            "OPPO A60 4G (CPH2631)",
+            "OPPO A3x 4G (CPH2641)",
+            "OPPO A3 4G (CPH2669)",
+            "OPPO A40",
+            "A40m (CPH2669)",
+            "OPPO A5i (CPH2773)",
+            "OPPO A58 4G (CPH2577)",
+            "OPPO A79 5G (CPH2553)",
+            "OPPO A80 5G (CPH2639)",
+            "Realme C55 (RMX3710)",
+            "Realme C65 4G (RMX3910)",
+            "Realme C67 4G (RMX3890)",
+            "Realme C75 4G",
+            "5G (RMX3941",
+            "3943)",
+            "Realme C75x (RMX5020)",
+            "Realme 14x 5G (RMX3940)"
+        ],
+        "note": "OEM FPC: BV067BRM-L00-XB00"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "GH82-36253A / GH82-36280A / GH82-36143A — Samsung Galaxy A16 4G (SM-A165F / SM-A165M)",
+        "size": "GH82-36253A / GH82-36280A / GH82-36143A",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G (SM-A165F",
+            "SM-A165M)",
+            "Samsung Galaxy A16 5G (SM-A166B)"
+        ],
+        "note": "A16 4G With-Frame = GH82-36253A, A16 4G Bare OLED = GH82-36280A"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "GH82-36827A / GH82-36829B / GH82-36327A — Samsung Galaxy A56 5G (SM-A566B) / Samsung Galaxy S25 5G (SM-S931B)",
+        "size": "GH82-36827A / GH82-36829B / GH82-36327A",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A56 5G (SM-A566B)",
+            "Samsung Galaxy S25 5G (SM-S931B)"
+        ],
+        "note": "Official 2025/2026 Service Pack Codes: Galaxy A56 5G = GH82-36827A (Bare) / GH82-36829B & C (With Frame)"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "5600020C3NL00 (6.88\" IPS Group) — Xiaomi Redmi 14C 4G / Redmi 14C 5G",
+        "size": "5600020C3NL00 (6.88\" IPS Group)",
+        "conf": "Conditional",
+        "models": [
+            "Xiaomi Redmi 14C 4G",
+            "Redmi 14C 5G",
+            "Redmi 14R 5G",
+            "Redmi A3 Pro",
+            "Redmi A4 5G",
+            "POCO C75",
+            "POCO C71"
+        ],
+        "note": "Shared 6.88\" 120Hz V-Notch HD+ LCD panel. Confirm With-Frame vs Without-Frame when ordering for A3 Pro / A4 vs 14C / C75."
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "X6852 / X6850 / X6871 (6.78\" AMOLED) — Infinix Note 40 4G (X6853) / Infinix Note 40 5G (X6852)",
+        "size": "X6852 / X6850 / X6871 (6.78\" AMOLED)",
+        "conf": "Conditional",
+        "models": [
+            "Infinix Note 40 4G (X6853)",
+            "Infinix Note 40 5G (X6852)",
+            "Infinix Note 40 Pro 4G (X6850)",
+            "Infinix GT 20 Pro (X6871)",
+            "Tecno Camon 30 4G",
+            "5G"
+        ],
+        "note": "Shared 6.78\" FHD+ AMOLED bare display panel (Check flat vs curved glass edge on Pro variants and calibrate optical FP!)."
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "Moto G53 / G34 / G45 Group — Motorola Moto G13 / Moto G23",
+        "size": "Moto G53 / G34 / G45 Group",
+        "conf": "Conditional",
+        "models": [
+            "Motorola Moto G13",
+            "Moto G23",
+            "Moto G34 5G",
+            "Moto G45 5G",
+            "Moto G53 5G"
+        ],
+        "note": "Shared 6.5\" HD+ 120Hz Center Punch-Hole IPS bare display panel (Confirm frame bezel before gluing)."
+    },
+    {
+        "type": "GLASS",
+        "subCat": "GLASS",
+        "title": "3807 — Samsung Galaxy A16 4G / Samsung Galaxy A16 5G",
+        "size": "3807",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G",
+            "Samsung Galaxy A16 5G"
+        ],
+        "note": "EAN 5715685014987; PanzerGlass Ultra-Wide Fit Clear Glass. Verified exact SKU from official 2025 catalogue."
+    },
+    {
+        "type": "GLASS",
+        "subCat": "GLASS",
+        "title": "PGRNUWFG29845 — Apple iPhone 13 / Apple iPhone 13 Pro",
+        "size": "PGRNUWFG29845",
+        "conf": "Conditional",
+        "models": [
+            "Apple iPhone 13",
+            "Apple iPhone 13 Pro",
+            "Apple iPhone 14",
+            "Apple iPhone 16e",
+            "Apple iPhone 17e"
+        ],
+        "note": "EAN 5715685021046; PanzerGlass Ultra-Wide Fit Clear Glass (Shared 5-model official SKU)."
+    },
+    {
+        "type": "GLASS",
+        "subCat": "GLASS",
+        "title": "PGRPUWFG29845 — Apple iPhone 13 / Apple iPhone 13 Pro",
+        "size": "PGRPUWFG29845",
+        "conf": "Conditional",
+        "models": [
+            "Apple iPhone 13",
+            "Apple iPhone 13 Pro",
+            "Apple iPhone 14",
+            "Apple iPhone 16e"
+        ],
+        "note": "EAN 5715685021053; PanzerGlass 2-Way Privacy Ultra-Wide Fit Glass."
+    },
+    {
+        "type": "CAM_PROT",
+        "subCat": "CAM_PROT",
+        "title": "3810 / 3809 — Samsung Galaxy A16 4G / Samsung Galaxy A16 5G",
+        "size": "3810 / 3809",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy A16 4G",
+            "Samsung Galaxy A16 5G"
+        ],
+        "note": "PanzerGlass Hoops Camera Lens Protector (3810 = Transparent Crystal, 3809 = Black Ring). External stick-on accessory."
+    },
+    {
+        "type": "CAM_PROT",
+        "subCat": "CAM_PROT",
+        "title": "PGRHOTRG29845 — Apple iPhone 16e / Apple iPhone 17e",
+        "size": "PGRHOTRG29845",
+        "conf": "Conditional",
+        "models": [
+            "Apple iPhone 16e",
+            "Apple iPhone 17e"
+        ],
+        "note": "PanzerGlass Hoops Transparent Camera Lens Protector for iPhone 16e / 17e."
+    },
+    {
+        "type": "GLASS",
+        "subCat": "GLASS",
+        "title": "⭕ No-Cut / Without-Hole (不開孔) — Realme C55 / Realme C67",
+        "size": "⭕ No-Cut / Without-Hole (不開孔)",
+        "conf": "Conditional",
+        "models": [
+            "Realme C55",
+            "Realme C67",
+            "Vivo T3x 5G",
+            "Vivo T4x 5G",
+            "Oppo A60",
+            "OnePlus Nord CE 3 Lite 5G"
+        ],
+        "note": "6.72\" Master No-Cut Clear-Top Glass. Transparent over front camera to fit both Punch-Hole and V-Notch displays without blocking the selfie lens."
     }
 ];
