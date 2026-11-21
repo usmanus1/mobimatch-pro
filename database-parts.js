@@ -2533,5 +2533,16 @@ window.defaultData = [
             "iFixit’s Apple HomeView teardown reveals a de"
         ],
         "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — Best Bike Phone Mounts of 2026 - GearLab",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Best Bike Phone Mounts of 2026 - GearLab"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
