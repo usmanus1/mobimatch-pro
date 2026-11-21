@@ -2610,5 +2610,16 @@ window.defaultData = [
             "[JerryRigEverything] BE GENTLE WITH YOUR NEW iPHONE DUO"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — [JerryRigEverything] iPhone Duo Teardown – APPLE SHOULD",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "[JerryRigEverything] iPhone Duo Teardown – APPLE SHOULD"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
