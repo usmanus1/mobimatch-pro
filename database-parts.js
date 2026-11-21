@@ -2566,5 +2566,16 @@ window.defaultData = [
             "The Best Bike Phone Mounts of 2026 - Bikerumor"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "GLASS",
+        "subCat": "GLASS",
+        "title": "NEW-SKU — Top 5 Best Vizio Tv Stand 2026 - Pixelfy.me",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Top 5 Best Vizio Tv Stand 2026 - Pixelfy.me"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
