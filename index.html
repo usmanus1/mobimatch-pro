@@ -476,6 +476,9 @@
                 <button onclick="mmOpen(3)" class="text-[11px] bg-slate-900 hover:bg-slate-800 text-amber-400 px-2.5 py-1 rounded-full font-bold shadow-xs flex items-center gap-1">
                     <i class="fas fa-code-compare"></i> <span id="subBtnCompare">Compare 2 Phones</span>
                 </button>
+                <button onclick="openWallChartModal()" class="text-[11px] bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white px-2.5 py-1 rounded-full font-extrabold shadow-xs flex items-center gap-1 transition">
+                    <i class="fas fa-print"></i> <span id="subBtnWallChart">Print Free Wall Chart</span>
+                </button>
             </div>
         </div>
 
@@ -903,6 +906,41 @@
         </div>
     </div>
 
+    <!-- 🖨️ PRINTABLE SHOP WALL CHART + QR CODE MODAL -->
+    <div id="wallChartModal" class="hidden fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl" dir="ltr">
+            <div class="flex justify-between items-center mb-3 border-b pb-2">
+                <h3 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                    <i class="fas fa-print text-rose-600"></i> Free A4 Shop Wall Chart + QR Poster
+                </h3>
+                <button onclick="toggleModal('wallChartModal')" class="text-slate-400 hover:text-slate-600 text-lg">✕</button>
+            </div>
+            <div class="space-y-2.5 text-xs">
+                <div class="p-2.5 bg-amber-50 border border-amber-300 rounded-xl text-amber-950 font-semibold text-[11px]">
+                    📌 Print this 1-page A4 Reference Chart for your repair bench wall! Includes <b>Top 5 Universal Glasses</b>, <b>Top 2026 Universal LCD Stencils</b>, <b>Batteries &amp; ICs</b>, <b>Diagnostic Codes</b>, and a scannable <b>QR Code</b> for live updates.
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">🏪 Your Shop Name (Optional — prints on top of poster):</label>
+                    <input type="text" id="wcShopName" placeholder="e.g. Al-Madina Mobile Repairing Center" class="w-full p-2.5 rounded-xl border border-slate-300 font-bold text-slate-900">
+                </div>
+                <div>
+                    <label class="font-bold text-slate-700 block mb-1">📞 Your Shop Phone / WhatsApp (Optional):</label>
+                    <input type="text" id="wcShopPhone" placeholder="e.g. +966 5X XXX XXXX / 0300-XXXXXXX" class="w-full p-2.5 rounded-xl border border-slate-300 font-semibold text-slate-900">
+                </div>
+                <div class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://www.mobimatchpro.com/" alt="MobiMatch Pro QR" class="w-14 h-14 rounded-lg border border-slate-300 bg-white p-0.5 shrink-0">
+                    <div class="text-[11px] text-slate-700">
+                        <b class="text-slate-900 block">Live QR Code Included Automatically</b>
+                        Technicians &amp; staff can scan the wall chart anytime to search 8,000+ models on <b>www.mobimatchpro.com</b>.
+                    </div>
+                </div>
+                <button onclick="generatePrintableWallChart()" class="w-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-500 hover:to-orange-400 text-white font-extrabold py-3 rounded-xl text-xs shadow-lg flex items-center justify-center gap-2 transition">
+                    <i class="fas fa-print"></i> Print / Save A4 Wall Chart (PDF)
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Shop Tools 10-Tab Modal (Includes AI Repair Wizard, Stock Drawers, Donor Phones, Panic Log, Queue & Supplier Catalogue Importer) -->
     <div id="mmModal" class="fixed inset-0 z-50 hidden bg-black/60 p-2 overflow-y-auto flex items-center justify-center">
         <div class="bg-white text-slate-800 rounded-2xl max-w-2xl w-full mx-auto p-4 my-4 shadow-2xl" dir="ltr">
@@ -957,6 +995,7 @@
                 subDrawer: "Drawer Stock",
                 subDonor: "Donor Phones",
                 subCompare: "Compare 2 Phones",
+                subWallChart: "Print Free Wall Chart",
                 fabChat: "AI Repair Assistant",
                 fabTools: "Shop Tools (10)",
                 sponsorTitle: "Promote Your Mobile Parts & LCD Wholesale Shop Here!",
@@ -997,6 +1036,7 @@
                 subDrawer: "Drawer Stock",
                 subDonor: "Scrap Donor Phones",
                 subCompare: "2 Phones Milayein",
+                subWallChart: "Free Shop Chart Print",
                 fabChat: "AI Repair Ustaz",
                 fabTools: "Shop Tools (10)",
                 sponsorTitle: "Apni Mobile Parts & LCD Wholesale Dukan ka Ishtihar Yahan Lagayein!",
@@ -1103,6 +1143,7 @@
             document.getElementById('subBtnDrawer').innerText = uiText('subDrawer');
             document.getElementById('subBtnDonor').innerText = uiText('subDonor');
             document.getElementById('subBtnCompare').innerText = uiText('subCompare');
+            const wcEl = document.getElementById('subBtnWallChart'); if (wcEl) wcEl.innerText = uiText('subWallChart');
             document.getElementById('fabChatLabel').innerText = uiText('fabChat');
             document.getElementById('fabToolsLabel').innerText = uiText('fabTools');
             document.getElementById('lblSponsorTitle').innerText = uiText('sponsorTitle');
@@ -1554,6 +1595,161 @@
         function requestSupplierQuote(phone) {
             const part = document.getElementById('supPartInput').value.trim() || 'Universal LCD Rate List';
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent('Salam, I need wholesale rate for: ' + part)}`, '_blank');
+        }
+
+        function openWallChartModal() {
+            const savedName = localStorage.getItem('mobimatch_shop_name') || '';
+            const savedPhone = localStorage.getItem('mobimatch_shop_phone') || '';
+            const nameEl = document.getElementById('wcShopName');
+            const phoneEl = document.getElementById('wcShopPhone');
+            if (nameEl) nameEl.value = savedName;
+            if (phoneEl) phoneEl.value = savedPhone;
+            document.getElementById('wallChartModal').classList.remove('hidden');
+        }
+
+        function generatePrintableWallChart() {
+            const shopName = ((document.getElementById('wcShopName') || {}).value || '').trim();
+            const shopPhone = ((document.getElementById('wcShopPhone') || {}).value || '').trim();
+            if (shopName) localStorage.setItem('mobimatch_shop_name', shopName);
+            if (shopPhone) localStorage.setItem('mobimatch_shop_phone', shopPhone);
+
+            const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const shopBanner = shopName
+                ? `<div class="shop-tag">🏪 ${esc(shopName)}${shopPhone ? ' &nbsp;|&nbsp; 📞 ' + esc(shopPhone) : ''}</div>`
+                : '';
+
+            const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=4&data=https://www.mobimatchpro.com/';
+            const todayStr = new Date().toISOString().slice(0, 10);
+
+            const chartHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MobiMatch Pro — Free Shop Wall Reference Chart (A4)</title>
+<style>
+    @page { size: A4 portrait; margin: 9mm; }
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #0f172a; background: #fff; font-size: 10.5px; line-height: 1.32; }
+    .page { max-width: 210mm; margin: 0 auto; border: 2.5px solid #0f172a; border-radius: 10px; overflow: hidden; }
+    .hdr { background: #0f172a; color: #fff; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .hdr h1 { margin: 0; font-size: 19px; letter-spacing: -0.3px; color: #facc15; }
+    .hdr p { margin: 2px 0 0 0; font-size: 10.5px; color: #cbd5e1; }
+    .shop-tag { margin-top: 5px; display: inline-block; background: #1e293b; border: 1px solid #facc15; color: #fef08a; padding: 2px 8px; border-radius: 5px; font-weight: 800; font-size: 11px; }
+    .qr-box { background: #fff; padding: 4px; border-radius: 7px; text-align: center; shrink: 0; }
+    .qr-box img { width: 68px; height: 68px; display: block; margin: 0 auto; }
+    .qr-box span { display: block; font-size: 8.5px; font-weight: 900; color: #0f172a; margin-top: 2px; }
+    .body { padding: 9px 12px; }
+    .sec-title { background: #1e293b; color: #fff; font-weight: 800; font-size: 11px; padding: 4px 8px; border-radius: 5px; margin: 7px 0 5px 0; text-transform: uppercase; letter-spacing: 0.3px; }
+    .sec-title.amber { background: #b45309; }
+    .sec-title.blue { background: #1d4ed8; }
+    .sec-title.emerald { background: #047857; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 5px; font-size: 9.8px; }
+    th, td { border: 1px solid #cbd5e1; padding: 4px 6px; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; font-weight: 800; color: #0f172a; }
+    .badge { display: inline-block; padding: 1px 5px; border-radius: 4px; font-weight: 800; font-size: 8.8px; }
+    .b-cut { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+    .b-nocut { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .box { border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; background: #f8fafc; font-size: 9.6px; }
+    .box b { color: #0f172a; }
+    .warn { background: #fef2f2; border: 1.5px solid #fca5a5; color: #991b1b; padding: 5px 8px; border-radius: 6px; font-size: 9.5px; font-weight: 700; margin-top: 6px; }
+    .ftr { background: #f1f5f9; border-top: 2px solid #0f172a; padding: 6px 12px; display: flex; justify-content: space-between; align-items: center; font-size: 9.8px; font-weight: 800; color: #0f172a; }
+    .no-print { text-align: center; padding: 10px; background: #fef3c7; border-bottom: 1px solid #fcd34d; }
+    .no-print button { background: #0f172a; color: #facc15; border: none; padding: 8px 18px; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 13px; }
+    @media print { .no-print { display: none !important; } body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="no-print">
+    <button onclick="window.print()">🖨️ Print Now / Save as PDF (A4)</button>
+</div>
+<div class="page">
+    <div class="hdr">
+        <div>
+            <h1>MOBIMATCH PRO — 2026 UNIVERSAL SHOP WALL CHART</h1>
+            <p>Top Universal Tempered Glasses • 2026 LCD Folder Stencils • Batteries &amp; ICs • Factory Test Codes</p>
+            ${shopBanner}
+        </div>
+        <div class="qr-box">
+            <img src="${qrUrl}" alt="Scan MobiMatch Pro">
+            <span>SCAN FOR 8,000+ MODELS</span>
+        </div>
+    </div>
+    <div class="body">
+        <div class="sec-title amber">1. Top 5 Must-Stock Universal Tempered Glasses (Covers ~80% Daily Customers)</div>
+        <table>
+            <thead><tr><th style="width:22%">Master Glass / Cut</th><th style="width:15%">Cutout Type</th><th>Compatible High-Volume Models</th></tr></thead>
+            <tbody>
+                <tr><td><b>#1. 6.5"–6.56" Super-D</b><br>(SG026 / MTG0073)</td><td><span class="badge b-cut">💧 Waterdrop Cut</span></td><td>Vivo Y20/Y21/Y16/Y17s/Y28 5G/Y33s • OPPO A15/A16/A17/A18/A38/A57/A78 5G • Realme C11/C12/C15/C20/C21/C30/C33/C35 • Samsung A12/A02s/A03s/A04/A04s/A13 5G • Redmi 9A/9C/10A • Infinix Hot 30i (Dry-Fit)/Smart 7 • Tecno Spark 10C</td></tr>
+                <tr><td><b>#2. 6.67"–6.72" Master</b><br>(SG065 / SG069)</td><td><span class="badge b-nocut">⭕ No-Cut (Clear)</span></td><td>Realme C55/C65/C67/C75/11/12/12x • OPPO A58 4G/A60/A79/A98/A3x/F23 • Vivo T3x/T4x/Y28 4G/Y29 • OnePlus Nord CE3 Lite/N30 • Redmi Note 12/13 4G &amp; 5G / POCO X5/X6</td></tr>
+                <tr><td><b>#3. 6.7"–6.74" Large</b><br>(U/V-Notch)</td><td><span class="badge b-cut">💧 Waterdrop Cut</span></td><td>Samsung A05/A05s/A06/A07/A16/A17 • Realme C51/C53/C61/C63 4G/Note 50/Note 60 • Redmi 12C/13C 4G &amp; 5G / A3 / POCO C55/C65</td></tr>
+                <tr><td><b>#4. 6.56"–6.6" Hole</b><br>(Dynamic Punch)</td><td><span class="badge b-nocut">⭕ No-Cut (Clear)</span></td><td>Infinix Smart 8/Hot 40i/Smart 9/Hot 50i • Tecno Spark 20/20C/Go 2024/Pop 8/Spark 30C/Pop 9 • itel P55/A70/P65/A80 • OPPO A53/A54/A76 • Realme 8i/9i</td></tr>
+                <tr><td><b>#5. Apple iPhone Flat</b><br>(6.1" &amp; 6.7")</td><td><span class="badge b-nocut">🔲 Sensor Open</span></td><td><b>6.1" (AGL03385):</b> iPhone 13 = 13 Pro = 14 = 16e = 17e (Clear also fits 12/12 Pro) • <b>6.1" Dynamic Island:</b> iPhone 16 = 15 = 14 Pro • <b>6.7":</b> 16 Plus = 15 Plus = 14 Pro Max</td></tr>
+            </tbody>
+        </table>
+
+        <div class="sec-title blue">2. Top 2026 Universal LCD / Folder Backplate Stencils (Bench Verified)</div>
+        <table>
+            <thead><tr><th style="width:24%">Stencil / FPC Code</th><th style="width:16%">Screen Spec</th><th>Verified Compatible Models (Dry-Test Before Gluing!)</th></tr></thead>
+            <tbody>
+                <tr><td><b>BL-KL65A35.60</b> (Updated)</td><td>6.51"–6.58" V-Notch</td><td>Vivo Y20 / Y12s / Y15s / Y21 / Y22 / Y16 / Y17s / Y28 5G / Y33s / Y56 5G / Y75 5G / T1 / T2x 5G</td></tr>
+                <tr><td><b>RMX3710 / BV067BRM</b></td><td>6.72" Punch-Hole</td><td>Realme C55 / C65 / C67 / C75 / 11 / 12x / 14x • OPPO A58 4G / A60 / A3x / A79 / A98 • Nord CE3 Lite / N30</td></tr>
+                <tr><td><b>SK67025A-B-BOE</b> (2026)</td><td>6.7" 120Hz Hole</td><td>Realme 15x 5G (RMX5250) = Realme C85 4G/5G = OPPO A6x 4G/5G = OPPO K14x = OnePlus Nord N6</td></tr>
+                <tr><td><b>830-098201 / AE220-TXD</b></td><td>6.67" 120Hz Hole</td><td>Realme C83 5G = OPPO A6c = Realme C100 5G = Realme C100i = Narzo 100 Lite</td></tr>
+                <tr><td><b>KTM667Y28-01 / TM6700</b></td><td>6.72" Punch-Hole</td><td>Vivo T3x 5G = Vivo T4x 5G = iQOO Z9x / Z10x = Vivo Y58 5G = Y28 4G / Y29 / Y19s / Y38 5G (❌ Not Y28 5G)</td></tr>
+                <tr><td><b>830-066718-2B18-02</b></td><td>6.67" Flat AMOLED</td><td>Vivo Y200 5G = Y200e = T3 5G = iQOO Z9 5G = V29e Global Flat = V30 Lite = V40 Lite = Y300 5G</td></tr>
+                <tr><td><b>X6531 / LK5</b> (Transsion)</td><td>6.67" 120Hz Hole</td><td>Infinix Hot 50 5G / Hot 50i / Smart 9 / Note 50x • Tecno Spark Go 1 / Spark 30C / Pop 9 • itel P65 / A80</td></tr>
+                <tr><td><b>CAA-LHD26-07-20</b></td><td>6.78" FHD+ Hole</td><td>Infinix Hot 30 / Note 30 4G &amp; 5G / Hot 40 / Hot 40 Pro • Tecno Spark 10 Pro / 20 Pro / Pova 5 / Pova 6 Neo</td></tr>
+                <tr><td><b>560002C3UA00 / E003</b></td><td>6.74" / 6.5" IPS</td><td><b>560002C3UA00:</b> Redmi 13C 4G = POCO C65 (Check Frame!) • <b>E003 FPC:</b> Samsung A12 / M12 / F12 / A02 / A32 5G / A04s</td></tr>
+            </tbody>
+        </table>
+
+        <div class="grid2">
+            <div>
+                <div class="sec-title emerald">3. Top Universal Batteries &amp; Motherboard ICs</div>
+                <div class="box">
+                    <b>• EB-BA217ABY (5000mAh):</b> Samsung A12 / A127F / A21s / A13 4G / A04s / A02s / A03s / M12<br>
+                    <b>• EB-BA166ABY:</b> Samsung A16 4G/5G = A17 = A26 5G<br>
+                    <b>• BLP729 (23 Models):</b> Realme C11/C20/C21/C3/5/5i/6i, OPPO A5/A9 2020<br>
+                    <b>• BLP923:</b> Realme C51/C53/Note 50, OPPO A57/A77/A78 5G<br>
+                    <b>• BN56:</b> Redmi 9A/9C/10A/A1/A2/POCO C3/C31 • <b>BN5Q:</b> Redmi 13C/C65<br>
+                    <b>• MT6357CRV = MRV</b> (❌ Not V) • <b>MT6358W:</b> Helio G70–G88 (100+ Models)<br>
+                    <b>• PM4250:</b> SD 460/662/680 • <b>S2MU106X01 (#1203-009213):</b> Samsung A10–A55/S24<br>
+                    <b>• SM5109 = NT50358A = TPS65132:</b> Universal 15-Ball ±5.5V Graphic IC
+                </div>
+            </div>
+            <div>
+                <div class="sec-title">4. Quick Test Codes &amp; Hard Reset Shortcuts</div>
+                <div class="box">
+                    <b>• Samsung Test:</b> <code>*#0*#</code> (Turn OFF Auto Blocker on One UI 6/7/8)<br>
+                    <b>• Samsung Hard Reset (Android 11–16):</b> Plug PC USB Cable → Vol Down + Power (7s) → Switch to Vol Up + Power<br>
+                    <b>• Xiaomi / Redmi / POCO CIT:</b> <code>*#*#6484#*#*</code> | Reset: Vol Up + Power<br>
+                    <b>• OPPO / Realme / OnePlus:</b> <code>*#899#</code> | Reset: Vol Down + Power (4-Digit Code)<br>
+                    <b>• Infinix / Tecno / itel Test:</b> <code>*#*#90#*#*</code> (A50: <code>*#*#80#*#*</code>)<br>
+                    <b>• Fake Charging Fix:</b> Replace 0402 <b>22nF–47nF 25V BTST Cap</b> near Charging IC!<br>
+                    <b>• iPhone 3-Min Panic:</b> <code>mic1/prs0</code> = Charge Flex • <code>0x80000</code> = Proximity Flex
+                </div>
+            </div>
+        </div>
+
+        <div class="warn">
+            ⚠️ BENCH SCOPE LOCK: A shared Tempered Glass cut NEVER means the LCD Combo, Outer Refurb Glass, or Touch Digitizer is compatible. Always confirm exact model code (4G vs 5G) and dry-test on board before gluing!
+        </div>
+    </div>
+    <div class="ftr">
+        <span>🌐 FREE LIVE DATABASE &amp; DAILY UPDATES: www.mobimatchpro.com</span>
+        <span>Updated: ${todayStr} • Works Offline (PWA)</span>
+    </div>
+</div>
+</body>
+</html>`;
+
+            const w = window.open('', '_blank', 'width=900,height=1050');
+            if (!w) { showToast('❌ Please allow popups to print the Wall Chart!'); return; }
+            w.document.open();
+            w.document.write(chartHtml);
+            w.document.close();
+            toggleModal('wallChartModal');
         }
 
         function openCutCompareModal(cardTitle) {
