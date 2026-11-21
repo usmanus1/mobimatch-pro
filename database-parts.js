@@ -2555,5 +2555,16 @@ window.defaultData = [
             "These Bike Phone Mounts Will Keep Your Phone Accessible"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — The Best Bike Phone Mounts of 2026 - Bikerumor",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "The Best Bike Phone Mounts of 2026 - Bikerumor"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
