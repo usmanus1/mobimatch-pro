@@ -78,13 +78,6 @@
     ],
     "PANIC_AND_HARD_RESET": [
       {
-        "headline": "How to Hard Reset Every iPhone Model (2026 Guide) - Gotta Be Mobile",
-        "published": "Wed, 24 Jun 2026 07:00:00 GMT",
-        "source": "https://news.google.com/rss/articles/CBMidkFVX3lxTE41TWE1SWRJZnJXblF3TGlaSXlqVHprUzNVVHRZRG12bklGYm94dXNUd2UybnZSUGFCOHZQZzA1ZlVlcWltWVdTckh0SjVTTUxrLXQ4azBuU0lVNWhCNGxHVlFiMEZPcENVSHEzOGJLd3RGTzZINXc?oc=5",
-        "target_tab": "PANIC_AND_HARD_RESET",
-        "status": "Pending Bench Verification"
-      },
-      {
         "headline": "iPhone stuck or locked? Here\u2019s how Recovery mode works - Macworld",
         "published": "Thu, 20 Aug 2026 07:00:00 GMT",
         "source": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNFJ1R2JjRDRZcmtCbENPaVdkWGxmaUs3LUJDTVN2TUtFbG83WFJRT0tEUENzSHBVMHhXUTlOMk5OcnRqRUwxMl9kSG9mWmtUZ2txczlHNUpfN0Y3NU5QdzZKb29kQUVXX2hZMHlxX3VFQUUxRm1GOFZLc19ZVEJyNmIwZXJZSDNsMkhwWA?oc=5",
@@ -99,16 +92,23 @@
         "status": "Pending Bench Verification"
       },
       {
-        "headline": "Hard Reset or Force Restart Your iPhone 18 Pro - MacRumors",
-        "published": "Fri, 18 Sep 2026 07:00:00 GMT",
-        "source": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1tb1NuMGRBQ3ozZGRNcTBKY3l5YTZZYnlYWHQ2eS13a0k3bEFSV2hybFIyOFZLSzhiT2I0N2cydThxTGc2S2dYZlNJQUpnbzJQbnhkUEJnem1fbW5NZThLUmRySVk0aG5VQnlVS1ZLTW41T3VLTDkxRlVVMUc?oc=5",
+        "headline": "iOS 27 Comes With a macOS-Like Recovery Mode for iPhone - Lifehacker",
+        "published": "Mon, 20 Jul 2026 07:00:00 GMT",
+        "source": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVmNZTXl1VWp6QlowdFc3MC1VOG0yWmQ5SGtzYzVfX1BtT1A0VnU3X25GNWRwVUlqdXhrbWZybDlYVE5UM0hjWHo3XzFMaE5VY3pOZ2liYXhxb21rRENvNHFRTFJ4cVRQRUpiSUJTR3JiNEdUM0RNNl9DMEZpekdDa1VqLVhicDBySUVz?oc=5",
         "target_tab": "PANIC_AND_HARD_RESET",
         "status": "Pending Bench Verification"
       },
       {
-        "headline": "iOS 27 Comes With a macOS-Like Recovery Mode for iPhone - Lifehacker",
-        "published": "Mon, 20 Jul 2026 07:00:00 GMT",
-        "source": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVmNZTXl1VWp6QlowdFc3MC1VOG0yWmQ5SGtzYzVfX1BtT1A0VnU3X25GNWRwVUlqdXhrbWZybDlYVE5UM0hjWHo3XzFMaE5VY3pOZ2liYXhxb21rRENvNHFRTFJ4cVRQRUpiSUJTR3JiNEdUM0RNNl9DMEZpekdDa1VqLVhicDBySUVz?oc=5",
+        "headline": "How to fix an iPhone stuck in recovery mode - AZ Big Media",
+        "published": "Fri, 02 Oct 2026 07:00:00 GMT",
+        "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPeU5wbndpeGpxY2tfZWJXWTlRVzRXcWhPbDVMTGY0anlXVzJWZTFWNVdqVFc0N0xjSVdHNW9NVFpNN1dqX1kzdUV1ZmdJN002YlFZaWhPbjQ2anpjWXRfSVkyS1FaUU5GdU8za1F3UTg2QnVvZHRDdnNFeUtlZUFndzNwMA?oc=5",
+        "target_tab": "PANIC_AND_HARD_RESET",
+        "status": "Pending Bench Verification"
+      },
+      {
+        "headline": "iOS 27 Adds Mac-Like Recovery Mode for iPhone and iPad - MacRumors",
+        "published": "Mon, 22 Jun 2026 07:00:00 GMT",
+        "source": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5kWkp6aWNfMjl1ZDNOQU5fSXM2UEtuYzlRUUFXeEJOSDRTSFdJakdiRVNQMHNOdDctMXp1cUswZVdlc2twNXphUmpFSTRaaVIzWFM1a1drUDY2VGdfdi1BUUV2YVFKZ2xGcW0xdUxmRXIwalMzMUcyQk1wOEg?oc=5",
         "target_tab": "PANIC_AND_HARD_RESET",
         "status": "Pending Bench Verification"
       }
