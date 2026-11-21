@@ -950,5 +950,16 @@ window.defaultData = (window.defaultData || []).concat([
             "J5 Prime (G570F)"
         ],
         "note": "SMA1301 = Audio Amp IC (A10/A50/S10)"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — iFixit teardown confirms iPhone 17e's high repairabilit",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iFixit teardown confirms iPhone 17e's high repairabilit"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
