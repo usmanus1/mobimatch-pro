@@ -983,5 +983,16 @@ window.defaultData = (window.defaultData || []).concat([
             "Samsung Galaxy update removes Android recovery menu too"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — Android 17 Beta 4.1 Rolls Out With Critical Bug Fixes A",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Android 17 Beta 4.1 Rolls Out With Critical Bug Fixes A"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
