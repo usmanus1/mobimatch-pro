@@ -972,5 +972,16 @@ window.defaultData = (window.defaultData || []).concat([
             "How to Format Android Phones (2026 Guide) - Beebom Gadg"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — Samsung Galaxy update removes Android recovery menu too",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "Samsung Galaxy update removes Android recovery menu too"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
