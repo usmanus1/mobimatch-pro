@@ -2500,5 +2500,16 @@ window.defaultData = [
             "Samsung Forced to Offer One-Time Free Screen"
         ],
         "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — iFixit HomeView Teardown Finds Glued Speakers",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iFixit HomeView Teardown Finds Glued Speakers"
+        ],
+        "note": "Research Lead"
     }
 ];
