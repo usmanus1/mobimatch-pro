@@ -918,8 +918,8 @@
     <!-- ==================================================================== -->
     <!-- 2-PART MODULAR EXTERNAL DATABASE SCRIPTS (V16.3)                     -->
     <!-- ==================================================================== -->
-    <script src="/database-parts.js?v=16.8"></script>
-    <script src="/database-board.js?v=16.8"></script>
+    <script src="/database-parts.js?v=16.9"></script>
+    <script src="/database-board.js?v=16.9"></script>
 
     <!-- ==================================================================== -->
     <!-- SINGLE UNIFIED V16.3 BILINGUAL + 5 AI FEATURES ENGINE                -->
@@ -1084,6 +1084,9 @@
         function toggleSiteLanguage() {
             siteLang = siteLang === 'en' ? 'ur' : 'en';
             localStorage.setItem('mobimatch_lang', siteLang);
+            if (!defaultData.length && Array.isArray(window.defaultData) && window.defaultData.length) {
+                compatibilityData = [...customData, ...window.defaultData];
+            }
             applyLanguageUI();
             showToast(siteLang === 'ur' ? '🇵🇰 Roman Urdu Mode Active!' : '🇬🇧 English Mode Active!');
         }
@@ -2094,7 +2097,7 @@
                         html += `<div class="p-2 bg-slate-50 border rounded-xl space-y-1">
                             <span class="inline-block bg-indigo-100 text-indigo-900 font-extrabold px-2 py-0.5 rounded text-[10px]">${cat.replace(/_/g, ' ')} (${items.length})</span>`;
                         items.forEach(it => {
-                            const safeTitle = (it.headline || '').replace(/</g, '&lt;').replace(/'/g, "\'");
+                            const safeTitle = (it.headline || '').replace(/</g, '&lt;').replace(/'/g, "\\'");
                             html += `<div class="text-[11px] flex justify-between items-start gap-2 pt-1 border-t border-slate-200/70">
                                 <a href="${it.source || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-800 hover:text-blue-600 font-semibold leading-snug">${(it.headline || '').replace(/</g, '&lt;')} ↗</a>
                                 <button onclick="document.getElementById('rawCatalogueInput').value='LCD | NEW-SKU | ${safeTitle.slice(0,45)} | Research Lead';showToast('Copied to input box!')" class="bg-blue-100 text-blue-900 px-1.5 py-0.5 rounded text-[9px] font-bold shrink-0">+ Draft</button>
