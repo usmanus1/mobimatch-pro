@@ -1,195 +1,68 @@
 {
   "last_sync": "2026-11-21",
-  "total_leads": 30,
+  "total_leads": 9,
+  "dedup_checked_codes": 666,
   "feature_research": {
-    "LCD_AND_COMBO_COMPATIBILITY": [
+    "IFIXIT_TEARDOWNS_AND_GUIDES": [
       {
-        "headline": "OnePlus is leaving—these OnePlus 15 alternative phones are better bets - Gadget Flow",
-        "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VS2kwQXI3bkJFb3h6dUsxWXlGWmhsVDJlSm9kd3cwckFldlloUUlIV05razhnQXJPV2dFRXZPVFc1UnBkcWZheWRzMHFhcXJIcVVwbFlIYWMxcWV4QVRmaEZpZXNSZl9yUHBnQzZn?oc=5",
-        "published": "Thu, 23 Jul 2026 07:00:00 GMT",
-        "query": "\"LCD\" OR \"display\" smartphone replacement compatibility -tv -monitor -stand"
+        "headline": "[iFixit News & Teardowns] It’s Time We Demand the Right to Repair our Cars",
+        "source": "https://www.ifixit.com/News/120368/its-time-we-demand-the-right-to-repair-our-cars",
+        "published": "Thu, 19 Nov 2026 17:04:39 +0000",
+        "verification": "VERIFIED_AUTHORITY"
       },
       {
-        "headline": "Commodore Callback 8020 is a $399 Sailfish OS flip phone - Nokiamob",
-        "source": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVElNdnpSbTNTbEhac0RSejlOVFVQcGJiZ3ZXUjlKNThkZXFwNUxCNWRNbjZYQ0pCYno4d09icUMtMWNMRDVRbU9YeU91Zm1fUk1DR2Jqa05SS3pmSVVGMHFHMm9EVFY2QzhUVXJ0WDVDajc0VUFYVHdzekZkZTJmdU1DTHF0cnotM1RsTS15WHhuZw?oc=5",
-        "published": "Wed, 26 Aug 2026 07:00:00 GMT",
-        "query": "\"LCD\" OR \"display\" smartphone replacement compatibility -tv -monitor -stand"
+        "headline": "[iFixit News & Teardowns] HomeView Teardown: A Surprising Step Backward",
+        "source": "https://www.ifixit.com/News/120317/homeview-teardown-a-surprising-step-backward",
+        "published": "Tue, 17 Nov 2026 20:37:32 +0000",
+        "verification": "VERIFIED_AUTHORITY"
       },
       {
-        "headline": "Yes, your phone’s battery is still replaceable (and it’s better than upgrading) - How-To Geek",
-        "source": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQV1R0VjlDYVEtdjJQdEhyMVJudnhxLVJ0U29sNTNYT19WVUw4X25XX2JXejBYVmloejBWczBnLTEyb1NxOVREenlHTEcweXVDTmpFZkdvOHBhNTZSUl85bTZTNjVTY1hkREdIX2tEa0doUzVZdHY0UUxjLVNiYVctcTVLdDZWYmtHcl9fUk4xZVIyUFZrd0xOdDNuSEVtMGxsbHg0?oc=5",
-        "published": "Sun, 08 Mar 2026 08:00:00 GMT",
-        "query": "\"LCD\" OR \"display\" smartphone replacement compatibility -tv -monitor -stand"
+        "headline": "[iFixit News & Teardowns] iPhone Duo Teardown: The Most Repairable Foldable Has a Huge Screen Problem",
+        "source": "https://www.ifixit.com/News/119895/iphone-duo-teardown",
+        "published": "Sun, 25 Oct 2026 21:38:06 +0000",
+        "verification": "VERIFIED_AUTHORITY"
       },
       {
-        "headline": "Best Android phone with removable battery 2026 - Android Central",
-        "source": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9OUTZkN0pMYlFjUVRqMzFOYm51VlZwSlJ4Y3BXTzY3cW1aU0YtY1hOMFg5aWZNQ3ZQSlp0cElUdHZ6MFl3NWNXUW1YaU1VS0lId1RyeWFLbHluU3F3VXRiX0Nxa2tpdFExaV9jdnQxTGJaQ0JKQ0E?oc=5",
-        "published": "Mon, 06 Apr 2026 07:00:00 GMT",
-        "query": "\"LCD\" OR \"display\" smartphone replacement compatibility -tv -monitor -stand"
-      },
-      {
-        "headline": "Is Xiaomi changing its strategy? Affordable Redmi Note 17 Pro 5G is perfect for a beach vacation - Notebookcheck",
-        "source": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNWkZQVUc0Qmd3eUl5amdCT0IwVjhTaWZUNUJHUDAwTzBfVjVkWk1yenFlc3ljMk9JWXhMMEFjV0dDRWs0Q2V5RGVYclBPWGJzTW9jRmlWU0NvRktSUnBQYmRVellhVEdZdTBGZ0lleXUxNllwa2xjYzlSeGhBNktNMERnaUJid3NuXzBKWC1iMTB4d0F4SF91SldMSHZuRjdxcVlKS3pMaXlzNGpsd29xSXdiaTFwem0tdGNGczZONG0zVE0zTWpBT3ZjdGxZOVU3MGV0TE1pcw?oc=5",
-        "published": "Fri, 09 Oct 2026 07:00:00 GMT",
-        "query": "realme OR oppo OR vivo OR redmi display screen replacement repair 2026 -tv"
-      },
-      {
-        "headline": "Xiaomi brings Redmi Watch 6 global with one key Watch 5 gap fixed - Gadgets & Wearables",
-        "source": "https://news.google.com/rss/articles/CBMia0FVX3lxTE11cEJxa3FUeVVKR1ROb1h3M1ZVT0s1aE5QdjgwbWhRcFBDMVdyN1VTVlVyX0o2NFloQU03U0paRzM2SVJYbDdRMExmS0tQbDBWN2J4a3VsdWQybEp5REFxUTlncXpRWGF0X2JJ?oc=5",
-        "published": "Sat, 02 May 2026 07:00:00 GMT",
-        "query": "realme OR oppo OR vivo OR redmi display screen replacement repair 2026 -tv"
+        "headline": "[iFixit News & Teardowns] How the iPhone Duo’s Crazy Repair Prices Compare",
+        "source": "https://www.ifixit.com/News/119797/how-the-iphone-duos-crazy-repair-prices-compare",
+        "published": "Tue, 20 Oct 2026 19:10:27 +0000",
+        "verification": "VERIFIED_AUTHORITY"
       }
     ],
-    "TEMPERED_GLASS_AND_OCA": [
+    "GSMARENA_NEW_MODELS_2026": [],
+    "XDA_AND_RECOVERY_MODES": [
       {
-        "headline": "Screen Protector iPhone 14 Market Forecast to 2035: Replacement Demand and Premiumization to Drive Growth - IndexBox",
-        "source": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPX2UwZ0RVeG5qb3M0OElwRUc2Y0pXRTZuM1g1djNZVkFyVHU2VUl3dU11ZW9sVVlUdXNlSnZybU9kUWxkQ2VlRGtXdEFkNTJ0VEI2a3pNbzVQTUxYV1QwS0xnMGpvNFBLNEJmREt4aFZDMUZUTTBGUG1EaFZBbTdYXzdyWjR3SkszSm5UbVlRNXc1T1htUG9IY2xiYU5ONmlMRnc5emc1TWUtMEc5aThUNUpQOFZOR2s1blB2b1p3cmltMWtPRkx0Y01YMjltS0k?oc=5",
-        "published": "Sat, 21 Nov 2026 12:21:05 GMT",
-        "query": "\"screen protector\" smartphone iphone OR samsung OR pixel 2026 -tv -stand -furniture"
-      },
-      {
-        "headline": "The right screen protector could save you hundreds of dollars in repairs — here are the best ones to shop - NBC News",
-        "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPcXNDRnVWY2dLRjR1ZllDZDJNS2o1dDVnYVVRdjVkWlR5ZEVSUXV3TWN0OG94NTJrNGFIVXkwLWZZdTVYYTk0SVJmU0hnU1JXVG5sTmJDMnc1UmJ5bWsweGtwdHAtbnlDbVFKbDZMT0ZaYmpEelRVVTQyWGpqeC1KWHJadw?oc=5",
-        "published": "Wed, 02 Sep 2026 07:00:00 GMT",
-        "query": "\"screen protector\" smartphone iphone OR samsung OR pixel 2026 -tv -stand -furniture"
-      },
-      {
-        "headline": "The 7 Best Screen Protectors for iPhone and Android in 2026 - Online Tech Tips",
-        "source": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMGM3RzJZd0lZaERQYjlnaVBmQnF4NWs5d2lsLVlJM2V3OWh4OERYRFRCWk4tekJ6M2s5N0hTUEY2bGptMVJvejllVF9DVUxsNHhmTUszV01VOERUMWtya3haOGREcFlCUENLQ1d0Qm1rU3Q2QWFQaVFpc0gzdHpJUFY2eXpaRnps?oc=5",
-        "published": "Thu, 29 Oct 2026 07:00:00 GMT",
-        "query": "\"screen protector\" smartphone iphone OR samsung OR pixel 2026 -tv -stand -furniture"
-      },
-      {
-        "headline": "Do You Still Need A Screen Protector In 2026? - SlashGear",
-        "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRXVlWVRCQmxTOS1GWEd6SldDSXBaSkNvdmxlOEczdVJHazkwYWliR2dROWNsdVdhQU4xU2lJY05Oa0FFYkRtbFNlS2J3b1lUdXpWN09sX2MxeUl4TXd3aDE3MXZVM2IwNEh1ZTVocnlGaEJ0OW1JRGh5ZU1rd2lOMHlHWQ?oc=5",
-        "published": "Sat, 11 Apr 2026 07:00:00 GMT",
-        "query": "\"screen protector\" smartphone iphone OR samsung OR pixel 2026 -tv -stand -furniture"
-      },
-      {
-        "headline": "The Best Samsung Galaxy S25 Plus Screen Protectors - Business Insider",
-        "source": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNYkl4d1hiUGFnT2MzWGhhZXlIcmNhbll5TllxN2g0Y0JUaVFZcVVXRmRQNnozaEo0dFpkVExwNVpOdkpmOEZWSGFoOTk3bTZwaHJjRXZ0V29PX3V2c0xSU013dno1Y0haRl80Vm5rM19DR19FN1dlaEU5dmxDTWs4VUJHMlBlVGFyYTI5WmhFenB1RnND?oc=5",
-        "published": "Tue, 11 Feb 2025 08:00:00 GMT",
-        "query": "\"tempered glass\" \"screen protector\" phone compatibility -tv -stand -table -desk"
-      },
-      {
-        "headline": "The best iPhone screen protectors - Digital Camera World",
-        "source": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLWpqY3ltaEFGRzdBZDRBbFhnWnZibk1TODJ0Qlh6eDhsbjVqUG5SNFBKUlJZRkxDSnFZdFhSQVZNTjN2RFZMQVBBUk45Q0Jfc0dFNW1EN2FLeVp4YVE0cVRSRmlmV3JublVLUUlOYmRPczNSOXAyTXppUVg2ZFYwcHljTQ?oc=5",
-        "published": "Thu, 02 Oct 2025 07:00:00 GMT",
-        "query": "\"tempered glass\" \"screen protector\" phone compatibility -tv -stand -table -desk"
+        "headline": "[XDA Developers Mobile] 3 expansion cards I've tried dedicating my spare PCIe slots to",
+        "source": "https://www.xda-developers.com/expansion-cards-ive-tried-dedicating-my-spare-pcie-slots-to/",
+        "published": "Sat, 21 Nov 2026 17:00:23 GMT",
+        "verification": "VERIFIED_TECH"
       }
     ],
-    "BATTERY_AND_IC_COMPATIBILITY": [
+    "REDDIT_MOBILE_REPAIR_COMMUNITY": [],
+    "YOUTUBE_REPAIR_CHANNELS": [
       {
-        "headline": "Best upcoming phones in 2026: find your next phone - Stuff",
-        "source": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5BNWRDWjZMcXdpZTB0dEhiMV9qendGb3B0MnJnbW10T0V6UHpCcmJzSGdpZUlGZ0tPTXFxZS1DUjM2SDhnYjJIeGRsSi1oUHMyZnR4SVB2enJFWnhVVjZEUVJ5UXc3UlZQaHliaWd3RVk?oc=5",
-        "published": "Tue, 03 Nov 2026 08:00:00 GMT",
-        "query": "smartphone battery replacement iphone OR samsung OR xiaomi 2026 -car -ev -laptop"
+        "headline": "[JerryRigEverything] BE GENTLE WITH YOUR NEW iPHONE DUO",
+        "source": "https://www.youtube.com/shorts/-aaxRKDQFeM",
+        "published": "2026-10-31T04:32:20+00:00",
+        "verification": "VIDEO_TEARDOWN"
       },
       {
-        "headline": "No, EU iPhones won't have a removable battery door in 2027 - AppleInsider",
-        "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTmx0LXRQeHRORENLN2t2WlpUMzNadWhHTDdiMlFHYTV5UE1FOHJjNVdwUzEtbExqMkh6OWROa3psVkk4d2RVU2l5VkxTVENka2hrSC02c0g1TnlHSm1PZ1ZNcTFrTnFsTnQ4Q2VmSmw1VTdfOHBSc0pWbUVSaVNER2ZndnRiMjFIOU5GMVl5Y1UxRWpFX1lqcHpNdTZXenh6?oc=5",
-        "published": "Fri, 10 Jul 2026 07:00:00 GMT",
-        "query": "smartphone battery replacement iphone OR samsung OR xiaomi 2026 -car -ev -laptop"
+        "headline": "[JerryRigEverything] iPhone Duo Teardown – APPLE SHOULD APOLOGIZE",
+        "source": "https://www.youtube.com/watch?v=_Xe2JAoMwIA",
+        "published": "2026-11-02T23:13:30+00:00",
+        "verification": "VIDEO_TEARDOWN"
       },
       {
-        "headline": "Samsung Galaxy Users Are Reporting One Key Issue After Updating To One UI 9 - BGR",
-        "source": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNNFFvbFMwdDk5d1RhWUZuWVVEZ0N6aUc2TnpCci00ejU3ZERoZ250aDg4VGhUMlZhbWIzSXlUazZ5ckUwSkx2WjBfM3dqekhtRnN6ZEdWUUJTYjlJbHNxRjdta3dKamVlMjRGcTRYYVZxcVk0SnVnem1JWW92MGZubzN2NXk5U0VsVDV1b2VaZXdCbllmSXBZ?oc=5",
-        "published": "Wed, 28 Oct 2026 07:00:00 GMT",
-        "query": "smartphone battery replacement iphone OR samsung OR xiaomi 2026 -car -ev -laptop"
+        "headline": "[JerryRigEverything] I think i fixed the iPhone Duo...",
+        "source": "https://www.youtube.com/shorts/ObVOK_RxduU",
+        "published": "2026-10-26T09:32:21+00:00",
+        "verification": "VIDEO_TEARDOWN"
       },
       {
-        "headline": "Smartphones must have user-replaceable batteries by 2027. But not your iPhone. Here's why - PhoneArena",
-        "source": "https://news.google.com/rss/articles/CBMingFBVV95cUxPY2Jxb2N4TFE4SkRVYkZEYWhLcDZwQ25tMTBnLWI5NGhfQlFqUFJ2TEw2VVJ2MGM0enhtSFJjOHoyWWNrNTdnUjluWWJGdjdEU0d6ekx4NFVDS3lBMzFhMGpfaVJVNkY2VDZQc1dFMzJKZzN5QWg1cVptQTNNdmUyZ2F4WndQRFV2cU1NelFQbkRnUWY4VEs0WXBwSHk5dw?oc=5",
-        "published": "Mon, 01 Jun 2026 07:00:00 GMT",
-        "query": "smartphone battery replacement iphone OR samsung OR xiaomi 2026 -car -ev -laptop"
-      },
-      {
-        "headline": "Turning An Old Phone’s Motherboard Into An RC Plane Controller - Hackaday",
-        "source": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNa2NFZlpzUkZXc2xCNHlEbDQzMkNUMEpObG5KdkVFSDN0M1pKQlRNOURXb2lIanY1NEhZRGdTZDFpWjBSMzlJTkRPR0tnU3pfUlJsZjJLOHlCQ3o1NTc1bVQya05Td1pqVVBqYW15TVpMQmY5LWduNTNXVHBBZVpCQXVXR2U1ZXN6NzBKMGtoX2J5RjJfSV9GaXdn?oc=5",
-        "published": "Wed, 28 Oct 2026 07:00:00 GMT",
-        "query": "mobile phone repair \"PMIC\" OR \"charging IC\" OR \"eMMC\" OR \"motherboard\" -tv"
-      },
-      {
-        "headline": "Samsung Hit With Class Action Lawsuit Over ‘Catastrophic’ Oct. 2024 Galaxy S22 Software Update - ClassAction.org",
-        "source": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOeFkyckxYWXEyY3E0dTMxVmJzZkc1TEVOTFhGMHh3LU5XTUt3dHltZFJvaUtyYll6M1VZX2lmOTQ0RE5IMGFsLVpaeUpST1dIcG9JTVlxcEN1NHlZZmJ4S1RXWFpiNC1RZ3NSak5FZ3JGaDZBXzJ4aUNpZnhTVU9NV2JBTnlBN1BnOXpYRkJJNGJXUzVwQnl2Z0xPdks1V2kxRkNBdk1waUlmbTVONDRTYmZ2SFZCU3F1MTNRNkI1R3RlZnc?oc=5",
-        "published": "Thu, 29 Jan 2026 08:00:00 GMT",
-        "query": "mobile phone repair \"PMIC\" OR \"charging IC\" OR \"eMMC\" OR \"motherboard\" -tv"
-      }
-    ],
-    "FLEX_CC_BOARD_AND_PARTS": [
-      {
-        "headline": "Most Repairable Phones You Can Buy in 2026 - TechRepublic",
-        "source": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0wSGYyMUlVVEJiRkpRaVdGRjdOX1MteTY2dnhzMTdmR3FlTFd2cFBJYm9FQUJ2WUZxNTNCTEU2dU5lcDRlNE1kNUFScU5rVFloTXEyMDJaYnJqYXBhdjBjVTVpQnpGVXdlZ3hVWDBMVkFTSFhtRVJBc0ZB?oc=5",
-        "published": "Wed, 26 Aug 2026 07:00:00 GMT",
-        "query": "smartphone \"charging port\" OR \"USB-C\" flex replacement repair -tv -laptop"
-      },
-      {
-        "headline": "Samsung Galaxy phone not charging? Try these 6 solutions - Android Authority",
-        "source": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPYzM5ekF4SEZBcjhsUkdRdU8zRHlISVdhdlUxN3JWMEhsM1dEU2QxWG50Yk4ydHRSNjByeTc1cm9qcWZSUGZkRWE3aHZyelg4UGJFc3hKcHNlb0syQzBYQ254ZTZuZ2tpMGdsSXZpMkdQZmtSTlYwT29NWHM4VW1NQg?oc=5",
-        "published": "Sun, 09 Nov 2025 08:00:00 GMT",
-        "query": "smartphone \"charging port\" OR \"USB-C\" flex replacement repair -tv -laptop"
-      },
-      {
-        "headline": "Apple sells iPhone Duo repair parts through its Self Service Repair Store - news.lavx.hu",
-        "source": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZ00xT2JBSlRacE9yT1BSN0duNVl1VWVNeC1rZ1JQVUtMTXRVWjhsUDRPNjBtc2xHTDNxUzBFSXJXemVNRXFYemllbzlHR2FiSWtWMUlwZ0toaEJsZVNXeVo4OEM1eW1BZzd2ajhtRlE5V1UwVmtzTFM3NHY1VlZ4eFlkVGNvRkEyV3hkODZxSVdSSF82VHBhM2pLeUtBRlNxQlRxUw?oc=5",
-        "published": "Wed, 18 Nov 2026 00:12:46 GMT",
-        "query": "smartphone \"charging port\" OR \"USB-C\" flex replacement repair -tv -laptop"
-      },
-      {
-        "headline": "Android Charging Port Repair 2026: DIY Fix or Professional Repair, Here’s What Actually Pays Off - Phandroid",
-        "source": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOakZQNXl2STRWejc1UDlPR0dkVVBobkdWUzdpSkdpZHZ5Q1VORDhPcWVGYWc5QXlSMkw3NERpVElPaVpSN1BMRUxJV08wcFY4THNRRUdRdGU4WG1Vck1OUmpfcHphbGRsNUlVcS1XX2NJTktTbEVZUlZIQlNVVGFjMS1GMkxsQkNKdk5vdE9GYXFHM3UyZWJQR3Yza2hqTDdRcGJtcWE0Rndmb1JPTnVpakRHUFlwdW9YYm1lM3NzemhEdHRJX3fSAcsBQVVfeXFMUEVEYldtb0o0bHdrSEtIeXBoLU1yZUxtd1J4cG5tTnNtQjd5dmlLNTQzZzNjOEpFSXBnQmNJdVR4WDZNY1dBRDFZek1OSDhKcDZTRVA1TWRac1RvenVZQkhMZVMxRXlPeXVGcVlvX05nNDZLYmY3X09zYkhXSW9kUGNBeFlGeHlYZExwZU5Ea1VUNUctQWNMaldDWkJVaDNIMUZfZVdRX2JTR3pNaklmTldRdW9NMC1BUkV1R1FMdTg3TkpzNUJVS3Atanc?oc=5",
-        "published": "Fri, 21 Aug 2026 07:00:00 GMT",
-        "query": "smartphone \"charging port\" OR \"USB-C\" flex replacement repair -tv -laptop"
-      },
-      {
-        "headline": "Smartphone makers don't bother to comply with EU repairability requirements - The Register",
-        "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNdjBDek0wQnIyN3Q3ZUVZbEpmLXlMVjhxV2o1YlZZX0ZCMDZDb0E3SzlOckhPQXpFaFFrUVRXZUN5eXNtVFNEZzdGZnNxdi02WF8ydTVNdXFGOHlhel9LTTcwVHhMcDZxTkxVa3ZPTW8tU3NQeXhzamdldXdXRFRPbVMwajRWSWlsdnptSWhzZVNjMmpOWTE1M2lrNU9GQzJPb0l5b3JpLWxOWVZsOE5CdmFRYk9tTVlXUXUwU2s3a3lJemZnbTZ3UlphcTNkVkFT?oc=5",
-        "published": "Mon, 07 Sep 2026 07:00:00 GMT",
-        "query": "iFixit OR smartphone teardown spare parts repairability 2026 -tv -laptop"
-      },
-      {
-        "headline": "Pixel Watch 5 teardown results in another rare rating from iFixit - Notebookcheck",
-        "source": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQV0Zqd19idlk4bDZSdkdscnh3cGhxcC1fOVhOX1FYOE1rSEluc0xyWnhBM3RpeTUybENmYmN6djVUSHdGb1hKMm1EaHY4dkprRFg1NGlMZ0VPSENJMTR6NU9ubHE0QUdVNlhma29iNnplaDZLdFJKTVlFRl8zMk5VSDZpN3N5QTNsbEs1RTMxOHBIMWtKS0NMV3FnaWdKMTcxUUh3UE1nNkJYRXdrTFpz?oc=5",
-        "published": "Sat, 05 Sep 2026 07:00:00 GMT",
-        "query": "iFixit OR smartphone teardown spare parts repairability 2026 -tv -laptop"
-      }
-    ],
-    "PANIC_LOG_AND_HARD_RESET": [
-      {
-        "headline": "iPhone Keeps Shutting Down and Restarting? Fix it Without Losing Data - Techloy",
-        "source": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOYnp2Z08yU012MWhjV0kweDVOZHJPUGpfbmktTDd2WWYwOVFra2FjcHhEN09JaUR5eTNILWJaZF9zZjhwZTUzTG9laGJveEtPTFFRd3BocnB2c2tyd3Z3S3ItSHdDMjBPeUNVVndfbGpja3kwVW5hWHJHOWdFU3lEXzk5YUstRzNXQ2d1QVJ1RE1qT21Za2NyUw?oc=5",
-        "published": "Mon, 20 Jul 2026 07:00:00 GMT",
-        "query": "iphone \"panic\" OR \"restart\" OR \"bootloop\" repair fix"
-      },
-      {
-        "headline": "iPhone 18 Pro Random Shutdowns and Restarts: Panic-Full Fix from Tenorshare - PR Newswire",
-        "source": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTWFvczd0ZV95X3Eza0kycmFQSVNqcHkwd3VhT20wQW5UTHlsSlRRNXNZbG9GMnhzZEhXM3p6c2N6cGQ0dXpnMG5wVFlHLTVMZ3dCOTVhTFlrNzZHQzBKclNqMDdFSkJSTW4xNFdqOGhoS3VwMWRUMlR1ZFZCQzdObEZTZVVHZmY5dUY3LVRPSjZJY1M4eVF3cnVxcmlNMkVEMmZSR1hXUzlYZ0k2OVlmZmlhOUtnWW5Xa01UUnlRM1JscGRNUjVZZmRR?oc=5",
-        "published": "Mon, 28 Sep 2026 07:00:00 GMT",
-        "query": "iphone \"panic\" OR \"restart\" OR \"bootloop\" repair fix"
-      },
-      {
-        "headline": "Fix 'No Service' on iPhone With These Checks - Lifewire",
-        "source": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBZOWdhQjNfbVFWbnNZSENESlFMOHA0QnlRYVZDQ2lUSkhHcldEd3FxOGdVNjBCZUZhbE4xNjFld21wMmpyWjJ3TU4tQ2Q3RlN6dm4xU0JXMndkX0R5bXp2Q3RpWEVMRDhvcGJKZmx3?oc=5",
-        "published": "Tue, 13 Jan 2026 08:00:00 GMT",
-        "query": "iphone \"panic\" OR \"restart\" OR \"bootloop\" repair fix"
-      },
-      {
-        "headline": "Iphone 14 pro max restart problems 3 minutes repair fix - YouTube",
-        "source": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4wbTVMMTd5ZlR0dVhHdk9HRmV0OVNJZ3VCOUF5d2pTOEJKYXVsNzBPM3pGRTk3NWlVNGxXMEZqNDBsVzl1b3FqTXp2ZkxLN2ZkcC1LclBwTmt0TWFR?oc=5",
-        "published": "Tue, 08 Jul 2025 07:00:00 GMT",
-        "query": "iphone \"panic\" OR \"restart\" OR \"bootloop\" repair fix"
-      },
-      {
-        "headline": "Galaxy S26 Ultra Owners Report Getting Stuck After Factory Reset — Samsung Offers a Workaround - TechRepublic",
-        "source": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5selIxZmstYmlad1hJZUEtUDBUeW9HZ0p2OWR3UE1GZWFvUmpLazdCQk0zS2Vicks3MTBxWnFra2FOeWZ6RTJxTVBQRHBPLVUyRmtDVzYtZXRYdXVUZi1nY1RLeWhxNEpzTjdfUWhVRG5zZlU3NWY3Ng?oc=5",
-        "published": "Wed, 28 Oct 2026 07:00:00 GMT",
-        "query": "android \"recovery mode\" OR \"factory reset\" samsung OR xiaomi OR pixel 2026"
-      },
-      {
-        "headline": "Samsung Galaxy update removes Android recovery menu tools, including sideloading - 9to5Google",
-        "source": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRS1iWU00T2lVSFM2X2VOblFHejFKeEVYVDluakZoX1paSEJtY2JtbVJYZ3NfX3RUOGdBbFVGTWJmWVBpVjQyS2xYWC1PMGtvYTQzcVBGR1AyRmQ1X2dyNE51X19nU21iYzYwUEVkWEo3ZFVHU2F0Zm9Rb2pDOHhBbmJaZVdpZk9GQnVJS09zQQ?oc=5",
-        "published": "Fri, 27 Feb 2026 08:00:00 GMT",
-        "query": "android \"recovery mode\" OR \"factory reset\" samsung OR xiaomi OR pixel 2026"
+        "headline": "[JerryRigEverything] iPhone Duo Durability: Destroyed",
+        "source": "https://www.youtube.com/watch?v=5laDGy4INB0",
+        "published": "2026-10-31T19:38:45+00:00",
+        "verification": "VIDEO_TEARDOWN"
       }
     ]
   }
