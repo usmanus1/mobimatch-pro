@@ -2632,5 +2632,16 @@ window.defaultData = [
             "[JerryRigEverything] I think i fixed the iPhone Duo..."
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — [iFixit News & Teardowns] How the iPhone Duo’s Crazy Re",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "[iFixit News & Teardowns] How the iPhone Duo’s Crazy Re"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
