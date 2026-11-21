@@ -2588,5 +2588,16 @@ window.defaultData = [
             "The Best Wall Chargers for Almost Any USB-C Device - Th"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — OnePlus is leaving—these OnePlus 15 alternative phones",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "OnePlus is leaving—these OnePlus 15 alternative phones"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
