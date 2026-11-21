@@ -2544,5 +2544,16 @@ window.defaultData = [
             "Best Bike Phone Mounts of 2026 - GearLab"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — These Bike Phone Mounts Will Keep Your Phone Accessible",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "These Bike Phone Mounts Will Keep Your Phone Accessible"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ];
