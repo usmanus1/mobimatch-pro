@@ -2522,5 +2522,16 @@ window.defaultData = [
             "iOS 27 Adds Mac-Like Recovery Mode for iPhone"
         ],
         "note": "Research Lead"
+    },
+    {
+        "type": "LCD",
+        "subCat": "LCD",
+        "title": "NEW-SKU — iFixit’s Apple HomeView teardown reveals a de",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iFixit’s Apple HomeView teardown reveals a de"
+        ],
+        "note": "Research Lead"
     }
 ];
