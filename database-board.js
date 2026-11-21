@@ -1016,5 +1016,16 @@ window.defaultData = (window.defaultData || []).concat([
             "iPhone 17e teardown shows you can switch most parts wit"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — iPhone 18 Pro Random Shutdowns and Restarts: Panic-Full",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "iPhone 18 Pro Random Shutdowns and Restarts: Panic-Full"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
