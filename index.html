@@ -2043,14 +2043,27 @@
                     </div>
                     <div id="githubResearchBox" class="hidden border-t pt-2 space-y-1.5"></div>
                     <div class="border-t pt-2">
-                        <b class="text-slate-800 block mb-1.5">Pending Review Drafts (${importedDrafts.length}):</b>
+                        <div class="flex flex-wrap justify-between items-center gap-1.5 mb-1.5">
+                            <label class="flex items-center gap-1.5 font-extrabold text-slate-800 cursor-pointer">
+                                <input type="checkbox" id="selectAllDraftsChk" onchange="toggleAllDrafts(this.checked)" class="w-3.5 h-3.5 accent-indigo-600">
+                                <span>Pending Review Drafts (${importedDrafts.length})</span>
+                            </label>
+                            <div class="flex flex-wrap gap-1">
+                                <button onclick="copySelectedDraftsForGithub()" class="bg-slate-900 hover:bg-slate-800 text-amber-400 px-2 py-1 rounded-lg font-bold text-[10px]">📋 Copy Selected JS</button>
+                                <button onclick="approveSelectedDrafts()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2 py-1 rounded-lg font-bold text-[10px]">✅ Approve Selected</button>
+                                ${customData.length ? `<button onclick="copyAllLocalApprovedForGithub()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-2 py-1 rounded-lg font-bold text-[10px]">🚀 Copy My Approved (${customData.length})</button>` : ''}
+                            </div>
+                        </div>
                         <div class="space-y-1.5 max-h-48 overflow-y-auto">
                             ${importedDrafts.length ? importedDrafts.map((d, i) => `
                                 <div class="p-2 bg-slate-50 border rounded-xl flex justify-between items-center gap-2">
-                                    <div>
-                                        <span class="bg-blue-100 text-blue-900 font-bold px-1.5 py-0.5 rounded text-[10px]">${d.type}</span>
-                                        <b class="ml-1">${d.title}</b>
-                                        <p class="text-[11px] text-slate-600">${d.models.join(', ')} — <i>${d.note}</i></p>
+                                    <div class="flex items-start gap-2">
+                                        <input type="checkbox" class="draft-select-chk mt-1 w-3.5 h-3.5 accent-indigo-600 shrink-0" value="${i}">
+                                        <div>
+                                            <span class="bg-blue-100 text-blue-900 font-bold px-1.5 py-0.5 rounded text-[10px]">${d.type}</span>
+                                            <b class="ml-1">${d.title}</b>
+                                            <p class="text-[11px] text-slate-600">${d.models.join(', ')} — <i>${d.note}</i></p>
+                                        </div>
                                     </div>
                                     <div class="flex flex-wrap gap-1 shrink-0">
                                         <button onclick="copyDraftForGithub(${i})" title="Copy JS code for GitHub" class="bg-slate-900 hover:bg-slate-800 text-amber-400 px-2 py-1 rounded font-bold text-[10px]">📋 Copy JS</button>
@@ -2144,6 +2157,63 @@
             renderCatalogueImporterTab();
             showToast(`📥 Added ${added} draft record(s) for review!`);
         }
+        function toggleAllDrafts(checked) {
+            document.querySelectorAll('.draft-select-chk').forEach(chk => { chk.checked = checked; });
+        }
+        function getSelectedDraftIndexes() {
+            return Array.from(document.querySelectorAll('.draft-select-chk:checked')).map(c => parseInt(c.value, 10)).filter(n => !isNaN(n));
+        }
+        function formatRecordsAsJs(records) {
+            return records.map(d => `,\n    ${JSON.stringify({
+                type: d.type,
+                subCat: d.subCat || d.type,
+                title: d.title,
+                size: d.size || 'Universal',
+                conf: d.conf || 'High',
+                models: d.models || [],
+                note: d.note || 'Verified on shop bench.'
+            }, null, 4).replace(/\n/g, '\n    ')}`).join('');
+        }
+        function copySelectedDraftsForGithub() {
+            const idxs = getSelectedDraftIndexes();
+            if (!idxs.length) return showToast('Pehle kam az kam 1 draft tick (☑) karein!');
+            const selected = idxs.map(i => importedDrafts[i]).filter(Boolean);
+            const jsBlock = formatRecordsAsJs(selected);
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(jsBlock);
+                showToast(`📋 ${selected.length} Selected Drafts JS Copied! Paste before ]; on GitHub`);
+            } else {
+                prompt('Copy this JS and paste before ]; on GitHub:', jsBlock);
+            }
+        }
+        function approveSelectedDrafts() {
+            const idxs = getSelectedDraftIndexes().sort((a, b) => b - a);
+            if (!idxs.length) return showToast('Pehle kam az kam 1 draft tick (☑) karein!');
+            idxs.forEach(i => {
+                if (importedDrafts[i]) {
+                    customData.unshift(importedDrafts[i]);
+                    importedDrafts.splice(i, 1);
+                }
+            });
+            localStorage.setItem('mobimatch_custom', JSON.stringify(customData));
+            localStorage.setItem('mobimatch_import_drafts', JSON.stringify(importedDrafts));
+            compatibilityData = [...customData, ...defaultData];
+            updateCategoryTabCounts();
+            renderCatalogueImporterTab();
+            renderCards();
+            showToast(`✅ ${idxs.length} Drafts Approved Locally!`);
+        }
+        function copyAllLocalApprovedForGithub() {
+            if (!customData.length) return showToast('Koi local approved record nahi mila.');
+            const jsBlock = formatRecordsAsJs(customData);
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(jsBlock);
+                showToast(`🚀 All ${customData.length} Approved Matches Copied! Paste before ]; on GitHub`);
+            } else {
+                prompt('Copy this JS and paste before ]; on GitHub:', jsBlock);
+            }
+        }
+
         function copyDraftForGithub(i) {
             const d = importedDrafts[i];
             if (!d) return;
