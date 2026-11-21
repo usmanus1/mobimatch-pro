@@ -961,5 +961,16 @@ window.defaultData = (window.defaultData || []).concat([
             "iFixit teardown confirms iPhone 17e's high repairabilit"
         ],
         "note": "Compatibility Research Lead"
+    },
+    {
+        "type": "IC",
+        "subCat": "IC",
+        "title": "NEW-SKU — How to Format Android Phones (2026 Guide) - Beebom Gadg",
+        "size": "NEW-SKU",
+        "conf": "Conditional",
+        "models": [
+            "How to Format Android Phones (2026 Guide) - Beebom Gadg"
+        ],
+        "note": "Compatibility Research Lead"
     }
 ]);
